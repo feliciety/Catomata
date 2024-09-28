@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane fx:controller="project.autox.DFAController" fx:id="dfaPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="668.0" prefWidth="901.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<Pane fx:id="dfaPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="668.0" prefWidth="901.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.autox.DFAController">
    <children>
       <ImageView fitHeight="668.0" fitWidth="901.0" layoutX="-2.0" layoutY="6.0">
          <image>
@@ -31,7 +31,7 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Text>
-      <TextField fx:id="inputTextField"  layoutX="127.0" layoutY="127.0" styleClass="text-field" stylesheets="@../StyleSheet/Styles.css" promptText="e.g. babbabab" />
+      <TextField fx:id="inputTextField" layoutX="127.0" layoutY="127.0" promptText="e.g. babbabab" styleClass="text-field" stylesheets="@../StyleSheet/Styles.css" />
       <Line endX="559.0667724609375" layoutX="202.0" layoutY="89.0" startX="-70.26669311523438" stroke="#e1e1e1" style="-fx-opacity: 10;" styleClass="line-divider" />
       <HBox alignment="CENTER" layoutX="126.0" layoutY="172.0" prefHeight="46.0" prefWidth="279.0" stylesheets="@../StyleSheet/Styles.css">
          <children>
@@ -63,9 +63,9 @@
          </children>
       </HBox>
       <Line endX="559.0667724609375" layoutX="200.0" layoutY="226.0" startX="-70.26669311523438" stroke="#e1e1e1" style="-fx-opacity: 10;" styleClass="line-divider" />
-      <ImageView fitHeight="234.0" fitWidth="585.0" layoutX="186.0" layoutY="270.0">
+      <ImageView fitHeight="275.0" fitWidth="637.0" layoutX="187.0" layoutY="248.0">
          <image>
-            <Image url="@../Images/DFAline.png" />
+            <Image url="@../Images/DFAlines.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="56.0" fitWidth="56.0" layoutX="223.0" layoutY="358.0">
@@ -73,7 +73,7 @@
             <Image url="@../Images/q0.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="56.0" fitWidth="56.0" layoutX="288.0" layoutY="270.0">
+      <ImageView fitHeight="56.0" fitWidth="56.0" layoutX="282.0" layoutY="271.0">
          <image>
             <Image url="@../Images/q1.png" />
          </image>
@@ -83,17 +83,17 @@
             <Image url="@../Images/q2.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="56.0" fitWidth="56.0" layoutX="416.0" layoutY="271.0">
+      <ImageView fitHeight="56.0" fitWidth="56.0" layoutX="414.0" layoutY="274.0">
          <image>
             <Image url="@../Images/q3.png" />
          </image>
       </ImageView>
-      <ImageView id="q4" fitHeight="56.0" fitWidth="56.0" layoutX="297.0" layoutY="433.0">
+      <ImageView id="q4" fitHeight="56.0" fitWidth="56.0" layoutX="289.0" layoutY="439.0">
          <image>
             <Image url="@../Images/q4.png" />
          </image>
       </ImageView>
-      <ImageView id="q5" fitHeight="56.0" fitWidth="56.0" layoutX="414.0" layoutY="433.0">
+      <ImageView id="q5" fitHeight="56.0" fitWidth="56.0" layoutX="414.0" layoutY="438.0">
          <image>
             <Image url="@../Images/q5.png" />
          </image>
@@ -103,22 +103,22 @@
             <Image url="@../Images/q6.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="56.0" fitWidth="56.0" layoutX="541.0" layoutY="275.0">
+      <ImageView fitHeight="56.0" fitWidth="56.0" layoutX="542.0" layoutY="273.0">
          <image>
             <Image url="@../Images/q7.png" />
          </image>
       </ImageView>
-      <ImageView id="q8" fitHeight="56.0" fitWidth="56.0" layoutX="545.0" layoutY="435.0">
+      <ImageView id="q8" fitHeight="56.0" fitWidth="56.0" layoutX="542.0" layoutY="441.0">
          <image>
             <Image url="@../Images/q8.png" />
          </image>
       </ImageView>
-      <ImageView id="q9" fitHeight="56.0" fitWidth="56.0" layoutX="607.0" layoutY="357.0">
+      <ImageView id="q9" fitHeight="56.0" fitWidth="56.0" layoutX="606.0" layoutY="357.0">
          <image>
             <Image url="@../Images/q9.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="56.0" fitWidth="56.0" layoutX="736.0" layoutY="356.0">
+      <ImageView fitHeight="56.0" fitWidth="56.0" layoutX="732.0" layoutY="356.0">
          <image>
             <Image url="@../Images/q10f.png" />
          </image>
