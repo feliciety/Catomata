@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1226.0" styleClass="gradient-background" stylesheets="@Styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="779.0" fitWidth="901.0" layoutX="276.0" layoutY="55.0">
+         <image>
+            <Image url="@../../../../../../../Downloads/Rectangle%2030.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="100.0" layoutY="233.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="display-flex" text="DFA" wrappingWidth="82.81366729736328" />
+      <Text layoutX="89.0" layoutY="322.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Deterministic Finite Automata" />
+   </children>
+</AnchorPane>
