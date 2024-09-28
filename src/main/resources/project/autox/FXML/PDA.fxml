@@ -88,6 +88,31 @@
             </Text>
          </children>
       </Pane>
+      <ImageView fitHeight="106.0" fitWidth="527.0" layoutX="155.0" layoutY="330.0">
+         <image>
+            <Image url="@../Images/PDAlines.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="56.0" fitWidth="56.0" layoutX="191.0" layoutY="377.0">
+         <image>
+            <Image url="@../Images/q0.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="56.0" fitWidth="56.0" layoutX="354.0" layoutY="377.0">
+         <image>
+            <Image url="@../Images/q1.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="56.0" fitWidth="56.0" layoutX="516.0" layoutY="377.0">
+         <image>
+            <Image url="@../Images/q2.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="56.0" fitWidth="56.0" layoutX="675.0" layoutY="377.0">
+         <image>
+            <Image url="@../Images/q3f.png" />
+         </image>
+      </ImageView>
    </children>
    <stylesheets>
       <URL value="@../StyleSheet/Styles.css" />
