@@ -1,5 +1,5 @@
 .gradient-background {
-    -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #B7FBB8, #FCF7B9, #C2FFBC, #EBEBAA);
+    -fx-background-color: white;
 }
 
 .main-pane {
