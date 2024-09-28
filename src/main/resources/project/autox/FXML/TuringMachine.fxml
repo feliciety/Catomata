@@ -67,7 +67,7 @@
       <Pane layoutX="323.0" layoutY="608.0" prefHeight="24.0" prefWidth="201.0" style="-fx-background-color: #EDF2F7;" styleClass="background-exp" />
       <ImageView fitHeight="281.0" fitWidth="503.0" layoutX="114.0" layoutY="251.0">
          <image>
-            <Image url="@../Images/Tmlines.png" />
+            <Image url="@../Images/TMlines.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="56.0" fitWidth="56.0" layoutX="149.0" layoutY="301.0">
