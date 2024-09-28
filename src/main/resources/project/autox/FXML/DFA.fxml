@@ -18,12 +18,12 @@
    <children>
       <ImageView fitHeight="917.0" fitWidth="1231.0" layoutX="-3.2" layoutY="-16.0" AnchorPane.leftAnchor="-3.0" AnchorPane.topAnchor="-16.0">
          <image>
-            <Image url="@../../images/Homepage.png" />
+            <Image url="@../Images/Homepage.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="900.0" fitWidth="938.0" layoutX="262.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../images/Rectangle30.png" />
+            <Image url="@../Images/Rectangle30.png" />
          </image>
       </ImageView>
       <Text layoutX="100.0" layoutY="233.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="display-flex" text="DFA" wrappingWidth="82.81366729736328" />
@@ -94,7 +94,7 @@
       <Line endX="559.0667724609375" layoutX="481.0" layoutY="450.0" startX="-70.26669311523438" stroke="#e1e1e1" style="-fx-opacity: 10;" styleClass="line-divider" />
    </children>
    <stylesheets>
-      <URL value="@Styles.css" />
-      <URL value="@txtSS.css" />
+      <URL value="@../StyleSheet/Styles.css" />
+      <URL value="@../StyleSheet/txtSS.css" />
    </stylesheets>
 </AnchorPane>
