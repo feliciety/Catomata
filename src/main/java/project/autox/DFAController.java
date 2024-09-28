@@ -10,17 +10,17 @@ public class DFAController{
 
     private static int currentState = 1; //initial state
     @FXML
-    private TextField inputTextField;
+    private TextField Input_DFA;
     @FXML
-    private Button ValidateBTN;
+    private Button Validate_DFA;
     @FXML
-    private Button SimulateBTN;
+    private Button Simulate_DFA;
 
 
     public void initialize() {
 
-        ValidateBTN.setOnAction(event -> {
-            String input = inputTextField.getText();
+        Validate_DFA.setOnAction(event -> {
+            String input = Input_DFA.getText();
             if (isValid(input)) {
                 currentState = 0;
                 boolean isAccepted = transition(input);
@@ -36,8 +36,8 @@ public class DFAController{
             }
         });
 
-        SimulateBTN.setOnAction(event -> {
-            simulateInput(inputTextField.getText());
+        Simulate_DFA.setOnAction(event -> {
+            simulateInput(Input_DFA.getText());
             //code simulate dri
         });
 

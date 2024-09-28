@@ -31,7 +31,8 @@ public class HelloController {
 
     @FXML
     public void loadPDA() throws IOException {
-        Pane pdaPane = FXMLLoader.load(getClass().getResource("/project/autox/FXML/PDA.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/project/autox/FXML/PDA.fxml"));
+        Pane pdaPane = loader.load();
         contentPane.getChildren().setAll(pdaPane);
     }
 
