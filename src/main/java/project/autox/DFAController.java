@@ -22,11 +22,11 @@ public class DFAController{
         ValidateBTN.setOnAction(event -> {
             String input = inputTextField.getText();
             if (isValid(input)) {
-                currentState = 1;
+                currentState = 0;
                 boolean isAccepted = transition(input);
                 if (isAccepted) {
                     System.out.println("The input is accepted by the DFA.");
-                } else if (currentState == -1) {
+                } else if (currentState == 2) {
                     System.out.println("In Trap state.");
                 } else {
                     System.out.println("The input is rejected by the DFA.");
@@ -61,29 +61,29 @@ public class DFAController{
 
     public static boolean transition(String input) {
         for (char ch : input.toCharArray()) {
-            if (currentState == -1) {
+            if (currentState == 2) {
                 return false;
             }
 
             switch (currentState) {
-                case 1:
-                    if (ch == 'a') currentState = 2;
+                case 0:
+                    if (ch == 'a') currentState = 1;
                     else if (ch == 'b') currentState = 4;
                     break;
-                case 2:
-                    if (ch == 'a') currentState = -1;
+                case 1:
+                    if (ch == 'a') currentState = 2;
                     else if (ch == 'b') currentState = 3;
                     break;
                 case 3:
                     if (ch == 'a') currentState = 6;
-                    else if (ch == 'b') currentState = -1;
+                    else if (ch == 'b') currentState = 2;
                     break;
                 case 4:
-                    if (ch == 'a') currentState = -1;
-                    else if (ch == 'b') currentState = 5;
+                    if (ch == 'a') currentState = 5;
+                    else if (ch == 'b') currentState = 2;
                     break;
                 case 5:
-                    if (ch == 'a') currentState = -1;
+                    if (ch == 'a') currentState = 2;
                     else if (ch == 'b') currentState = 6;
                     break;
                 case 6:
