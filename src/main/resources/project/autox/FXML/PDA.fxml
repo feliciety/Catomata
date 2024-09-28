@@ -13,14 +13,14 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane fx:id="dfaPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="668.0" prefWidth="901.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<Pane fx:id="pdaPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="668.0" prefWidth="901.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ImageView fitHeight="668.0" fitWidth="901.0" layoutX="-2.0" layoutY="6.0">
          <image>
             <Image url="@../Images/Rectangle30.png" />
          </image>
       </ImageView>
-      <Text fill="#464545" layoutX="127.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DFA Simulator" wrappingWidth="450.4999999999998">
+      <Text fill="#464545" layoutX="127.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PDA Simulator" wrappingWidth="630.33349609375">
          <styleClass>
             <String fx:value="display-flex" />
             <String fx:value="text-title" />
@@ -63,66 +63,6 @@
          </children>
       </HBox>
       <Line endX="559.0667724609375" layoutX="200.0" layoutY="226.0" startX="-70.26669311523438" stroke="#e1e1e1" style="-fx-opacity: 10;" styleClass="line-divider" />
-      <ImageView fitHeight="234.0" fitWidth="585.0" layoutX="186.0" layoutY="270.0">
-         <image>
-            <Image url="@../Images/DFAline.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="56.0" fitWidth="56.0" layoutX="223.0" layoutY="358.0">
-         <image>
-            <Image url="@../Images/q0.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="56.0" fitWidth="56.0" layoutX="288.0" layoutY="270.0">
-         <image>
-            <Image url="@../Images/q1.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="56.0" fitWidth="56.0" layoutX="351.0" layoutY="357.0">
-         <image>
-            <Image url="@../Images/q2.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="56.0" fitWidth="56.0" layoutX="416.0" layoutY="271.0">
-         <image>
-            <Image url="@../Images/q3.png" />
-         </image>
-      </ImageView>
-      <ImageView id="q4" fitHeight="56.0" fitWidth="56.0" layoutX="297.0" layoutY="433.0">
-         <image>
-            <Image url="@../Images/q4.png" />
-         </image>
-      </ImageView>
-      <ImageView id="q5" fitHeight="56.0" fitWidth="56.0" layoutX="414.0" layoutY="433.0">
-         <image>
-            <Image url="@../Images/q5.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="56.0" fitWidth="56.0" layoutX="479.0" layoutY="357.0">
-         <image>
-            <Image url="@../Images/q6.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="56.0" fitWidth="56.0" layoutX="541.0" layoutY="275.0">
-         <image>
-            <Image url="@../Images/q7.png" />
-         </image>
-      </ImageView>
-      <ImageView id="q8" fitHeight="56.0" fitWidth="56.0" layoutX="545.0" layoutY="435.0">
-         <image>
-            <Image url="@../Images/q8.png" />
-         </image>
-      </ImageView>
-      <ImageView id="q9" fitHeight="56.0" fitWidth="56.0" layoutX="607.0" layoutY="357.0">
-         <image>
-            <Image url="@../Images/q9.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="56.0" fitWidth="56.0" layoutX="736.0" layoutY="356.0">
-         <image>
-            <Image url="@../Images/q10f.png" />
-         </image>
-      </ImageView>
       <Line endX="559.0667724609375" layoutX="195.0" layoutY="570.0" startX="-70.26669311523438" stroke="#e1e1e1" style="-fx-opacity: 10;" styleClass="line-divider" />
       <Text fill="#464545" layoutX="124.0" layoutY="603.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-twotoldok" text="Regular Expression:" wrappingWidth="201.37109375">
          <font>

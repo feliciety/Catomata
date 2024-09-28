@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="668.0" prefWidth="901.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<Pane fx:id="tmPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="668.0" prefWidth="901.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ImageView fitHeight="668.0" fitWidth="901.0" layoutX="-2.0" layoutY="6.0">
          <image>
@@ -31,14 +31,7 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Text>
-      <Text fill="#464545" layoutX="114.0" layoutY="568.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-twotoldok" text="Regular Expression:" wrappingWidth="201.37109375">
-         <font>
-            <Font name="Segoe Script" size="12.0" />
-         </font>
-      </Text>
-      <Text fill="#464545" layoutX="114.0" layoutY="603.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-twotoldok" text="Language Accepted:" wrappingWidth="216.4283447265625" />
       <TextField layoutX="127.0" layoutY="127.0" styleClass="text-field" stylesheets="@../StyleSheet/Styles.css" />
-      <Line endX="559.0667724609375" layoutX="202.0" layoutY="89.0" startX="-70.26669311523438" stroke="#e1e1e1" style="-fx-opacity: 10;" styleClass="line-divider" />
       <HBox alignment="CENTER" layoutX="126.0" layoutY="172.0" prefHeight="46.0" prefWidth="279.0" stylesheets="@../StyleSheet/Styles.css">
          <children>
             <Button id="ValidateBTN" alignment="CENTER" minHeight="34.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="101.0" styleClass="button-valsim" stylesheets="@../StyleSheet/Styles.css" text="Validate">
@@ -68,8 +61,53 @@
             </Text>
          </children>
       </HBox>
+      <Line endX="559.0667724609375" layoutX="202.0" layoutY="89.0" startX="-70.26669311523438" stroke="#e1e1e1" style="-fx-opacity: 10;" styleClass="line-divider" />
       <Line endX="559.0667724609375" layoutX="200.0" layoutY="226.0" startX="-70.26669311523438" stroke="#e1e1e1" style="-fx-opacity: 10;" styleClass="line-divider" />
-      <Pane layoutX="320.0" layoutY="547.0" prefHeight="25.0" prefWidth="68.0" style="-fx-background-color: #EDF2F7;" styleClass="background-exp">
+      <Pane layoutX="323.0" layoutY="573.0" prefHeight="25.0" prefWidth="68.0" style="-fx-background-color: #EDF2F7;" styleClass="background-exp" />
+      <Pane layoutX="323.0" layoutY="608.0" prefHeight="24.0" prefWidth="201.0" style="-fx-background-color: #EDF2F7;" styleClass="background-exp" />
+      <ImageView fitHeight="281.0" fitWidth="503.0" layoutX="114.0" layoutY="251.0">
+         <image>
+            <Image url="@../Images/Tmlines.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="56.0" fitWidth="56.0" layoutX="149.0" layoutY="301.0">
+         <image>
+            <Image url="@../Images/q0.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="56.0" fitWidth="56.0" layoutX="287.0" layoutY="301.0">
+         <image>
+            <Image url="@../Images/q1.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="56.0" fitWidth="56.0" layoutX="423.0" layoutY="301.0">
+         <image>
+            <Image url="@../Images/q2.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="56.0" fitWidth="56.0" layoutX="558.0" layoutY="301.0">
+         <image>
+            <Image url="@../Images/q3.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="56.0" fitWidth="56.0" layoutX="557.0" layoutY="433.0">
+         <image>
+            <Image url="@../Images/q4.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="56.0" fitWidth="56.0" layoutX="152.0" layoutY="430.0">
+         <image>
+            <Image url="@../Images/q5f.png" />
+         </image>
+      </ImageView>
+      <Line endX="559.0667724609375" layoutX="195.0" layoutY="570.0" startX="-70.26669311523438" stroke="#e1e1e1" style="-fx-opacity: 10;" styleClass="line-divider" />
+      <Text fill="#464545" layoutX="124.0" layoutY="603.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-twotoldok" text="Regular Expression:" wrappingWidth="201.37109375">
+         <font>
+            <Font name="Segoe Script" size="12.0" />
+         </font>
+      </Text>
+      <Text fill="#464545" layoutX="124.0" layoutY="638.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-twotoldok" text="Language Accepted:" wrappingWidth="216.4283447265625" />
+      <Pane layoutX="333.0" layoutY="583.0" prefHeight="25.0" prefWidth="68.0" style="-fx-background-color: #EDF2F7;" styleClass="background-exp">
          <children>
             <Text layoutX="10.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0+ c 0+" wrappingWidth="317.23688888549805">
                <font>
@@ -78,7 +116,7 @@
             </Text>
          </children>
       </Pane>
-      <Pane layoutX="320.0" layoutY="585.0" prefHeight="24.0" prefWidth="201.0" style="-fx-background-color: #EDF2F7;" styleClass="background-exp">
+      <Pane layoutX="333.0" layoutY="618.0" prefHeight="24.0" prefWidth="201.0" style="-fx-background-color: #EDF2F7;" styleClass="background-exp">
          <children>
             <Text layoutX="21.0" layoutY="17.0" strokeType="OUTSIDE" strokeWidth="0.0" text="{ 0^m c 0^n | m, n ≥ 1 }" wrappingWidth="158.8369255065918">
                <font>
@@ -87,42 +125,6 @@
             </Text>
          </children>
       </Pane>
-      <Line endX="559.0667724609375" layoutX="185.0" layoutY="540.0" startX="-70.26669311523438" stroke="#e1e1e1" style="-fx-opacity: 10;" styleClass="line-divider" />
-      <ImageView fitHeight="281.0" fitWidth="503.0" layoutX="89.0" layoutY="240.0">
-         <image>
-            <Image url="@../Images/TMlines.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="56.0" fitWidth="56.0" layoutX="124.0" layoutY="290.0">
-         <image>
-            <Image url="@../Images/q0.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="56.0" fitWidth="56.0" layoutX="262.0" layoutY="290.0">
-         <image>
-            <Image url="@../Images/q1.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="56.0" fitWidth="56.0" layoutX="398.0" layoutY="290.0">
-         <image>
-            <Image url="@../Images/q2.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="56.0" fitWidth="56.0" layoutX="533.0" layoutY="290.0">
-         <image>
-            <Image url="@../Images/q3.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="56.0" fitWidth="56.0" layoutX="532.0" layoutY="422.0">
-         <image>
-            <Image url="@../Images/q4.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="56.0" fitWidth="56.0" layoutX="127.0" layoutY="419.0">
-         <image>
-            <Image url="@../Images/q5f.png" />
-         </image>
-      </ImageView>
    </children>
    <stylesheets>
       <URL value="@../StyleSheet/Styles.css" />
