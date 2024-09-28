@@ -12,7 +12,8 @@ public class HelloController {
 
     @FXML
     public void loadDFA() throws IOException {
-        Pane dfaPane = FXMLLoader.load(getClass().getResource("/project/autox/FXML/DFA.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/project/autox/FXML/DFA.fxml"));
+        Pane dfaPane = loader.load();
         contentPane.getChildren().setAll(dfaPane);
     }
 

@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="727b3115-6b64-474a-9dda-efd002915432" name="Changes" comment="working code">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/project/autox/Images/PDAlines.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/project/autox/Images/q3f.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/project/autox/FXML/PDA.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/autox/FXML/PDA.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/project/autox/DFAController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/autox/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/autox/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/autox/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/autox/HelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/project/autox/FXML/DFA.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/autox/FXML/DFA.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,9 +29,12 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="mavenHome" value="Use Maven wrapper" />
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
       </MavenGeneralSettings>
     </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
