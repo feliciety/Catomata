@@ -14,14 +14,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1226.0" styleClass="gradient-background" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" styleClass="gradient-background" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ImageView fitHeight="917.0" fitWidth="1231.0" layoutX="-3.2" layoutY="-16.0" AnchorPane.leftAnchor="-3.0" AnchorPane.topAnchor="-16.0">
-         <image>
-            <Image url="@../Images/Homepage.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="900.0" fitWidth="938.0" layoutX="262.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="661.0" fitWidth="890.0" layoutX="290.4" layoutY="20.8" AnchorPane.leftAnchor="290.0" AnchorPane.topAnchor="21.0">
          <image>
             <Image url="@../Images/Rectangle30.png" />
          </image>
@@ -45,11 +40,11 @@
          </font>
       </Text>
       <Text fill="#464545" layoutX="420.0" layoutY="385.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-twotoldok" text="Language Accepted:" wrappingWidth="216.4283447265625" AnchorPane.leftAnchor="410.0" AnchorPane.topAnchor="396.3" />
-      <TextField layoutX="415.0" layoutY="209.0" styleClass="text-field" stylesheets="@Styles.css" AnchorPane.leftAnchor="410.0" AnchorPane.topAnchor="217.0" />
+      <TextField layoutX="415.0" layoutY="209.0" styleClass="text-field" stylesheets="@../StyleSheet/Styles.css" AnchorPane.leftAnchor="410.0" AnchorPane.topAnchor="217.0" />
       <Line endX="559.0667724609375" layoutX="481.16669311523435" layoutY="163.9" startX="-70.26669311523438" stroke="#e1e1e1" style="-fx-opacity: 10;" styleClass="line-divider" AnchorPane.leftAnchor="410.0" AnchorPane.topAnchor="163.4" />
-      <HBox alignment="CENTER" layoutY="271.2" prefHeight="46.0" prefWidth="279.0" AnchorPane.leftAnchor="410.0" AnchorPane.topAnchor="271.0">
+      <HBox alignment="CENTER" layoutY="271.2" prefHeight="46.0" prefWidth="279.0" stylesheets="@../StyleSheet/Styles.css" AnchorPane.leftAnchor="410.0" AnchorPane.topAnchor="271.0">
          <children>
-            <Button alignment="CENTER" minHeight="34.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="101.0" styleClass="button-valsim" stylesheets="@Styles.css" text="Validate">
+            <Button alignment="CENTER" minHeight="34.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="101.0" styleClass="button-valsim" stylesheets="@../StyleSheet/Styles.css" text="Validate">
                <HBox.margin>
                   <Insets right="20.0" />
                </HBox.margin>
@@ -57,13 +52,17 @@
                   <Font name="Segoe UI" size="14.0" />
                </font>
             </Button>
-            <Button alignment="CENTER" minHeight="34.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="100.0" styleClass="button-valsim" stylesheets="@Styles.css" text="Simulate">
+            <Button alignment="CENTER" minHeight="34.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="100.0" styleClass="button-valsim" text="Simulate">
                <HBox.margin>
                   <Insets right="20.0" />
                </HBox.margin>
                <font>
                   <Font name="Segoe UI" size="14.0" />
                </font>
+               <stylesheets>
+                  <URL value="@../StyleSheet/txtSS.css" />
+                  <URL value="@../StyleSheet/Styles.css" />
+               </stylesheets>
             </Button>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Clear" wrappingWidth="31.3701171875">
                <font>
