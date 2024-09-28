@@ -14,15 +14,18 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" styleClass="gradient-background" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" styleClass="gradient-background" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ImageView fitHeight="668.0" fitWidth="901.0" layoutX="279.0" layoutY="23.0">
          <image>
             <Image url="@../Images/Rectangle30.png" />
          </image>
       </ImageView>
-      <Text layoutX="100.0" layoutY="233.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="display-flex" text="DFA" wrappingWidth="82.81366729736328" />
-      <Text layoutX="89.0" layoutY="322.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Deterministic Finite Automata" />
+      <Text layoutX="76.0" layoutY="256.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="display-flex" text="DFA" wrappingWidth="82.81366729736328">
+         <font>
+            <Font size="30.0" />
+         </font></Text>
+      <Text layoutX="76.0" layoutY="268.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Deterministic Finite Automata" />
       <Text fill="#464545" layoutX="408.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DFA Simulator" wrappingWidth="450.4999999999998" AnchorPane.leftAnchor="408.0" AnchorPane.topAnchor="44.9296875">
          <styleClass>
             <String fx:value="display-flex" />
@@ -151,6 +154,30 @@
             <Image url="@../Images/q10.png" />
          </image>
       </ImageView>
+      <Text layoutX="76.0" layoutY="318.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="display-flex" text="NFA" wrappingWidth="82.81366729736328">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Text>
+      <Text layoutX="76.0" layoutY="332.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nondeterministic Finite Automata" />
+      <Text layoutX="76.0" layoutY="383.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="display-flex" text="CFG" wrappingWidth="82.81366729736328">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Text>
+      <Text layoutX="76.0" layoutY="400.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Context-Free Grammars" />
+      <Text layoutX="76.0" layoutY="450.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="display-flex" text="PDA" wrappingWidth="82.81366729736328">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Text>
+      <Text layoutX="76.0" layoutY="467.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pushdown Automata" />
+      <Text layoutX="76.0" layoutY="517.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="display-flex" text="TM" wrappingWidth="82.81366729736328">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Text>
+      <Text layoutX="76.0" layoutY="533.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Turing Machine" />
    </children>
    <stylesheets>
       <URL value="@../StyleSheet/Styles.css" />
