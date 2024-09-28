@@ -1,0 +1,250 @@
+Index: src/main/resources/project/autox/FXML/DFA.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import java.lang.String?>\r\n<?import java.net.URL?>\r\n<?import javafx.geometry.Insets?>\r\n<?import javafx.scene.control.Button?>\r\n<?import javafx.scene.control.TextField?>\r\n<?import javafx.scene.image.Image?>\r\n<?import javafx.scene.image.ImageView?>\r\n<?import javafx.scene.layout.AnchorPane?>\r\n<?import javafx.scene.layout.HBox?>\r\n<?import javafx.scene.layout.Pane?>\r\n<?import javafx.scene.shape.Line?>\r\n<?import javafx.scene.text.Font?>\r\n<?import javafx.scene.text.Text?>\r\n\r\n<AnchorPane maxHeight=\"-Infinity\" maxWidth=\"-Infinity\" minHeight=\"-Infinity\" minWidth=\"-Infinity\" prefHeight=\"700.0\" prefWidth=\"1200.0\" styleClass=\"gradient-background\" xmlns=\"http://javafx.com/javafx/21\" xmlns:fx=\"http://javafx.com/fxml/1\">\r\n   <children>\r\n      <ImageView fitHeight=\"668.0\" fitWidth=\"901.0\" layoutX=\"279.0\" layoutY=\"23.0\">\r\n         <image>\r\n            <Image url=\"@../Images/Rectangle30.png\" />\r\n         </image>\r\n      </ImageView>\r\n      <Text layoutX=\"100.0\" layoutY=\"233.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" styleClass=\"display-flex\" text=\"DFA\" wrappingWidth=\"82.81366729736328\" />\r\n      <Text layoutX=\"89.0\" layoutY=\"322.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"Deterministic Finite Automata\" />\r\n      <Text fill=\"#464545\" layoutX=\"408.0\" layoutY=\"95.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"DFA Simulator\" wrappingWidth=\"450.4999999999998\" AnchorPane.leftAnchor=\"408.0\" AnchorPane.topAnchor=\"44.9296875\">\r\n         <styleClass>\r\n            <String fx:value=\"display-flex\" />\r\n            <String fx:value=\"text-title\" />\r\n         </styleClass>\r\n      </Text>\r\n      <Text fill=\"#464545\" layoutX=\"408.0\" layoutY=\"131.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" styleClass=\"text-twotoldok\" text=\"Input String:\" wrappingWidth=\"118.0283203125\" AnchorPane.leftAnchor=\"408.0\" AnchorPane.topAnchor=\"110.28125\">\r\n         <font>\r\n            <Font name=\"System Bold\" size=\"12.0\" />\r\n         </font>\r\n      </Text>\r\n      <Text fill=\"#464545\" layoutX=\"395.0\" layoutY=\"585.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" styleClass=\"text-twotoldok\" text=\"Regular Expression:\" wrappingWidth=\"201.37109375\" AnchorPane.leftAnchor=\"395.0\" AnchorPane.topAnchor=\"564.28125\">\r\n         <font>\r\n            <Font name=\"Segoe Script\" size=\"12.0\" />\r\n         </font>\r\n      </Text>\r\n      <Text fill=\"#464545\" layoutX=\"395.0\" layoutY=\"620.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" styleClass=\"text-twotoldok\" text=\"Language Accepted:\" wrappingWidth=\"216.4283447265625\" AnchorPane.leftAnchor=\"395.0\" AnchorPane.topAnchor=\"601.0\" />\r\n      <TextField layoutX=\"408.0\" layoutY=\"144.0\" styleClass=\"text-field\" stylesheets=\"@../StyleSheet/Styles.css\" AnchorPane.leftAnchor=\"408.0\" AnchorPane.topAnchor=\"144.0\" />\r\n      <Line endX=\"559.0667724609375\" layoutX=\"483.0\" layoutY=\"106.0\" startX=\"-70.26669311523438\" stroke=\"#e1e1e1\" style=\"-fx-opacity: 10;\" styleClass=\"line-divider\" AnchorPane.leftAnchor=\"412.2333068847656\" AnchorPane.topAnchor=\"105.5\" />\r\n      <HBox alignment=\"CENTER\" layoutX=\"403.2\" layoutY=\"189.4\" prefHeight=\"46.0\" prefWidth=\"279.0\" stylesheets=\"@../StyleSheet/Styles.css\" AnchorPane.leftAnchor=\"403.2\" AnchorPane.topAnchor=\"189.4\">\r\n         <children>\r\n            <Button id=\"ValidateBTN\" alignment=\"CENTER\" minHeight=\"34.0\" mnemonicParsing=\"false\" prefHeight=\"34.0\" prefWidth=\"101.0\" styleClass=\"button-valsim\" stylesheets=\"@../StyleSheet/Styles.css\" text=\"Validate\">\r\n               <HBox.margin>\r\n                  <Insets right=\"20.0\" />\r\n               </HBox.margin>\r\n               <font>\r\n                  <Font name=\"Segoe UI\" size=\"14.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button id=\"SimulateBTN\" alignment=\"CENTER\" minHeight=\"34.0\" mnemonicParsing=\"false\" prefHeight=\"34.0\" prefWidth=\"100.0\" styleClass=\"button-valsim\" text=\"Simulate\">\r\n               <HBox.margin>\r\n                  <Insets right=\"20.0\" />\r\n               </HBox.margin>\r\n               <font>\r\n                  <Font name=\"Segoe UI\" size=\"14.0\" />\r\n               </font>\r\n               <stylesheets>\r\n                  <URL value=\"@../StyleSheet/txtSS.css\" />\r\n                  <URL value=\"@../StyleSheet/Styles.css\" />\r\n               </stylesheets>\r\n            </Button>\r\n            <Text id=\"ClearBTN\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"Clear\" wrappingWidth=\"31.3701171875\">\r\n               <font>\r\n                  <Font name=\"Segoe UI\" size=\"14.0\" />\r\n               </font>\r\n            </Text>\r\n         </children>\r\n      </HBox>\r\n      <Line endX=\"559.0667724609375\" layoutX=\"480.96669311523436\" layoutY=\"242.9\" startX=\"-70.26669311523438\" stroke=\"#e1e1e1\" style=\"-fx-opacity: 10;\" styleClass=\"line-divider\" AnchorPane.leftAnchor=\"410.2\" AnchorPane.topAnchor=\"242.4\" />\r\n      <Pane layoutX=\"601.0\" layoutY=\"564.0\" prefHeight=\"24.72\" prefWidth=\"337.0\" style=\"-fx-background-color: #EDF2F7;\" styleClass=\"background-exp\" AnchorPane.leftAnchor=\"601.0\" AnchorPane.topAnchor=\"564.0\">\r\n         <children>\r\n            <Text layoutX=\"10.0\" layoutY=\"18.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"(aba+bab) (a+b)* (bab) (a+b)* (a+b+ab+ba) (a+b)*\" wrappingWidth=\"317.23688888549805\">\r\n               <font>\r\n                  <Font name=\"Segoe UI\" size=\"14.0\" />\r\n               </font>\r\n            </Text>\r\n         </children>\r\n      </Pane>\r\n      <Pane layoutX=\"601.0\" layoutY=\"602.0\" prefHeight=\"24.0\" prefWidth=\"63.0\" style=\"-fx-background-color: #EDF2F7;\" styleClass=\"background-exp\" AnchorPane.leftAnchor=\"601.0\">\r\n         <children>\r\n            <Text layoutX=\"15.0\" layoutY=\"17.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"[a, b]\" wrappingWidth=\"30.836925506591797\">\r\n               <font>\r\n                  <Font name=\"Segoe UI\" size=\"14.0\" />\r\n               </font>\r\n            </Text>\r\n         </children>\r\n      </Pane>\r\n      <Line endX=\"559.0667724609375\" layoutX=\"470.0\" layoutY=\"557.0\" startX=\"-70.26669311523438\" stroke=\"#e1e1e1\" style=\"-fx-opacity: 10;\" styleClass=\"line-divider\" />\r\n      <ImageView fitHeight=\"234.0\" fitWidth=\"585.0\" layoutX=\"467.0\" layoutY=\"287.0\">\r\n         <image>\r\n            <Image url=\"@../Images/DFAline.png\" />\r\n         </image>\r\n      </ImageView>\r\n      <ImageView fitHeight=\"56.0\" fitWidth=\"56.0\" layoutX=\"504.0\" layoutY=\"375.0\">\r\n         <image>\r\n            <Image url=\"@../Images/q0.png\" />\r\n         </image>\r\n      </ImageView>\r\n      <ImageView fitHeight=\"56.0\" fitWidth=\"56.0\" layoutX=\"569.0\" layoutY=\"286.0\">\r\n         <image>\r\n            <Image url=\"@../Images/q1.png\" />\r\n         </image>\r\n      </ImageView>\r\n      <ImageView fitHeight=\"56.0\" fitWidth=\"56.0\" layoutX=\"632.0\" layoutY=\"374.0\">\r\n         <image>\r\n            <Image url=\"@../Images/q2.png\" />\r\n         </image>\r\n      </ImageView>\r\n      <ImageView fitHeight=\"56.0\" fitWidth=\"56.0\" layoutX=\"698.0\" layoutY=\"288.0\">\r\n         <image>\r\n            <Image url=\"@../Images/q3.png\" />\r\n         </image>\r\n      </ImageView>\r\n      <ImageView fitHeight=\"56.0\" fitWidth=\"56.0\" layoutX=\"578.0\" layoutY=\"450.0\">\r\n         <image>\r\n            <Image url=\"@../Images/q4.png\" />\r\n         </image>\r\n      </ImageView>\r\n      <ImageView fitHeight=\"56.0\" fitWidth=\"56.0\" layoutX=\"695.0\" layoutY=\"450.0\">\r\n         <image>\r\n            <Image url=\"@../Images/q5.png\" />\r\n         </image>\r\n      </ImageView>\r\n      <ImageView fitHeight=\"56.0\" fitWidth=\"56.0\" layoutX=\"760.0\" layoutY=\"374.0\">\r\n         <image>\r\n            <Image url=\"@../Images/q6.png\" />\r\n         </image>\r\n      </ImageView>\r\n      <ImageView fitHeight=\"56.0\" fitWidth=\"56.0\" layoutX=\"826.0\" layoutY=\"299.0\">\r\n         <image>\r\n            <Image url=\"@../Images/q7.png\" />\r\n         </image>\r\n      </ImageView>\r\n      <ImageView fitHeight=\"56.0\" fitWidth=\"56.0\" layoutX=\"826.0\" layoutY=\"452.0\">\r\n         <image>\r\n            <Image url=\"@../Images/q8.png\" />\r\n         </image>\r\n      </ImageView>\r\n      <ImageView fitHeight=\"56.0\" fitWidth=\"56.0\" layoutX=\"888.0\" layoutY=\"374.0\">\r\n         <image>\r\n            <Image url=\"@../Images/q9.png\" />\r\n         </image>\r\n      </ImageView>\r\n      <ImageView fitHeight=\"56.0\" fitWidth=\"56.0\" layoutX=\"1016.0\" layoutY=\"372.0\">\r\n         <image>\r\n            <Image url=\"@../Images/q10.png\" />\r\n         </image>\r\n      </ImageView>\r\n   </children>\r\n   <stylesheets>\r\n      <URL value=\"@../StyleSheet/Styles.css\" />\r\n      <URL value=\"@../StyleSheet/txtSS.css\" />\r\n   </stylesheets>\r\n</AnchorPane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/project/autox/FXML/DFA.fxml b/src/main/resources/project/autox/FXML/DFA.fxml
+--- a/src/main/resources/project/autox/FXML/DFA.fxml	(revision 51adaa7a58946c66c7fb5a82b4e49be5cf93fc98)
++++ b/src/main/resources/project/autox/FXML/DFA.fxml	(date 1727504133385)
+@@ -101,7 +101,7 @@
+             <Image url="@../Images/q0.png" />
+          </image>
+       </ImageView>
+-      <ImageView fitHeight="56.0" fitWidth="56.0" layoutX="569.0" layoutY="286.0">
++      <ImageView fitHeight="56.0" fitWidth="56.0" layoutX="569.0" layoutY="287.0">
+          <image>
+             <Image url="@../Images/q1.png" />
+          </image>
+@@ -111,7 +111,7 @@
+             <Image url="@../Images/q2.png" />
+          </image>
+       </ImageView>
+-      <ImageView fitHeight="56.0" fitWidth="56.0" layoutX="698.0" layoutY="288.0">
++      <ImageView fitHeight="56.0" fitWidth="56.0" layoutX="697.0" layoutY="288.0">
+          <image>
+             <Image url="@../Images/q3.png" />
+          </image>
+@@ -131,7 +131,7 @@
+             <Image url="@../Images/q6.png" />
+          </image>
+       </ImageView>
+-      <ImageView fitHeight="56.0" fitWidth="56.0" layoutX="826.0" layoutY="299.0">
++      <ImageView fitHeight="56.0" fitWidth="56.0" layoutX="822.0" layoutY="292.0">
+          <image>
+             <Image url="@../Images/q7.png" />
+          </image>
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"727b3115-6b64-474a-9dda-efd002915432\" name=\"Changes\" comment=\"working code\">\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/resources/project/autox/Images/DFAline.png\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/project/autox/FXML/DFA.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/project/autox/FXML/DFA.fxml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/project/autox/Images/q0.png\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/project/autox/Images/q0.png\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/project/autox/Images/q1.png\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/project/autox/Images/q1.png\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/project/autox/Images/q10.png\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/project/autox/Images/q10.png\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/project/autox/Images/q2.png\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/project/autox/Images/q2.png\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/project/autox/Images/q3.png\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/project/autox/Images/q3.png\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/project/autox/Images/q4.png\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/project/autox/Images/q4.png\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/project/autox/Images/q5.png\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/project/autox/Images/q5.png\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/project/autox/Images/q6.png\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/project/autox/Images/q6.png\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/project/autox/Images/q7.png\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/project/autox/Images/q7.png\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/project/autox/Images/q8.png\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/project/autox/Images/q8.png\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/project/autox/Images/q9.png\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/project/autox/Images/q9.png\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MavenImportPreferences\">\r\n    <option name=\"generalSettings\">\r\n      <MavenGeneralSettings>\r\n        <option name=\"mavenHome\" value=\"Use Maven wrapper\" />\r\n      </MavenGeneralSettings>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 6\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2mgGckcYcghDfhGJwjTGonRJUOv\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"Application.HelloApplication.executor\": \"Run\",\r\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"git-widget-placeholder\": \"main\",\r\n    \"kotlin-language-version-configured\": \"true\",\r\n    \"node.js.detected.package.eslint\": \"true\",\r\n    \"node.js.detected.package.tslint\": \"true\",\r\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\r\n    \"nodejs_package_manager_path\": \"npm\",\r\n    \"vue.rearranger.settings.migration\": \"true\"\r\n  }\r\n}]]></component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\Admin\\IdeaProjects\\AutoX\\src\\main\\resources\\project\\autox\\Images\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"727b3115-6b64-474a-9dda-efd002915432\" name=\"Changes\" comment=\"\" />\r\n      <created>1727490887466</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1727490887466</updated>\r\n      <workItem from=\"1727490888515\" duration=\"2000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"working code\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1727500339115</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1727500339115</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"working code\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1727500352333</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1727500352333</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"working code\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1727500948941</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1727500948941</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"4\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Merge remote-tracking branch 'origin/main'\" />\r\n    <MESSAGE value=\"working code\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"working code\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 51adaa7a58946c66c7fb5a82b4e49be5cf93fc98)
++++ b/.idea/workspace.xml	(date 1727505086199)
+@@ -5,26 +5,23 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="727b3115-6b64-474a-9dda-efd002915432" name="Changes" comment="working code">
+-      <change afterPath="$PROJECT_DIR$/src/main/resources/project/autox/Images/DFAline.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/project/autox/FXML/NFA.fxml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/resources/project/autox/FXML/DFA.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/autox/FXML/DFA.fxml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/project/autox/Images/q0.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/autox/Images/q0.png" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/project/autox/Images/q1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/autox/Images/q1.png" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/project/autox/Images/q10.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/autox/Images/q10.png" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/project/autox/Images/q2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/autox/Images/q2.png" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/project/autox/Images/q3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/autox/Images/q3.png" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/project/autox/Images/q4.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/autox/Images/q4.png" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/project/autox/Images/q5.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/autox/Images/q5.png" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/project/autox/Images/q6.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/autox/Images/q6.png" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/project/autox/Images/q7.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/autox/Images/q7.png" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/project/autox/Images/q8.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/autox/Images/q8.png" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/project/autox/Images/q9.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/autox/Images/q9.png" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/resources/project/autox/StyleSheet/Styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/autox/StyleSheet/Styles.css" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+     <option name="LAST_RESOLUTION" value="IGNORE" />
+   </component>
++  <component name="FileTemplateManagerImpl">
++    <option name="RECENT_TEMPLATES">
++      <list>
++        <option value="FxmlFile" />
++      </list>
++    </option>
++  </component>
+   <component name="Git.Settings">
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
+@@ -51,6 +48,7 @@
+     "RunOnceActivity.ShowReadmeOnStart": "true",
+     "git-widget-placeholder": "main",
+     "kotlin-language-version-configured": "true",
++    "last_opened_file_path": "C:/Users/Admin/IdeaProjects/AutoX/src/main/resources/project/autox/FXML",
+     "node.js.detected.package.eslint": "true",
+     "node.js.detected.package.tslint": "true",
+     "node.js.selected.package.eslint": "(autodetect)",
+@@ -60,6 +58,9 @@
+   }
+ }]]></component>
+   <component name="RecentsManager">
++    <key name="CopyFile.RECENT_KEYS">
++      <recent name="C:\Users\Admin\IdeaProjects\AutoX\src\main\resources\project\autox\FXML" />
++    </key>
+     <key name="MoveFile.RECENT_KEYS">
+       <recent name="C:\Users\Admin\IdeaProjects\AutoX\src\main\resources\project\autox\Images" />
+     </key>
+@@ -105,7 +106,23 @@
+       <option name="project" value="LOCAL" />
+       <updated>1727500948941</updated>
+     </task>
+-    <option name="localTasksCounter" value="4" />
++    <task id="LOCAL-00004" summary="working code">
++      <option name="closed" value="true" />
++      <created>1727503279170</created>
++      <option name="number" value="00004" />
++      <option name="presentableId" value="LOCAL-00004" />
++      <option name="project" value="LOCAL" />
++      <updated>1727503279170</updated>
++    </task>
++    <task id="LOCAL-00005" summary="working code">
++      <option name="closed" value="true" />
++      <created>1727503286482</created>
++      <option name="number" value="00005" />
++      <option name="presentableId" value="LOCAL-00005" />
++      <option name="project" value="LOCAL" />
++      <updated>1727503286482</updated>
++    </task>
++    <option name="localTasksCounter" value="6" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+Index: src/main/resources/project/autox/StyleSheet/Styles.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>.gradient-background {\r\n    -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #B7FBB8, #FCF7B9, #C2FFBC, #EBEBAA);\r\n}\r\n\r\n.main-pane {\r\n    -fx-pref-width: 901px;\r\n    -fx-pref-height: 779px;\r\n    -fx-border-radius: 21px;\r\n    -fx-background-radius: 21px;\r\n    -fx-background-color: rgba(255, 255, 255, 0.4);\r\n    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 10, 0, 0, 5);\r\n}\r\n\r\n.line-divider {\r\n    -fx-pref-width: 640px;\r\n    -fx-pref-height: 1px;\r\n    -fx-background-color:rgba(24, 18, 18, 0.89);\r\n    -fx-border-width: 0 0 1px 0;\r\n    -fx-opacity: 0.6;\r\n}\r\n\r\n.text-field {\r\n    -fx-background-color: #FFF;\r\n    -fx-border-radius: 6px;\r\n    -fx-padding: 12px 17px;\r\n    -fx-background-radius: 6px;\r\n    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 4, 0, 0, 1);\r\n    -fx-pref-width: 640px;\r\n    -fx-pref-height: 40px;\r\n    -fx-alignment: center;\r\n}\r\n\r\n.button-valsim {\r\n    -fx-background-color: #FFF;\r\n    -fx-border-radius: 6px;\r\n    -fx-background-radius: 6px;\r\n    -fx-padding: 8px 16px;\r\n    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 4, 0, 0, 1);\r\n    -fx-alignment: center;\r\n    -fx-display: inline-flex;\r\n}\r\n\r\n.background-exp {\r\n    -fx-background-color: #EDF2F7;\r\n    -fx-border-radius: 6px;\r\n    -fx-background-radius: 6px;\r\n    -fx-padding: 2.72px 8px 4px 8px;\r\n    -fx-min-width: 24px;\r\n    -fx-max-width: 640px;\r\n    -fx-min-height: 24px;\r\n    -fx-alignment: center;\r\n}\r\n\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/project/autox/StyleSheet/Styles.css b/src/main/resources/project/autox/StyleSheet/Styles.css
+--- a/src/main/resources/project/autox/StyleSheet/Styles.css	(revision 51adaa7a58946c66c7fb5a82b4e49be5cf93fc98)
++++ b/src/main/resources/project/autox/StyleSheet/Styles.css	(date 1727505086115)
+@@ -1,5 +1,5 @@
+ .gradient-background {
+-    -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #B7FBB8, #FCF7B9, #C2FFBC, #EBEBAA);
++    -fx-background-color: white;
+ }
+ 
+ .main-pane {
+Index: src/main/resources/project/autox/FXML/NFA.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/project/autox/FXML/NFA.fxml b/src/main/resources/project/autox/FXML/NFA.fxml
+new file mode 100644
+--- /dev/null	(date 1727504937126)
++++ b/src/main/resources/project/autox/FXML/NFA.fxml	(date 1727504937126)
+@@ -0,0 +1,97 @@
++<?xml version="1.0" encoding="UTF-8"?>
++
++<?import java.lang.String?>
++<?import java.net.URL?>
++<?import javafx.geometry.Insets?>
++<?import javafx.scene.control.Button?>
++<?import javafx.scene.control.TextField?>
++<?import javafx.scene.image.Image?>
++<?import javafx.scene.image.ImageView?>
++<?import javafx.scene.layout.HBox?>
++<?import javafx.scene.layout.Pane?>
++<?import javafx.scene.shape.Line?>
++<?import javafx.scene.text.Font?>
++<?import javafx.scene.text.Text?>
++
++
++<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="668.0" prefWidth="901.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
++   <children>
++      <ImageView fitHeight="668.0" fitWidth="901.0" layoutX="4.0" layoutY="7.0">
++         <image>
++            <Image url="@../Images/Rectangle30.png" />
++         </image>
++      </ImageView>
++      <Text fill="#464545" layoutX="133.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DFA Simulator" wrappingWidth="450.4999999999998">
++         <styleClass>
++            <String fx:value="display-flex" />
++            <String fx:value="text-title" />
++         </styleClass>
++      </Text>
++      <Text fill="#464545" layoutX="133.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-twotoldok" text="Input String:" wrappingWidth="118.0283203125">
++         <font>
++            <Font name="System Bold" size="12.0" />
++         </font>
++      </Text>
++      <Text fill="#464545" layoutX="120.0" layoutY="569.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-twotoldok" text="Regular Expression:" wrappingWidth="201.37109375">
++         <font>
++            <Font name="Segoe Script" size="12.0" />
++         </font>
++      </Text>
++      <Text fill="#464545" layoutX="120.0" layoutY="604.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-twotoldok" text="Language Accepted:" wrappingWidth="216.4283447265625" />
++      <TextField layoutX="133.0" layoutY="128.0" styleClass="text-field" stylesheets="@../StyleSheet/Styles.css" />
++      <Line endX="559.0667724609375" layoutX="208.0" layoutY="90.0" startX="-70.26669311523438" stroke="#e1e1e1" style="-fx-opacity: 10;" styleClass="line-divider" />
++      <HBox alignment="CENTER" layoutX="128.0" layoutY="173.0" prefHeight="46.0" prefWidth="279.0" stylesheets="@../StyleSheet/Styles.css">
++         <children>
++            <Button id="ValidateBTN" alignment="CENTER" minHeight="34.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="101.0" styleClass="button-valsim" stylesheets="@../StyleSheet/Styles.css" text="Validate">
++               <HBox.margin>
++                  <Insets right="20.0" />
++               </HBox.margin>
++               <font>
++                  <Font name="Segoe UI" size="14.0" />
++               </font>
++            </Button>
++            <Button id="SimulateBTN" alignment="CENTER" minHeight="34.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="100.0" styleClass="button-valsim" text="Simulate">
++               <HBox.margin>
++                  <Insets right="20.0" />
++               </HBox.margin>
++               <font>
++                  <Font name="Segoe UI" size="14.0" />
++               </font>
++               <stylesheets>
++                  <URL value="@../StyleSheet/txtSS.css" />
++                  <URL value="@../StyleSheet/Styles.css" />
++               </stylesheets>
++            </Button>
++            <Text id="ClearBTN" strokeType="OUTSIDE" strokeWidth="0.0" text="Clear" wrappingWidth="31.3701171875">
++               <font>
++                  <Font name="Segoe UI" size="14.0" />
++               </font>
++            </Text>
++         </children>
++      </HBox>
++      <Line endX="559.0667724609375" layoutX="206.0" layoutY="227.0" startX="-70.26669311523438" stroke="#e1e1e1" style="-fx-opacity: 10;" styleClass="line-divider" />
++      <Pane layoutX="326.0" layoutY="548.0" prefHeight="24.72" prefWidth="337.0" style="-fx-background-color: #EDF2F7;" styleClass="background-exp">
++         <children>
++            <Text layoutX="10.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="(aba+bab) (a+b)* (bab) (a+b)* (a+b+ab+ba) (a+b)*" wrappingWidth="317.23688888549805">
++               <font>
++                  <Font name="Segoe UI" size="14.0" />
++               </font>
++            </Text>
++         </children>
++      </Pane>
++      <Pane layoutX="326.0" layoutY="586.0" prefHeight="24.0" prefWidth="63.0" style="-fx-background-color: #EDF2F7;" styleClass="background-exp">
++         <children>
++            <Text layoutX="15.0" layoutY="17.0" strokeType="OUTSIDE" strokeWidth="0.0" text="[a, b]" wrappingWidth="30.836925506591797">
++               <font>
++                  <Font name="Segoe UI" size="14.0" />
++               </font>
++            </Text>
++         </children>
++      </Pane>
++      <Line endX="559.0667724609375" layoutX="195.0" layoutY="541.0" startX="-70.26669311523438" stroke="#e1e1e1" style="-fx-opacity: 10;" styleClass="line-divider" />
++   </children>
++   <stylesheets>
++      <URL value="@../StyleSheet/Styles.css" />
++      <URL value="@../StyleSheet/txtSS.css" />
++   </stylesheets>
++</Pane>
