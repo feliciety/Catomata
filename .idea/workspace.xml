@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="727b3115-6b64-474a-9dda-efd002915432" name="Changes" comment="">
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
@@ -18,6 +19,10 @@
       <change afterPath="$PROJECT_DIR$/src/main/java/project/autox/HelloApplication.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/project/autox/HelloController.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/project/autox/hello-view.fxml" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/project/autox/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/autox/hello-view.fxml" afterDir="false" />
+>>>>>>> 88ae130ffd2070632cd476ea73c420f5c648da42
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,15 +39,22 @@
       </MavenGeneralSettings>
     </option>
   </component>
+<<<<<<< HEAD
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
 }</component>
+=======
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 6
+}]]></component>
+>>>>>>> 88ae130ffd2070632cd476ea73c420f5c648da42
   <component name="ProjectId" id="2mgGckcYcghDfhGJwjTGonRJUOv" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+<<<<<<< HEAD
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
@@ -53,6 +65,18 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+=======
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+>>>>>>> 88ae130ffd2070632cd476ea73c420f5c648da42
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -68,9 +92,13 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1727490887466</updated>
+<<<<<<< HEAD
       <workItem from="1727490888515" duration="63000" />
       <workItem from="1727491454083" duration="8000" />
       <workItem from="1727491551169" duration="22000" />
+=======
+      <workItem from="1727490888515" duration="2000" />
+>>>>>>> 88ae130ffd2070632cd476ea73c420f5c648da42
     </task>
     <servers />
   </component>
