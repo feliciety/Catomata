@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1226.0" styleClass="gradient-background" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="917.0" fitWidth="1231.0" layoutX="-3.2" layoutY="-16.0" AnchorPane.leftAnchor="-3.0" AnchorPane.topAnchor="-16.0">
+         <image>
+            <Image url="@../../images/Homepage.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="900.0" fitWidth="938.0" layoutX="262.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/Rectangle30.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="100.0" layoutY="233.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="display-flex" text="DFA" wrappingWidth="82.81366729736328" />
+      <Text layoutX="89.0" layoutY="322.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Deterministic Finite Automata" />
+      <Text fill="#464545" layoutX="410.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DFA Simulator" wrappingWidth="450.4999999999998" AnchorPane.leftAnchor="410.0" AnchorPane.topAnchor="101.0">
+         <styleClass>
+            <String fx:value="display-flex" />
+            <String fx:value="text-title" />
+         </styleClass>
+      </Text>
+      <Text fill="#464545" layoutX="410.0" layoutY="182.51" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-twotoldok" text="Input String:" wrappingWidth="118.0283203125" AnchorPane.leftAnchor="410.0" AnchorPane.topAnchor="182.51">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+      <Text fill="#464545" layoutX="420.0" layoutY="346.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-twotoldok" text="Regular Expression:" wrappingWidth="201.37109375" AnchorPane.leftAnchor="410.0" AnchorPane.topAnchor="356.3">
+         <font>
+            <Font name="Segoe Script" size="12.0" />
+         </font>
+      </Text>
+      <Text fill="#464545" layoutX="420.0" layoutY="385.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-twotoldok" text="Language Accepted:" wrappingWidth="216.4283447265625" AnchorPane.leftAnchor="410.0" AnchorPane.topAnchor="396.3" />
+      <TextField layoutX="415.0" layoutY="209.0" styleClass="text-field" stylesheets="@Styles.css" AnchorPane.leftAnchor="410.0" AnchorPane.topAnchor="217.0" />
+      <Line endX="559.0667724609375" layoutX="481.16669311523435" layoutY="163.9" startX="-70.26669311523438" stroke="#e1e1e1" style="-fx-opacity: 10;" styleClass="line-divider" AnchorPane.leftAnchor="410.0" AnchorPane.topAnchor="163.4" />
+      <HBox alignment="CENTER" layoutY="271.2" prefHeight="46.0" prefWidth="279.0" AnchorPane.leftAnchor="410.0" AnchorPane.topAnchor="271.0">
+         <children>
+            <Button alignment="CENTER" minHeight="34.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="101.0" styleClass="button-valsim" stylesheets="@Styles.css" text="Validate">
+               <HBox.margin>
+                  <Insets right="20.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="Segoe UI" size="14.0" />
+               </font>
+            </Button>
+            <Button alignment="CENTER" minHeight="34.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="100.0" styleClass="button-valsim" stylesheets="@Styles.css" text="Simulate">
+               <HBox.margin>
+                  <Insets right="20.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="Segoe UI" size="14.0" />
+               </font>
+            </Button>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Clear" wrappingWidth="31.3701171875">
+               <font>
+                  <Font name="Segoe UI" size="14.0" />
+               </font>
+            </Text>
+         </children>
+      </HBox>
+      <Line endX="559.0667724609375" layoutX="470.0" layoutY="325.0" startX="-70.26669311523438" stroke="#e1e1e1" style="-fx-opacity: 10;" styleClass="line-divider" AnchorPane.leftAnchor="410.0" AnchorPane.topAnchor="327.84" />
+      <Pane layoutX="784.0" layoutY="389.0" prefHeight="24.72" prefWidth="337.0" style="-fx-background-color: #EDF2F7;" styleClass="background-exp" AnchorPane.leftAnchor="596.81" AnchorPane.topAnchor="355.83">
+         <children>
+            <Text layoutX="10.0" layoutY="17.0" strokeType="OUTSIDE" strokeWidth="0.0" text="(aba+bab) (a+b)* (bab) (a+b)* (a+b+ab+ba) (a+b)*" wrappingWidth="317.23688888549805">
+               <font>
+                  <Font name="Segoe UI" size="14.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Pane layoutX="596.8" layoutY="398.0" prefHeight="24.0" prefWidth="63.0" style="-fx-background-color: #EDF2F7;" styleClass="background-exp" AnchorPane.leftAnchor="597.0">
+         <children>
+            <Text layoutX="15.0" layoutY="17.0" strokeType="OUTSIDE" strokeWidth="0.0" text="[a, b]" wrappingWidth="30.836925506591797">
+               <font>
+                  <Font name="Segoe UI" size="14.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Line endX="559.0667724609375" layoutX="481.0" layoutY="450.0" startX="-70.26669311523438" stroke="#e1e1e1" style="-fx-opacity: 10;" styleClass="line-divider" />
+   </children>
+   <stylesheets>
+      <URL value="@Styles.css" />
+      <URL value="@txtSS.css" />
+   </stylesheets>
+</AnchorPane>

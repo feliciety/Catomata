@@ -1,0 +1,55 @@
+.gradient-background {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #B7FBB8, #FCF7B9, #C2FFBC, #EBEBAA);
+}
+
+.main-pane {
+    -fx-pref-width: 901px;
+    -fx-pref-height: 779px;
+    -fx-border-radius: 21px;
+    -fx-background-radius: 21px;
+    -fx-background-color: rgba(255, 255, 255, 0.4);
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 10, 0, 0, 5);
+}
+
+.line-divider {
+    -fx-pref-width: 640px;
+    -fx-pref-height: 1px;
+    -fx-background-color:rgba(24, 18, 18, 0.89);
+    -fx-border-width: 0 0 1px 0;
+    -fx-opacity: 0.6;
+}
+
+.text-field {
+    -fx-background-color: #FFF;
+    -fx-border-radius: 6px;
+    -fx-padding: 12px 17px;
+    -fx-background-radius: 6px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 4, 0, 0, 1);
+    -fx-pref-width: 640px;
+    -fx-pref-height: 40px;
+    -fx-alignment: center;
+}
+
+.button-valsim {
+    -fx-background-color: #FFF;
+    -fx-border-radius: 6px;
+    -fx-background-radius: 6px;
+    -fx-padding: 8px 16px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 4, 0, 0, 1);
+    -fx-alignment: center;
+    -fx-display: inline-flex;
+}
+
+.background-exp {
+    -fx-background-color: #EDF2F7;
+    -fx-border-radius: 6px;
+    -fx-background-radius: 6px;
+    -fx-padding: 2.72px 8px 4px 8px;
+    -fx-min-width: 24px;
+    -fx-max-width: 640px;
+    -fx-min-height: 24px;
+    -fx-alignment: center;
+}
+
+
+

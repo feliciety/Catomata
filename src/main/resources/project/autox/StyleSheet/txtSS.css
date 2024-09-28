@@ -1,0 +1,22 @@
+.text-twotoldok {
+    -fx-pref-width: 188.2px;
+    -fx-pref-height: 23.04px;
+    -fx-alignment: center;
+    -fx-text-fill: #464545;
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 19.2px;
+    -fx-line-spacing: 23.04px;
+}
+
+.text-title     {
+    -fx-pref-width: 318.11px;
+    -fx-pref-height: 55.68px;
+    -fx-alignment: center;
+    -fx-background-color: transparent;
+    -fx-text-fill: #464545;
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 46.4px;
+    -fx-font-weight: bold;
+    -fx-line-spacing: 55.68px;
+}
+
