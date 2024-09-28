@@ -13,7 +13,6 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="668.0" prefWidth="901.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ImageView fitHeight="668.0" fitWidth="901.0" layoutX="4.0" layoutY="7.0">
@@ -21,7 +20,7 @@
             <Image url="@../Images/Rectangle30.png" />
          </image>
       </ImageView>
-      <Text fill="#464545" layoutX="133.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DFA Simulator" wrappingWidth="450.4999999999998">
+      <Text fill="#464545" layoutX="133.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NFA Simulator" wrappingWidth="450.4999999999998">
          <styleClass>
             <String fx:value="display-flex" />
             <String fx:value="text-title" />
