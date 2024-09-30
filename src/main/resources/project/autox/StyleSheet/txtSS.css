@@ -1,10 +1,8 @@
 .text-twotoldok {
-    -fx-pref-width: 188.2px;
-    -fx-pref-height: 23.04px;
     -fx-alignment: center;
     -fx-text-fill: #464545;
     -fx-font-family: "Segoe UI";
-    -fx-font-size: 19.2px;
+    -fx-font-size: 14   .2px;
     -fx-line-spacing: 23.04px;
 }
 

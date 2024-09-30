@@ -31,7 +31,7 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Text>
-      <TextField layoutX="127.0" layoutY="127.0" styleClass="text-field" stylesheets="@../StyleSheet/Styles.css" />
+      <TextField layoutX="127.0" layoutY="124.0" styleClass="text-field" stylesheets="@../StyleSheet/Styles.css" />
       <HBox alignment="CENTER" layoutX="126.0" layoutY="172.0" prefHeight="46.0" prefWidth="279.0" stylesheets="@../StyleSheet/Styles.css">
          <children>
             <Button id="ValidateBTN" alignment="CENTER" minHeight="34.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="101.0" styleClass="button-valsim" stylesheets="@../StyleSheet/Styles.css" text="Validate">
@@ -63,60 +63,60 @@
       </HBox>
       <Line endX="559.0667724609375" layoutX="202.0" layoutY="89.0" startX="-70.26669311523438" stroke="#e1e1e1" style="-fx-opacity: 10;" styleClass="line-divider" />
       <Line endX="559.0667724609375" layoutX="200.0" layoutY="226.0" startX="-70.26669311523438" stroke="#e1e1e1" style="-fx-opacity: 10;" styleClass="line-divider" />
-      <Pane layoutX="323.0" layoutY="573.0" prefHeight="25.0" prefWidth="68.0" style="-fx-background-color: #EDF2F7;" styleClass="background-exp" />
-      <Pane layoutX="323.0" layoutY="608.0" prefHeight="24.0" prefWidth="201.0" style="-fx-background-color: #EDF2F7;" styleClass="background-exp" />
-      <ImageView fitHeight="298.0" fitWidth="538.0" layoutX="43.0" layoutY="255.0">
+      <ImageView fitHeight="260.0" fitWidth="444.0" layoutX="229.0" layoutY="238.0">
          <image>
             <Image url="@../Images/TMlines.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="82.0" layoutY="305.0">
+      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="261.0" layoutY="284.0">
          <image>
             <Image url="@../Images/q0.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="229.0" layoutY="305.0">
+      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="382.0" layoutY="283.0">
          <image>
             <Image url="@../Images/q1.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="375.0" layoutY="305.0">
+      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="503.0" layoutY="283.0">
          <image>
             <Image url="@../Images/q2.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="518.0" layoutY="305.0">
+      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="622.0" layoutY="284.0">
          <image>
             <Image url="@../Images/q3.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="517.0" layoutY="448.0">
+      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="621.0" layoutY="407.0">
          <image>
             <Image url="@../Images/q4.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="84.0" layoutY="445.0">
+      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="263.0" layoutY="402.0">
          <image>
             <Image url="@../Images/q5f.png" />
          </image>
       </ImageView>
-      <Line endX="559.0667724609375" layoutX="195.0" layoutY="570.0" startX="-70.26669311523438" stroke="#e1e1e1" style="-fx-opacity: 10;" styleClass="line-divider" />
-      <Text fill="#464545" layoutX="124.0" layoutY="603.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-twotoldok" text="Regular Expression:" wrappingWidth="201.37109375">
+      <Text fill="#464545" layoutX="445.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-twotoldok" text="Regular Expression:" wrappingWidth="201.37109375">
          <font>
-            <Font name="Segoe Script" size="12.0" />
+            <Font name="Segoe Script" size="5.0" />
          </font>
       </Text>
-      <Text fill="#464545" layoutX="124.0" layoutY="638.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-twotoldok" text="Language Accepted:" wrappingWidth="216.4283447265625" />
-      <Pane layoutX="333.0" layoutY="583.0" prefHeight="25.0" prefWidth="68.0" style="-fx-background-color: #EDF2F7;" styleClass="background-exp">
+      <Text fill="#464545" layoutX="444.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-twotoldok" text="Language Accepted:" wrappingWidth="216.4283447265625">
+         <font>
+            <Font name="Segoe Script" size="5.0" />
+         </font></Text>
+      <Pane layoutX="580.0" layoutY="169.0" prefHeight="25.0" prefWidth="91.0" style="-fx-background-color: #EDF2F7;" styleClass="background-exp">
          <children>
-            <Text layoutX="10.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0+ c 0+" wrappingWidth="317.23688888549805">
+            <Text layoutX="22.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0+ c 0+" wrappingWidth="317.23688888549805">
                <font>
                   <Font name="Segoe UI" size="14.0" />
                </font>
             </Text>
          </children>
       </Pane>
-      <Pane layoutX="333.0" layoutY="618.0" prefHeight="24.0" prefWidth="201.0" style="-fx-background-color: #EDF2F7;" styleClass="background-exp">
+      <Pane layoutX="580.0" layoutY="196.0" minHeight="19.0" prefHeight="19.0" prefWidth="201.0" style="-fx-background-color: #EDF2F7;" styleClass="background-exp">
          <children>
             <Text layoutX="21.0" layoutY="17.0" strokeType="OUTSIDE" strokeWidth="0.0" text="{ 0^m c 0^n | m, n ≥ 1 }" wrappingWidth="158.8369255065918">
                <font>
