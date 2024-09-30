@@ -16,9 +16,9 @@ public class PDAController {
     @FXML
     private Button Simulate_PDA;
 
-    // Validation to ensure the input contains only 'a' and 'b'
+
     private static boolean isValid(String input) {
-        return input.matches("[ab]+"); // Check if input contains only 'a' and 'b'
+        return input.matches("[ab]+");
     }
 
     public void initialize() {
@@ -42,39 +42,39 @@ public class PDAController {
     public boolean transition(String input) {
         for (char ch : input.toCharArray()) {
             switch (currentState) {
-                case 0: // q0 (initial state)
+                case 0:
                     if (ch == 'a') {
-                        stack.push('A'); // Push 'A' for each 'a'
+                        stack.push('A');
                     } else if (ch == 'b') {
-                        // Transition to q1 only if we see 'b' and the stack is not empty
+
                         if (stack.isEmpty()) {
-                            return false; // Reject if there's no 'A' to match
+                            return false;
                         }
-                        currentState = 1; // Move to state q1
-                        stack.pop(); // Pop 'A' for the first 'b'
+                        currentState = 1;
+                        stack.pop();
                     } else {
                         return false; // Invalid input
                     }
                     break;
 
-                case 1: // q1 (after reading 'b's)
+                case 1:
                     if (ch == 'b') {
                         if (!stack.isEmpty()) {
-                            stack.pop(); // Pop 'A' for each 'b'
+                            stack.pop();
                         } else {
-                            return false; // Reject if there's no matching 'A'
+                            return false;
                         }
                     } else {
-                        return false; // Invalid input, must be 'b'
+                        return false;
                     }
                     break;
 
                 default:
-                    return false; // Should not reach here
+                    return false;
             }
         }
 
-        // Accept only if the stack is empty at the end (indicating equal number of a's and b's)
+
         return stack.isEmpty();
     }
 }

@@ -65,37 +65,37 @@
       <Line endX="559.0667724609375" layoutX="200.0" layoutY="226.0" startX="-70.26669311523438" stroke="#e1e1e1" style="-fx-opacity: 10;" styleClass="line-divider" />
       <Pane layoutX="323.0" layoutY="573.0" prefHeight="25.0" prefWidth="68.0" style="-fx-background-color: #EDF2F7;" styleClass="background-exp" />
       <Pane layoutX="323.0" layoutY="608.0" prefHeight="24.0" prefWidth="201.0" style="-fx-background-color: #EDF2F7;" styleClass="background-exp" />
-      <ImageView fitHeight="281.0" fitWidth="503.0" layoutX="114.0" layoutY="251.0">
+      <ImageView fitHeight="298.0" fitWidth="538.0" layoutX="43.0" layoutY="255.0">
          <image>
             <Image url="@../Images/TMlines.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="56.0" fitWidth="56.0" layoutX="149.0" layoutY="301.0">
+      <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="82.0" layoutY="305.0">
          <image>
             <Image url="@../Images/q0.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="56.0" fitWidth="56.0" layoutX="287.0" layoutY="301.0">
+      <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="229.0" layoutY="305.0">
          <image>
             <Image url="@../Images/q1.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="56.0" fitWidth="56.0" layoutX="423.0" layoutY="301.0">
+      <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="375.0" layoutY="305.0">
          <image>
             <Image url="@../Images/q2.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="56.0" fitWidth="56.0" layoutX="558.0" layoutY="301.0">
+      <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="518.0" layoutY="305.0">
          <image>
             <Image url="@../Images/q3.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="56.0" fitWidth="56.0" layoutX="557.0" layoutY="433.0">
+      <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="517.0" layoutY="448.0">
          <image>
             <Image url="@../Images/q4.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="56.0" fitWidth="56.0" layoutX="152.0" layoutY="430.0">
+      <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="84.0" layoutY="445.0">
          <image>
             <Image url="@../Images/q5f.png" />
          </image>

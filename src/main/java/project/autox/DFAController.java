@@ -10,23 +10,23 @@ public class DFAController{
 
     private static int currentState = 1; //initial state
     @FXML
-    private TextField Input_DFA;
+    private TextField inputTextField;
     @FXML
-    private Button Validate_DFA;
+    private Button ValidateBTN;
     @FXML
-    private Button Simulate_DFA;
+    private Button SimulateBTN;
 
 
     public void initialize() {
 
-        Validate_DFA.setOnAction(event -> {
-            String input = Input_DFA.getText();
+        ValidateBTN.setOnAction(event -> {
+            String input = inputTextField.getText();
             if (isValid(input)) {
-                currentState = 0;
+                currentState = 1;
                 boolean isAccepted = transition(input);
                 if (isAccepted) {
                     System.out.println("The input is accepted by the DFA.");
-                } else if (currentState == 2) {
+                } else if (currentState == -1) {
                     System.out.println("In Trap state.");
                 } else {
                     System.out.println("The input is rejected by the DFA.");
@@ -36,8 +36,8 @@ public class DFAController{
             }
         });
 
-        Simulate_DFA.setOnAction(event -> {
-            simulateInput(Input_DFA.getText());
+        SimulateBTN.setOnAction(event -> {
+            simulateInput(inputTextField.getText());
             //code simulate dri
         });
 
@@ -61,29 +61,29 @@ public class DFAController{
 
     public static boolean transition(String input) {
         for (char ch : input.toCharArray()) {
-            if (currentState == 2) {
+            if (currentState == -1) {
                 return false;
             }
 
             switch (currentState) {
-                case 0:
-                    if (ch == 'a') currentState = 1;
-                    else if (ch == 'b') currentState = 4;
-                    break;
                 case 1:
                     if (ch == 'a') currentState = 2;
+                    else if (ch == 'b') currentState = 4;
+                    break;
+                case 2:
+                    if (ch == 'a') currentState = -1;
                     else if (ch == 'b') currentState = 3;
                     break;
                 case 3:
                     if (ch == 'a') currentState = 6;
-                    else if (ch == 'b') currentState = 2;
+                    else if (ch == 'b') currentState = -1;
                     break;
                 case 4:
-                    if (ch == 'a') currentState = 5;
-                    else if (ch == 'b') currentState = 2;
+                    if (ch == 'a') currentState = -1;
+                    else if (ch == 'b') currentState = 5;
                     break;
                 case 5:
-                    if (ch == 'a') currentState = 2;
+                    if (ch == 'a') currentState = -1;
                     else if (ch == 'b') currentState = 6;
                     break;
                 case 6:
@@ -107,7 +107,7 @@ public class DFAController{
                     return false;
             }
         }
-        return isAcceptingState(); //return if the final state accepted
+        return isAcceptingState();
 
 
     }
