@@ -81,7 +81,7 @@
       </ImageView>
       <HBox alignment="CENTER" layoutX="127.0" layoutY="175.0" prefHeight="46.0" prefWidth="345.0" stylesheets="@../StyleSheet/Styles.css">
          <children>
-            <Button fx:id="ValidateBTN" alignment="CENTER" minHeight="34.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="101.0" styleClass="button-valsim" stylesheets="@../StyleSheet/Styles.css" text="Validate">
+            <Button fx:id="Validate_PDA" alignment="CENTER" minHeight="34.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="101.0" styleClass="button-valsim" stylesheets="@../StyleSheet/Styles.css" text="Validate">
                <font>
                   <Font name="Segoe UI" size="14.0" />
                </font>
@@ -89,7 +89,7 @@
                   <Insets right="20.0" />
                </HBox.margin>
             </Button>
-            <Button fx:id="SimulateBTN" alignment="CENTER" minHeight="34.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="100.0" styleClass="button-valsim" text="Simulate">
+            <Button fx:id="Simulate_PDA" alignment="CENTER" minHeight="34.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="100.0" styleClass="button-valsim" text="Simulate">
                <font>
                   <Font name="Segoe UI" size="14.0" />
                </font>

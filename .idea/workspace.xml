@@ -4,17 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="727b3115-6b64-474a-9dda-efd002915432" name="Changes" comment="🔄 Refactor DFA and Turing Machine controllers, add new UI assets">
+    <list default="true" id="727b3115-6b64-474a-9dda-efd002915432" name="Changes" comment="Here's a simple commit message with an emoji:&#10;&#10;🎉 Finished DFA animation with correct logic.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/autox/DFAController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/autox/DFAController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/autox/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/autox/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/project/autox/FXML/CFG.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/autox/FXML/CFG.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/project/autox/FXML/DFA.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/autox/FXML/DFA.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/project/autox/FXML/Hpage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/autox/FXML/Hpage.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/project/autox/FXML/NFA.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/autox/FXML/NFA.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/project/autox/FXML/PDA.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/autox/FXML/PDA.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/project/autox/FXML/TuringMachine.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/autox/FXML/TuringMachine.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/project/autox/StyleSheet/Styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/autox/StyleSheet/Styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +108,7 @@
       <workItem from="1727662540055" duration="182000" />
       <workItem from="1727691934152" duration="6441000" />
       <workItem from="1727698448956" duration="13045000" />
-      <workItem from="1727713287386" duration="3277000" />
+      <workItem from="1727713287386" duration="4627000" />
     </task>
     <task id="LOCAL-00001" summary="working code">
       <option name="closed" value="true" />
@@ -277,7 +270,23 @@
       <option name="project" value="LOCAL" />
       <updated>1727698063187</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Here's a simple commit message with an emoji:&#10;&#10;🎉 Finished DFA animation with correct logic.">
+      <option name="closed" value="true" />
+      <created>1727716932081</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1727716932081</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Here's a simple commit message with an emoji:&#10;&#10;🎉 Finished DFA animation with correct logic.">
+      <option name="closed" value="true" />
+      <created>1727716940420</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1727716940420</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -310,6 +319,7 @@
     <MESSAGE value="working code" />
     <MESSAGE value="Merge remote-tracking branch 'origin/main'" />
     <MESSAGE value=" Refactor DFA and Turing Machine controllers, add new UI assets" />
-    <option name="LAST_COMMIT_MESSAGE" value=" Refactor DFA and Turing Machine controllers, add new UI assets" />
+    <MESSAGE value="Here's a simple commit message with an emoji:&#10;&#10; Finished DFA animation with correct logic." />
+    <option name="LAST_COMMIT_MESSAGE" value="Here's a simple commit message with an emoji:&#10;&#10; Finished DFA animation with correct logic." />
   </component>
 </project>
