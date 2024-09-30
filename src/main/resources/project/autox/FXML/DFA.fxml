@@ -13,13 +13,8 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane fx:id="dfaPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="668.0" prefWidth="901.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.autox.DFAController">
+<Pane fx:id="dfaPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="668.0" prefWidth="901.0" style="-fx-background-color: F4FFDE;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.autox.DFAController">
    <children>
-      <ImageView fitHeight="668.0" fitWidth="901.0" layoutX="-2.0" layoutY="6.0">
-         <image>
-            <Image url="@../Images/Rectangle30.png" />
-         </image>
-      </ImageView>
       <Text fill="#464545" layoutX="127.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DFA Simulator" wrappingWidth="450.4999999999998">
          <styleClass>
             <String fx:value="display-flex" />
@@ -33,7 +28,7 @@
       </Text>
       <TextField fx:id="inputTextField" layoutX="127.0" layoutY="127.0" promptText="e.g. babbabab" styleClass="text-field" stylesheets="@../StyleSheet/Styles.css" />
       <Line endX="559.0667724609375" layoutX="202.0" layoutY="89.0" startX="-70.26669311523438" stroke="#e1e1e1" style="-fx-opacity: 10;" styleClass="line-divider" />
-      <HBox alignment="CENTER" layoutX="126.0" layoutY="172.0" prefHeight="46.0" prefWidth="279.0" stylesheets="@../StyleSheet/Styles.css">
+      <HBox alignment="CENTER" layoutX="127.0" layoutY="175.0" prefHeight="46.0" prefWidth="345.0" stylesheets="@../StyleSheet/Styles.css">
          <children>
             <Button fx:id="ValidateBTN" alignment="CENTER" minHeight="34.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="101.0" styleClass="button-valsim" stylesheets="@../StyleSheet/Styles.css" text="Validate">
                <font>
@@ -55,11 +50,15 @@
                   <Insets right="20.0" />
                </HBox.margin>
             </Button>
-            <Text id="ClearBTN" onMouseClicked="#ClearBTN" strokeType="OUTSIDE" strokeWidth="0.0" text="Clear" wrappingWidth="31.3701171875">
+            <Button fx:id="ClearBTN" alignment="CENTER" minHeight="34.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="100.0" styleClass="button-valsim" text="Clear">
                <font>
                   <Font name="Segoe UI" size="14.0" />
                </font>
-            </Text>
+               <stylesheets>
+                  <URL value="@../StyleSheet/txtSS.css" />
+                  <URL value="@../StyleSheet/Styles.css" />
+               </stylesheets>
+            </Button>
          </children>
       </HBox>
       <Line endX="559.0667724609375" layoutX="200.0" layoutY="226.0" startX="-70.26669311523438" stroke="#e1e1e1" style="-fx-opacity: 10;" styleClass="line-divider" />

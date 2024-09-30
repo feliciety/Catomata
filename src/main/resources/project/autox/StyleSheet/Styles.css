@@ -2,12 +2,8 @@
     -fx-background-color: white;
 }
 
-.main-pane {
-    -fx-pref-width: 901px;
-    -fx-pref-height: 779px;
-    -fx-border-radius: 21px;
-    -fx-background-radius: 21px;
-    -fx-background-color: white;
+.pane-shadow {
+    -fx-effect: dropshadow(three-pass-box, rgba(77, 77, 77, 0.25), 10, 0, 0, 5);
 }
 
 .line-divider {
@@ -29,12 +25,17 @@
     -fx-alignment: center;
 }
 
+.button-main {
+    -fx-background-color: #FFF;
+    -fx-padding: 8px 16px;
+    -fx-alignment: center;
+    -fx-display: inline-flex;
+}
+
 .button-valsim {
     -fx-background-color: #FFF;
     -fx-border-radius: 6px;
-    -fx-background-radius: 6px;
     -fx-padding: 8px 16px;
-    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 4, 0, 0, 1);
     -fx-alignment: center;
     -fx-display: inline-flex;
 }
@@ -50,6 +51,3 @@
     -fx-alignment: center;
 }
 
-
-.display-flex {
-}
