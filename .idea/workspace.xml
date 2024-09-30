@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="727b3115-6b64-474a-9dda-efd002915432" name="Changes" comment="Here's a simple commit message with an emoji:&#10;&#10;🎉 Finished DFA animation with correct logic.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/project/autox/FXML/NFA.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/autox/FXML/NFA.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/project/autox/FXML/PDA.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/autox/FXML/PDA.fxml" afterDir="false" />
-    </list>
+    <list default="true" id="727b3115-6b64-474a-9dda-efd002915432" name="Changes" comment="Here’s a simple commit message for that:&#10;&#10;🔧 Fixed PDA button issue on homepage." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -108,7 +104,7 @@
       <workItem from="1727662540055" duration="182000" />
       <workItem from="1727691934152" duration="6441000" />
       <workItem from="1727698448956" duration="13045000" />
-      <workItem from="1727713287386" duration="4627000" />
+      <workItem from="1727713287386" duration="4745000" />
     </task>
     <task id="LOCAL-00001" summary="working code">
       <option name="closed" value="true" />
@@ -286,7 +282,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727716940420</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Here’s a simple commit message for that:&#10;&#10;🔧 Fixed PDA button issue on homepage.">
+      <option name="closed" value="true" />
+      <created>1727717997356</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1727717997356</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -320,6 +324,7 @@
     <MESSAGE value="Merge remote-tracking branch 'origin/main'" />
     <MESSAGE value=" Refactor DFA and Turing Machine controllers, add new UI assets" />
     <MESSAGE value="Here's a simple commit message with an emoji:&#10;&#10; Finished DFA animation with correct logic." />
-    <option name="LAST_COMMIT_MESSAGE" value="Here's a simple commit message with an emoji:&#10;&#10; Finished DFA animation with correct logic." />
+    <MESSAGE value="Here’s a simple commit message for that:&#10;&#10; Fixed PDA button issue on homepage." />
+    <option name="LAST_COMMIT_MESSAGE" value="Here’s a simple commit message for that:&#10;&#10; Fixed PDA button issue on homepage." />
   </component>
 </project>
