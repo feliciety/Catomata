@@ -49,7 +49,6 @@ public class PDAController {
                 animateInput(input);
 
 
-
             } else {
                 System.out.println("Input is invalid. Only 'a' and 'b' are allowed.");
             }
@@ -239,10 +238,7 @@ public class PDAController {
                         currentState = -1; // Enter trap state if invalid
                         return false;
                     }
-                    // If valid, move to state q2, pop 'A' from the stack
-                    stack.pop();
-                    animateSequentially(q0, q2); // Animate q0 -> q2 transition
-                    currentState = 2; // Move to state q2
+
                 } else {
                     // Invalid input
                     currentState = -1; // Trap state
@@ -254,14 +250,14 @@ public class PDAController {
                 // In state q1, expect either 'a' (push) or 'b' (pop)
                 if (ch == 'a') {
                     stack.push('A');
-                    animateSequentially(q1, q1); // Stay in q1, loop on 'a'
+                    animateImageView(q1); // Stay in q1, loop on 'a'
                 } else if (ch == 'b') {
                     if (stack.isEmpty() || stack.peek() != 'A') {
                         currentState = -1; // Enter trap state if invalid
                         return false;
                     }
                     stack.pop(); // Pop 'A' for each 'b'
-                    animateSequentially(q1, q2); // Animate q1 -> q2 transition
+                    animateImageView(q2); // Animate q1 -> q2 transition
                     currentState = 2; // Move to state q2
                 } else {
                     currentState = -1; // Trap state for invalid input
@@ -277,12 +273,13 @@ public class PDAController {
                         return false;
                     }
                     stack.pop(); // Pop 'A' for 'b'
-                    animateSequentially(q2, q2); // Stay in q2 while processing 'b'
+                    animateImageView(q2); // Stay in q2 while processing 'b'
                 } else {
                     currentState = -1; // Invalid transition to trap state
                     return false;
                 }
                 break;
+
 
             default:
                 // If in trap state (-1), reject the input
@@ -294,6 +291,7 @@ public class PDAController {
             currentState = 3; // Move to final state q3f (accepted)
             animateImageView(q3f);
             System.out.print("accepted");
+
             return true; // Input accepted
         }
 

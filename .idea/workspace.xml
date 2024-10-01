@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="727b3115-6b64-474a-9dda-efd002915432" name="Changes" comment="Here’s a simple commit message for that:&#10;&#10;🔧 Fixed PDA button issue on homepage.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/autox/DFAController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/autox/DFAController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/autox/PDAController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/autox/PDAController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/project/autox/FXML/PDA.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/autox/FXML/PDA.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,14 +48,14 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/NCGC/AppData/Local/SceneBuilder",
+    "last_opened_file_path": "C:/Users/Administrator/Downloads/javafx-sdk-23/lib/javafx.web.jar",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.0",
+    "project.structure.last.edited": "Global Libraries",
+    "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.lookFeel",
     "vue.rearranger.settings.migration": "true"
@@ -113,6 +111,7 @@
       <workItem from="1727698448956" duration="13045000" />
       <workItem from="1727713287386" duration="4745000" />
       <workItem from="1727743062013" duration="9817000" />
+      <workItem from="1727767362594" duration="3213000" />
     </task>
     <task id="LOCAL-00001" summary="working code">
       <option name="closed" value="true" />
