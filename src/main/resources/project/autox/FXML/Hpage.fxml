@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" style="-fx-background-color: white;" stylesheets="@../StyleSheet/Styles.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.autox.HelloController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" style="-fx-background-color: white;" stylesheets="@../StyleSheet/Styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.autox.HelloController">
    <children>
       <Pane layoutX="-2.0" layoutY="244.0" prefHeight="268.0" prefWidth="290.0" style="-fx-background-color: F6FDFF;" styleClass="pane-shadow" stylesheets="@../StyleSheet/Styles.css">
          <children>
             <Button fx:id="pdaButton" layoutX="2.0" layoutY="162.0" mnemonicParsing="false" onAction="#loadPDA" prefHeight="56.0" prefWidth="281.0" style="-fx-background-color: F6FDFF;" styleClass="button-main" stylesheets="@../StyleSheet/Styles.css" text="PUSH DOWN AUTOMATA" />
-            <Button fx:id="tmButton" layoutX="5.0" layoutY="212.0" mnemonicParsing="false" onAction="#loadTM" prefHeight="56.0" prefWidth="281.0" style="-fx-background-color: F6FDFF;" styleClass="button-main" stylesheets="@../StyleSheet/Styles.css" text="TURING MACHINE" />
          </children></Pane>
       <Pane fx:id="contentPane" layoutX="282.0" layoutY="16.0" prefHeight="668.0" prefWidth="901.0" style="-fx-background-color: F4FFDE; -fx-background-radius: 25;" styleClass="pane-shadow" stylesheets="@../StyleSheet/Styles.css" />
       <Pane layoutX="270.0" layoutY="240.0" prefHeight="276.73" prefWidth="11.0" style="-fx-background-color: F6FDFF;" stylesheets="@../StyleSheet/Styles.css" />
       <Button fx:id="dfaButton" layoutY="240.0" mnemonicParsing="false" onAction="#loadDFA" prefHeight="56.0" prefWidth="281.0" style="-fx-background-color: F6FDFF;" styleClass="button-main" stylesheets="@../StyleSheet/Styles.css" text="DETERMINISTIC FINITE AUTOMATA" />
       <Button fx:id="nfaButton" layoutY="295.0" mnemonicParsing="false" onAction="#loadNFA" prefHeight="56.0" prefWidth="281.0" style="-fx-background-color: F6FDFF;" styleClass="button-main" stylesheets="@../StyleSheet/Styles.css" text="NONDETERMINISTIC FINITE AUTOMATA" />
       <Button fx:id="cfgButton" layoutY="350.0" mnemonicParsing="false" onAction="#loadCFG" prefHeight="56.0" prefWidth="281.0" style="-fx-background-color: F6FDFF;" styleClass="button-main" stylesheets="@../StyleSheet/Styles.css" text="CONTEXT FREE GRAMMER" />
+      <Button fx:id="tmButton" layoutY="460.0" mnemonicParsing="false" onAction="#loadTM" prefHeight="56.0" prefWidth="281.0" style="-fx-background-color: F6FDFF;" styleClass="button-main" stylesheets="@../StyleSheet/Styles.css" text="TURING MACHINE" />
    </children>
 </AnchorPane>
