@@ -45,15 +45,17 @@ public class PDAController {
             if (isValid(input)) {
                 currentState = 0; // Reset state
                 stack.clear();
-                stack.push('Z');
-                animateInput(input);
-
+                //stack.push('Z');
 
             } else {
                 System.out.println("Input is invalid. Only 'a' and 'b' are allowed.");
             }
 
 
+        });
+
+        Simulate_PDA.setOnAction(event -> {
+            animateInput(Input_PDA.getText());
         });
 
         Clear_PDA.setOnAction(event -> {
@@ -274,6 +276,7 @@ public class PDAController {
                     }
                     stack.pop(); // Pop 'A' for 'b'
                     animateImageView(q2); // Stay in q2 while processing 'b'
+
                 } else {
                     currentState = -1; // Invalid transition to trap state
                     return false;
@@ -289,7 +292,7 @@ public class PDAController {
         // If we have processed all characters, check if the stack is empty and we're in state q2
         if (stack.isEmpty() && currentState == 2) {
             currentState = 3; // Move to final state q3f (accepted)
-            animateImageView(q3f);
+            animateSequentially(q2, q3f);
             System.out.print("accepted");
 
             return true; // Input accepted
