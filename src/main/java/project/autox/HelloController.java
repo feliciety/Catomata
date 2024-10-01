@@ -101,8 +101,10 @@ public class HelloController {
     }
 
     @FXML
-    public void loadTM() throws IOException {
-        Pane tmPane = FXMLLoader.load(getClass().getResource("/project/autox/FXML/TuringMachine.fxml"));
+      public void loadTM() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/project/autox/FXML/TuringMachine.fxml"));
+        Pane tmPane = loader.load();
         contentPane.getChildren().setAll(tmPane);
+
     }
 }
