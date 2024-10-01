@@ -59,22 +59,22 @@
             <Image url="@../Images/PDAlines.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="56.0" fitWidth="56.0" layoutX="191.0" layoutY="377.0">
+      <ImageView fx:id="q0" fitHeight="56.0" fitWidth="56.0" layoutX="191.0" layoutY="377.0">
          <image>
             <Image url="@../Images/q0.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="56.0" fitWidth="56.0" layoutX="354.0" layoutY="377.0">
+      <ImageView fx:id="q1" fitHeight="56.0" fitWidth="56.0" layoutX="354.0" layoutY="377.0">
          <image>
             <Image url="@../Images/q1.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="56.0" fitWidth="56.0" layoutX="516.0" layoutY="377.0">
+      <ImageView fx:id="q2" fitHeight="56.0" fitWidth="56.0" layoutX="516.0" layoutY="377.0">
          <image>
             <Image url="@../Images/q2.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="56.0" fitWidth="56.0" layoutX="675.0" layoutY="377.0">
+      <ImageView fx:id="q3f" fitHeight="56.0" fitWidth="56.0" layoutX="675.0" layoutY="377.0">
          <image>
             <Image url="@../Images/q3f.png" />
          </image>
@@ -101,7 +101,7 @@
                   <Insets right="20.0" />
                </HBox.margin>
             </Button>
-            <Button fx:id="clearBTN" alignment="CENTER" minHeight="34.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="100.0" styleClass="button-valsim" text="Clear">
+            <Button fx:id="Clear_PDA" alignment="CENTER" minHeight="34.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="100.0" styleClass="button-valsim" text="Clear">
                <font>
                   <Font name="Segoe UI" size="14.0" />
                </font>

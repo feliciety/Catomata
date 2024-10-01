@@ -57,6 +57,10 @@ public class DFAController {
         SimulateBTN.setOnAction(event -> {
             simulateInput(inputTextField.getText());
         });
+        ClearBTN.setOnAction(event -> {
+            inputTextField.clear();
+        });
+
     }
 
     private void applyShadowToImageView(ImageView imageView) {
