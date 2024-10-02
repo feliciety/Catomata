@@ -45,7 +45,7 @@ public class PDAController {
             if (isValid(input)) {
                 currentState = 0; // Reset state
                 stack.clear();
-                //stack.push('Z');
+                stack.push('Z');
 
             } else {
                 System.out.println("Input is invalid. Only 'a' and 'b' are allowed.");
@@ -290,11 +290,12 @@ public class PDAController {
         }
 
         // If we have processed all characters, check if the stack is empty and we're in state q2
-        if (stack.isEmpty() && currentState == 2) {
-            currentState = 3; // Move to final state q3f (accepted)
-            animateSequentially(q2, q3f);
-            System.out.print("accepted");
 
+        if (stack.size() == 1 && stack.peek() == 'Z' && currentState == 2) {
+            stack.pop(); // Pop 'Z' from the stack
+            currentState = 3; // Move to final state q3f (accepted)
+            animateSequentially(q2, q3f); // Animate transition from q2 to q3f
+            System.out.println("accepted"); // Indicate acceptance
             return true; // Input accepted
         }
 
