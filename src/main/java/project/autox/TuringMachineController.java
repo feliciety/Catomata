@@ -76,8 +76,10 @@ public class TuringMachineController {
     // Display initial tape with inputs
     private void displayInitialTape(String input1, String input2) {
         // Format the initial tape string
-        String initialTape = "Initial Tape: [_" + input1 + " + " + input2 + "_]";
-        Text tapeText = new Text(initialTape);
+        String initialTape = "Initial Tape: [_" + input1 + "B" + input2 + "_]";
+        String ArrowHead = "Head ^";
+        Text tapeText = new Text(initialTape + "\n          " +ArrowHead);
+
         tapeText.setStyle("-fx-font-size: 20px; -fx-padding: 10; -fx-border-color: black; -fx-border-width: 2;"); // Style for the tape text
 
         InfiniteTape.setContent(tapeText); // Set the initial tape text as content of the ScrollPane

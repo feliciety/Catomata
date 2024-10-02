@@ -1,0 +1,162 @@
+Index: src/main/resources/project/autox/FXML/TuringMachine.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import java.lang.String?>\r\n<?import java.net.URL?>\r\n<?import javafx.geometry.Insets?>\r\n<?import javafx.scene.control.Button?>\r\n<?import javafx.scene.control.TextField?>\r\n<?import javafx.scene.image.Image?>\r\n<?import javafx.scene.image.ImageView?>\r\n<?import javafx.scene.layout.HBox?>\r\n<?import javafx.scene.layout.Pane?>\r\n<?import javafx.scene.shape.Line?>\r\n<?import javafx.scene.text.Font?>\r\n<?import javafx.scene.text.Text?>\r\n\r\n<Pane fx:id=\"tmPane\" maxHeight=\"-Infinity\" maxWidth=\"-Infinity\" minHeight=\"-Infinity\" minWidth=\"-Infinity\" prefHeight=\"668.0\" prefWidth=\"901.0\" xmlns=\"http://javafx.com/javafx/21\" xmlns:fx=\"http://javafx.com/fxml/1\">\r\n   <children>\r\n      <ImageView fitHeight=\"668.0\" fitWidth=\"901.0\" layoutX=\"-2.0\" layoutY=\"6.0\">\r\n         <image>\r\n            <Image url=\"@../Images/Rectangle30.png\" />\r\n         </image>\r\n      </ImageView>\r\n      <Text fill=\"#464545\" layoutX=\"127.0\" layoutY=\"78.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"Turing Machine Simulator\" wrappingWidth=\"630.33349609375\">\r\n         <styleClass>\r\n            <String fx:value=\"display-flex\" />\r\n            <String fx:value=\"text-title\" />\r\n         </styleClass>\r\n      </Text>\r\n      <Text fill=\"#464545\" layoutX=\"127.0\" layoutY=\"114.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" styleClass=\"text-twotoldok\" text=\"Input String:\" wrappingWidth=\"118.0283203125\">\r\n         <font>\r\n            <Font name=\"System Bold\" size=\"12.0\" />\r\n         </font>\r\n      </Text>\r\n      <TextField layoutX=\"127.0\" layoutY=\"127.0\" styleClass=\"text-field\" stylesheets=\"@../StyleSheet/Styles.css\" />\r\n      <HBox alignment=\"CENTER\" layoutX=\"126.0\" layoutY=\"172.0\" prefHeight=\"46.0\" prefWidth=\"279.0\" stylesheets=\"@../StyleSheet/Styles.css\">\r\n         <children>\r\n            <Button id=\"ValidateBTN\" alignment=\"CENTER\" minHeight=\"34.0\" mnemonicParsing=\"false\" prefHeight=\"34.0\" prefWidth=\"101.0\" styleClass=\"button-valsim\" stylesheets=\"@../StyleSheet/Styles.css\" text=\"Validate\">\r\n               <font>\r\n                  <Font name=\"Segoe UI\" size=\"14.0\" />\r\n               </font>\r\n               <HBox.margin>\r\n                  <Insets right=\"20.0\" />\r\n               </HBox.margin>\r\n            </Button>\r\n            <Button id=\"SimulateBTN\" alignment=\"CENTER\" minHeight=\"34.0\" mnemonicParsing=\"false\" prefHeight=\"34.0\" prefWidth=\"100.0\" styleClass=\"button-valsim\" text=\"Simulate\">\r\n               <font>\r\n                  <Font name=\"Segoe UI\" size=\"14.0\" />\r\n               </font>\r\n               <stylesheets>\r\n                  <URL value=\"@../StyleSheet/txtSS.css\" />\r\n                  <URL value=\"@../StyleSheet/Styles.css\" />\r\n               </stylesheets>\r\n               <HBox.margin>\r\n                  <Insets right=\"20.0\" />\r\n               </HBox.margin>\r\n            </Button>\r\n            <Text id=\"ClearBTN\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"Clear\" wrappingWidth=\"31.3701171875\">\r\n               <font>\r\n                  <Font name=\"Segoe UI\" size=\"14.0\" />\r\n               </font>\r\n            </Text>\r\n         </children>\r\n      </HBox>\r\n      <Line endX=\"559.0667724609375\" layoutX=\"202.0\" layoutY=\"89.0\" startX=\"-70.26669311523438\" stroke=\"#e1e1e1\" style=\"-fx-opacity: 10;\" styleClass=\"line-divider\" />\r\n      <Line endX=\"559.0667724609375\" layoutX=\"200.0\" layoutY=\"226.0\" startX=\"-70.26669311523438\" stroke=\"#e1e1e1\" style=\"-fx-opacity: 10;\" styleClass=\"line-divider\" />\r\n      <Pane layoutX=\"323.0\" layoutY=\"573.0\" prefHeight=\"25.0\" prefWidth=\"68.0\" style=\"-fx-background-color: #EDF2F7;\" styleClass=\"background-exp\" />\r\n      <Pane layoutX=\"323.0\" layoutY=\"608.0\" prefHeight=\"24.0\" prefWidth=\"201.0\" style=\"-fx-background-color: #EDF2F7;\" styleClass=\"background-exp\" />\r\n      <ImageView fitHeight=\"281.0\" fitWidth=\"503.0\" layoutX=\"114.0\" layoutY=\"251.0\">\r\n         <image>\r\n            <Image url=\"@../Images/TMlines.png\" />\r\n         </image>\r\n      </ImageView>\r\n      <ImageView fitHeight=\"56.0\" fitWidth=\"56.0\" layoutX=\"149.0\" layoutY=\"301.0\">\r\n         <image>\r\n            <Image url=\"@../Images/q0.png\" />\r\n         </image>\r\n      </ImageView>\r\n      <ImageView fitHeight=\"56.0\" fitWidth=\"56.0\" layoutX=\"287.0\" layoutY=\"301.0\">\r\n         <image>\r\n            <Image url=\"@../Images/q1.png\" />\r\n         </image>\r\n      </ImageView>\r\n      <ImageView fitHeight=\"56.0\" fitWidth=\"56.0\" layoutX=\"423.0\" layoutY=\"301.0\">\r\n         <image>\r\n            <Image url=\"@../Images/q2.png\" />\r\n         </image>\r\n      </ImageView>\r\n      <ImageView fitHeight=\"56.0\" fitWidth=\"56.0\" layoutX=\"558.0\" layoutY=\"301.0\">\r\n         <image>\r\n            <Image url=\"@../Images/q3.png\" />\r\n         </image>\r\n      </ImageView>\r\n      <ImageView fitHeight=\"56.0\" fitWidth=\"56.0\" layoutX=\"557.0\" layoutY=\"433.0\">\r\n         <image>\r\n            <Image url=\"@../Images/q4.png\" />\r\n         </image>\r\n      </ImageView>\r\n      <ImageView fitHeight=\"56.0\" fitWidth=\"56.0\" layoutX=\"152.0\" layoutY=\"430.0\">\r\n         <image>\r\n            <Image url=\"@../Images/q5f.png\" />\r\n         </image>\r\n      </ImageView>\r\n      <Line endX=\"559.0667724609375\" layoutX=\"195.0\" layoutY=\"570.0\" startX=\"-70.26669311523438\" stroke=\"#e1e1e1\" style=\"-fx-opacity: 10;\" styleClass=\"line-divider\" />\r\n      <Text fill=\"#464545\" layoutX=\"124.0\" layoutY=\"603.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" styleClass=\"text-twotoldok\" text=\"Regular Expression:\" wrappingWidth=\"201.37109375\">\r\n         <font>\r\n            <Font name=\"Segoe Script\" size=\"12.0\" />\r\n         </font>\r\n      </Text>\r\n      <Text fill=\"#464545\" layoutX=\"124.0\" layoutY=\"638.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" styleClass=\"text-twotoldok\" text=\"Language Accepted:\" wrappingWidth=\"216.4283447265625\" />\r\n      <Pane layoutX=\"333.0\" layoutY=\"583.0\" prefHeight=\"25.0\" prefWidth=\"68.0\" style=\"-fx-background-color: #EDF2F7;\" styleClass=\"background-exp\">\r\n         <children>\r\n            <Text layoutX=\"10.0\" layoutY=\"18.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"0+ c 0+\" wrappingWidth=\"317.23688888549805\">\r\n               <font>\r\n                  <Font name=\"Segoe UI\" size=\"14.0\" />\r\n               </font>\r\n            </Text>\r\n         </children>\r\n      </Pane>\r\n      <Pane layoutX=\"333.0\" layoutY=\"618.0\" prefHeight=\"24.0\" prefWidth=\"201.0\" style=\"-fx-background-color: #EDF2F7;\" styleClass=\"background-exp\">\r\n         <children>\r\n            <Text layoutX=\"21.0\" layoutY=\"17.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"{ 0^m c 0^n | m, n ≥ 1 }\" wrappingWidth=\"158.8369255065918\">\r\n               <font>\r\n                  <Font name=\"Segoe UI\" size=\"14.0\" />\r\n               </font>\r\n            </Text>\r\n         </children>\r\n      </Pane>\r\n   </children>\r\n   <stylesheets>\r\n      <URL value=\"@../StyleSheet/Styles.css\" />\r\n      <URL value=\"@../StyleSheet/txtSS.css\" />\r\n   </stylesheets>\r\n</Pane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/project/autox/FXML/TuringMachine.fxml b/src/main/resources/project/autox/FXML/TuringMachine.fxml
+--- a/src/main/resources/project/autox/FXML/TuringMachine.fxml	(revision c6b58d8da965910691aa747710126ebc965f8e50)
++++ b/src/main/resources/project/autox/FXML/TuringMachine.fxml	(date 1727577177851)
+@@ -34,7 +34,7 @@
+       <TextField layoutX="127.0" layoutY="127.0" styleClass="text-field" stylesheets="@../StyleSheet/Styles.css" />
+       <HBox alignment="CENTER" layoutX="126.0" layoutY="172.0" prefHeight="46.0" prefWidth="279.0" stylesheets="@../StyleSheet/Styles.css">
+          <children>
+-            <Button id="ValidateBTN" alignment="CENTER" minHeight="34.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="101.0" styleClass="button-valsim" stylesheets="@../StyleSheet/Styles.css" text="Validate">
++            <Button id="Validate_TM" alignment="CENTER" minHeight="34.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="101.0" styleClass="button-valsim" stylesheets="@../StyleSheet/Styles.css" text="Validate">
+                <font>
+                   <Font name="Segoe UI" size="14.0" />
+                </font>
+@@ -42,7 +42,7 @@
+                   <Insets right="20.0" />
+                </HBox.margin>
+             </Button>
+-            <Button id="SimulateBTN" alignment="CENTER" minHeight="34.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="100.0" styleClass="button-valsim" text="Simulate">
++            <Button id="Simulate_TM" alignment="CENTER" minHeight="34.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="100.0" styleClass="button-valsim" text="Simulate">
+                <font>
+                   <Font name="Segoe UI" size="14.0" />
+                </font>
+@@ -54,7 +54,7 @@
+                   <Insets right="20.0" />
+                </HBox.margin>
+             </Button>
+-            <Text id="ClearBTN" strokeType="OUTSIDE" strokeWidth="0.0" text="Clear" wrappingWidth="31.3701171875">
++            <Text id="Clear_TM" strokeType="OUTSIDE" strokeWidth="0.0" text="Clear" wrappingWidth="31.3701171875">
+                <font>
+                   <Font name="Segoe UI" size="14.0" />
+                </font>
+Index: src/main/java/project/autox/TMController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/project/autox/TMController.java b/src/main/java/project/autox/TMController.java
+new file mode 100644
+--- /dev/null	(date 1727689572732)
++++ b/src/main/java/project/autox/TMController.java	(date 1727689572732)
+@@ -0,0 +1,90 @@
++package project.autox;
++
++import javafx.fxml.FXML;
++import javafx.scene.control.Button;
++import javafx.scene.control.TextField;
++import javafx.scene.text.Text;
++
++import java.util.HashMap;
++import java.util.Map;
++
++public class TMController {
++
++    private static int currentState = 0; // Initial state q0
++    private StringBuilder tape; // Represents the input tape
++    private int headPosition; // Current position of the head
++
++    @FXML
++    private TextField Input_Tape; // Input field for the tape
++    @FXML
++    private Button Validate_TM; // Button to validate input
++    @FXML
++    private Button Simulate_TM; // Button to simulate the Turing Machine
++    @FXML
++    private Text regexAccepted; // Text for accepted regular expression
++    @FXML
++    private Text languageAccepted; // Text for accepted language
++
++    // Transition table: Map of current state and input to next state and tape action
++    private Map<String, String[]> transitionTable;
++
++    public TMController() {
++        // Initialize the transition table
++        transitionTable = new HashMap<>();
++        // Define transitions according to the regular expression 0+ c 0+
++        transitionTable.put("0,0", new String[]{"0", "0", "R"}); // q0 on 0 -> q0, write 0, move right
++        transitionTable.put("0,c", new String[]{"1", "c", "R"}); // q0 on 'c' -> q1, write 'c', move right
++        transitionTable.put("1,0", new String[]{"1", "0", "R"}); // q1 on 0 -> q1, write 0, move right
++        transitionTable.put("1,blank", new String[]{"2", "blank", "L"}); // q1 on blank (end of input) -> q2, move left
++        transitionTable.put("2,0", new String[]{"2", "0", "L"}); // q2 on 0 -> q2, write 0, move left
++        transitionTable.put("2,c", new String[]{"3", "c", "R"}); // q2 on 'c' -> q3, write 'c', move right
++        transitionTable.put("3,0", new String[]{"3", "0", "R"}); // q3 on 0 -> q3, write 0, move right
++        transitionTable.put("3,blank", new String[]{"4", "blank", "S"}); // q3 on blank -> q4 (accepting state)
++    }
++
++    public void initialize() {
++        Validate_TM.setOnAction(event -> {
++            String input = Input_Tape.getText().trim();
++            tape = new StringBuilder(input.replaceAll(" ", "") + " blank"); // Set the tape with a blank at the end
++            headPosition = 0; // Reset head position
++            currentState = 0; // Reset state
++
++            boolean isAccepted = simulate();
++            if (isAccepted) {
++                System.out.println("The input is accepted by the Turing Machine.");
++            } else {
++                System.out.println("The input is rejected by the Turing Machine.");
++            }
++        });
++
++        Simulate_TM.setOnAction(event -> {
++            // Additional logic for step-by-step simulation can be implemented here
++            System.out.println("Step-by-step simulation not implemented yet.");
++        });
++
++        // Set texts for regular expressions and accepted language
++        regexAccepted.setText("0+ c 0+");
++        languageAccepted.setText("{ 0^m c 0^n | m, n ≥ 1 }");
++    }
++
++    public boolean simulate() {
++        while (headPosition < tape.length()) {
++            char currentSymbol = tape.charAt(headPosition);
++            String key = currentState + "," + (currentSymbol == ' ' ? "blank" : currentSymbol); // Use 'blank' for empty space
++
++            // Check for a valid transition
++            if (transitionTable.containsKey(key)) {
++                String[] action = transitionTable.get(key);
++                currentState = Integer.parseInt(action[0]); // Update current state
++                // Write to the tape (considering 'blank' as space for end)
++                tape.setCharAt(headPosition, action[1].equals("blank") ? ' ' : action[1].charAt(0));
++                headPosition += action[2].equals("R") ? 1 : (action[2].equals("L") ? -1 : 0); // Move head right, left, or stay
++            } else {
++                return false; // No valid transition, reject the input
++            }
++        }
++
++        // Accept if the machine halts in an accepting state (for simplicity, let's assume state 4 is accepting)
++        return currentState == 4;
++    }
++}
+\ No newline at end of file
+Index: src/main/java/project/autox/HelloController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package project.autox;\r\n\r\nimport javafx.fxml.FXML;\r\nimport javafx.fxml.FXMLLoader;\r\nimport javafx.scene.layout.Pane;\r\nimport java.io.IOException;\r\n\r\npublic class HelloController {\r\n\r\n    @FXML\r\n    private Pane contentPane;\r\n\r\n    @FXML\r\n    public void loadDFA() throws IOException {\r\n        FXMLLoader loader = new FXMLLoader(getClass().getResource(\"/project/autox/FXML/DFA.fxml\"));\r\n        Pane dfaPane = loader.load();\r\n        contentPane.getChildren().setAll(dfaPane);\r\n    }\r\n\r\n    @FXML\r\n    public void loadNFA() throws IOException {\r\n        Pane nfaPane = FXMLLoader.load(getClass().getResource(\"/project/autox/FXML/NFA.fxml\"));\r\n        contentPane.getChildren().setAll(nfaPane);\r\n    }\r\n\r\n    @FXML\r\n    public void loadCFG() throws IOException {\r\n        Pane cfgPane = FXMLLoader.load(getClass().getResource(\"/project/autox/FXML/CFG.fxml\"));\r\n        contentPane.getChildren().setAll(cfgPane);\r\n    }\r\n\r\n    @FXML\r\n    public void loadPDA() throws IOException {\r\n        FXMLLoader loader = new FXMLLoader(getClass().getResource(\"/project/autox/FXML/PDA.fxml\"));\r\n        Pane pdaPane = loader.load();\r\n        contentPane.getChildren().setAll(pdaPane);\r\n    }\r\n\r\n      @FXML\r\n    public void loadTM() throws IOException {\r\n        Pane tmPane = FXMLLoader.load(getClass().getResource(\"/project/autox/FXML/TuringMachine.fxml\"));\r\n        contentPane.getChildren().setAll(tmPane);\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/project/autox/HelloController.java b/src/main/java/project/autox/HelloController.java
+--- a/src/main/java/project/autox/HelloController.java	(revision c6b58d8da965910691aa747710126ebc965f8e50)
++++ b/src/main/java/project/autox/HelloController.java	(date 1727688734867)
+@@ -37,8 +37,9 @@
+     }
+ 
+       @FXML
+-    public void loadTM() throws IOException {
+-        Pane tmPane = FXMLLoader.load(getClass().getResource("/project/autox/FXML/TuringMachine.fxml"));
+-        contentPane.getChildren().setAll(tmPane);
+-    }
++      public void loadTM() throws IOException {
++          FXMLLoader loader = new FXMLLoader(getClass().getResource("/project/autox/FXML/TuringMachine.fxml"));
++          Pane tmPane = loader.load();
++          contentPane.getChildren().setAll(tmPane);
++      }
+ }
