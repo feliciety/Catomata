@@ -1,4 +1,4 @@
-package project.autox;
+          package project.autox;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
