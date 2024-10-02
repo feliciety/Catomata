@@ -30,7 +30,7 @@
       <TextField fx:id="Binput2" layoutX="127.0" layoutY="214.0" prefWidth="112.0" styleClass="text-field" stylesheets="@../StyleSheet/Styles.css" />
 
       <!-- Buttons for Actions -->
-      <Button fx:id="AddBTN" alignment="CENTER" layoutX="448.0" layoutY="170.0" minHeight="34.0" mnemonicParsing="false" onAction="#handleValidate" prefHeight="34.0" prefWidth="101.0" styleClass="button-valsim" stylesheets="@../StyleSheet/Styles.css" text="Compute">
+      <Button fx:id="AddBTN" alignment="CENTER" layoutX="556.0" layoutY="171.0" minHeight="34.0" mnemonicParsing="false" onAction="#handleValidate" prefHeight="34.0" prefWidth="101.0" styleClass="button-valsim" stylesheets="@../StyleSheet/Styles.css" text="Compute">
          <font>
             <Font name="Segoe UI" size="14.0" />
          </font>
@@ -54,11 +54,6 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Text>
-      <Button fx:id="Simulate" alignment="CENTER" layoutX="561.0" layoutY="171.0" minHeight="34.0" mnemonicParsing="false" onAction="#handleValidate" prefHeight="34.0" prefWidth="101.0" styleClass="button-valsim" stylesheets="@../StyleSheet/Styles.css" text="Simulate">
-         <font>
-            <Font name="Segoe UI" size="14.0" />
-         </font>
-      </Button>
       <Pane fx:id="Result" layoutX="127.0" layoutY="262.0" prefHeight="34.0" prefWidth="225.0" />
    </children>
    <stylesheets>
