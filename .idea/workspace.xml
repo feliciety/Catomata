@@ -40,7 +40,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/feliciety/AutoX.git&quot;,
-    &quot;accountId&quot;: &quot;5b37c23e-910e-4867-91bd-66bc9fc38478&quot;
+    &quot;accountId&quot;: &quot;e47121c6-0037-4d7a-82c3-533c6bd52fd5&quot;
   }
 }</component>
   <component name="ProblemsViewState">
@@ -126,6 +126,12 @@
       <workItem from="1727698448956" duration="13045000" />
       <workItem from="1727713287386" duration="4745000" />
       <workItem from="1727823448326" duration="1062000" />
+      <workItem from="1727848282672" duration="324000" />
+      <workItem from="1727864480673" duration="2277000" />
+      <workItem from="1727870654813" duration="61000" />
+      <workItem from="1727871031273" duration="39000" />
+      <workItem from="1727871159891" duration="68000" />
+      <workItem from="1727871233281" duration="3760000" />
     </task>
     <task id="LOCAL-00001" summary="working code">
       <option name="closed" value="true" />
