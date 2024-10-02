@@ -117,30 +117,30 @@ public class TuringMachineController {
 
     // Action handler for the 'Simulate' button
     @FXML
-    public void handleValidate() {
-        String binary1 = Binput1.getText();
-        String binary2 = Binput2.getText();
 
-        if (!binary1.isEmpty() && !binary2.isEmpty()) {
-            // Prepare the Turing Machine input
-            String input = binary1 + "+" + binary2;
-            TuringMachine tm = new TuringMachine(input);
+        public void handleValidate() {
+            String binary1 = Binput1.getText();
+            String binary2 = Binput2.getText();
 
-            // Run the simulation and get the result
-            String result = tm.run();
+            if (!binary1.isEmpty() && !binary2.isEmpty()) {
+                // Prepare the Turing Machine input
+                String input = binary1 + "+" + binary2;
+                TuringMachine tm = new TuringMachine(input);
 
-            // Create a Text node to display the result
-            Text outputText = new Text("Binary1: " + binary1 + "\nBinary2: " + binary2 + "\n" + result);
+                // Run the simulation and get the result
+                String result = tm.run();
 
-            // Clear the previous output and add the new result to OutputTM
-            OutputTM.getChildren().clear();
-            OutputTM.getChildren().add(outputText);
+                // Create a Text node to display the result
+                Text outputText = new Text("Binary1: " + binary1 + "\nBinary2: " + binary2 + "\n" + result);
 
-            // Adjust the position and layout of the output text within the AnchorPane
-            AnchorPane.setTopAnchor(outputText, 10.0);
-            AnchorPane.setLeftAnchor(outputText, 10.0);
-        }
-    }   
+                // Clear the previous output and add the new result to OutputTM
+                OutputTM.getChildren().clear();
+                OutputTM.getChildren().add(outputText);
+
+                // Adjust the position and layout of the output text within the AnchorPane
+                AnchorPane.setTopAnchor(outputText, 10.0);
+                AnchorPane.setLeftAnchor(outputText, 10.0);
+            }}
 
     @FXML
     public void handleClear() {
