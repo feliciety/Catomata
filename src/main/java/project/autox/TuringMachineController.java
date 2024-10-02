@@ -1,7 +1,6 @@
 package project.autox;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
@@ -22,7 +21,7 @@ public class TuringMachineController {
 
     // Turing Machine Inner Class
     public static class TuringMachine {
-        private enum State { Q0, Q1, Q2, Q3, Q4, Q5f }
+        private enum State {Q1, Q2, Q0, Q3, Q4, Q5f }
 
         private char[] tape;
         private int head;
@@ -34,16 +33,12 @@ public class TuringMachineController {
             int tapeSize = input.length() + 6;
             this.tape = new char[tapeSize];
             Arrays.fill(this.tape, 'B');
+
             int inputStart = 3;
             for (int i = 0; i < input.length(); i++) {
                 this.tape[i + inputStart] = input.charAt(i);
             }
-            for (int i = tape.length - 1; i >= 0; i--) {
-                if (tape[i] != 'B') {
-                    this.head = i;
-                    break;
-                }
-            }
+            this.head = inputStart;
             this.currentState = State.Q0;
             this.stepCount = 0;
             output.append("Initial tape: ").append(Arrays.toString(tape)).append("\n");
@@ -60,38 +55,38 @@ public class TuringMachineController {
                 output.append("Step ").append(stepCount).append(": Head at index ").append(head).append(", symbol: ").append(currentSymbol).append(", state: ").append(currentState).append("\n");
 
                 switch (currentState) {
-                    case Q0:
+                    case Q1:
                         if (currentSymbol == '1') {
-                            tape[head] = '0'; head--; currentState = State.Q1;
+                            tape[head] = '0'; head--; currentState = State.Q2;
                         } else if (currentSymbol == '0') {
-                            tape[head] = '1'; head--; currentState = State.Q0;
+                            tape[head] = '1'; head--; currentState = State.Q1;
                         } else if (currentSymbol == '+') {
                             tape[head] = 'B'; head++; currentState = State.Q4;
                         } else if (currentSymbol == 'B') {
-                            head--; currentState = State.Q0;
+                            head--; currentState = State.Q1;
                         }
                         break;
-                    case Q1:
+                    case Q2:
                         if (currentSymbol == '1' || currentSymbol == '0' || currentSymbol == 'B') {
-                            head--; currentState = State.Q1;
+                            head--; currentState = State.Q2;
                         } else if (currentSymbol == '+') {
                             tape[head] = '+'; head--; currentState = State.Q3;
                         }
                         break;
-                    case Q2:
+                    case Q0:
                         if (currentSymbol == '1' || currentSymbol == '0' || currentSymbol == '+') {
-                            head++; currentState = State.Q2;
+                            head++; currentState = State.Q0;
                         } else if (currentSymbol == 'B') {
-                            tape[head] = 'B'; head--; currentState = State.Q0;
+                            tape[head] = 'B'; head--; currentState = State.Q1;
                         }
                         break;
                     case Q3:
                         if (currentSymbol == '0') {
-                            tape[head] = '1'; head++; currentState = State.Q2;
+                            tape[head] = '1'; head++; currentState = State.Q0;
                         } else if (currentSymbol == '1') {
                             tape[head] = '0'; head--; currentState = State.Q3;
                         } else if (currentSymbol == 'B') {
-                            tape[head] = '1'; head++; currentState = State.Q2;
+                            tape[head] = '1'; head++; currentState = State.Q0;
                         } else if (currentSymbol == '+') {
                             head--; currentState = State.Q3;
                         }
