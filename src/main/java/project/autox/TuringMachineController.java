@@ -4,6 +4,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 
 import java.util.Arrays;
@@ -112,35 +114,49 @@ public class TuringMachineController {
 
     // Action handler for the 'Simulate' button
     @FXML
+    public void handleValidate() {
+        String binary1 = Binput1.getText();
+        String binary2 = Binput2.getText();
 
-        public void handleValidate() {
-            String binary1 = Binput1.getText();
-            String binary2 = Binput2.getText();
+        if (!binary1.isEmpty() && !binary2.isEmpty()) {
+            // Prepare the Turing Machine input
+            String input = binary1 + "+" + binary2;
+            TuringMachine tm = new TuringMachine(input);
 
-            if (!binary1.isEmpty() && !binary2.isEmpty()) {
-                // Prepare the Turing Machine input
-                String input = binary1 + "+" + binary2;
-                TuringMachine tm = new TuringMachine(input);
+            // Run the simulation and get the result
+            String turingResult = tm.run();
 
-                // Run the simulation and get the result
-                String result = tm.run();
+            // Convert binary inputs to integers, perform addition, and convert back to binary
+            int bin1Int = Integer.parseInt(binary1, 2);
+            int bin2Int = Integer.parseInt(binary2, 2);
+            int sum = bin1Int + bin2Int;
+            String binarySum = Integer.toBinaryString(sum);
 
-                // Create a Text node to display the result
-                Text outputText = new Text("Binary1: " + binary1 + "\nBinary2: " + binary2 + "\n" + result);
+            // Clear previous results in the Pane Result
+            Result.getChildren().clear();
 
-                // Clear the previous output and add the new result to OutputTM
-                OutputTM.getChildren().clear();
-                OutputTM.getChildren().add(outputText);
+            // Display binary addition result in Pane Result with styling
+            Text additionResult = new Text(binarySum);
+            additionResult.setFont(Font.font("Arial", FontWeight.BOLD, 16));  // Set font size to 16 and bold
+            Result.getChildren().add(additionResult);
 
-                // Adjust the position and layout of the output text within the AnchorPane
-                AnchorPane.setTopAnchor(outputText, 10.0);
-                AnchorPane.setLeftAnchor(outputText, 10.0);
-            }}
+            // Create a Text node to display the Turing Machine result with styling
+            Text outputText = new Text("Binary1: " + binary1 + "\nBinary2: " + binary2 + "\n" + turingResult);
+            outputText.setFont(Font.font("Arial", 14));  // Set font size to 14 for Turing machine result
+            OutputTM.getChildren().clear();
+            OutputTM.getChildren().add(outputText);
+
+            // Adjust the position and layout of the output text within the AnchorPane
+            AnchorPane.setTopAnchor(outputText, 10.0);
+            AnchorPane.setLeftAnchor(outputText, 10.0);
+        }
+    }
 
     @FXML
     public void handleClear() {
         Binput1.clear();
         Binput2.clear();
-        Result.getChildren().clear();
+        OutputTM.getChildren().clear();
+        Result.getChildren().clear();  // Clear the binary addition result as well
     }
 }
