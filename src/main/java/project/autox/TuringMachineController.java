@@ -2,7 +2,7 @@ package project.autox;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 
@@ -15,7 +15,7 @@ public class TuringMachineController {
     @FXML
     private TextField Binput2;
     @FXML
-    private AnchorPane OutputTM;
+    private FlowPane OutputTM;
     @FXML
     private Pane Result;
 
@@ -23,11 +23,11 @@ public class TuringMachineController {
     public static class TuringMachine {
         private enum State {Q1, Q2, Q0, Q3, Q4, Q5f }
 
-        private char[] tape;
+        private final char[] tape;
         private int head;
         private State currentState;
         private int stepCount;
-        private StringBuilder output = new StringBuilder();  // To store simulation output
+        private final StringBuilder output = new StringBuilder();  // To store simulation output
 
         public TuringMachine(String input) {
             int tapeSize = input.length() + 6;
@@ -41,7 +41,7 @@ public class TuringMachineController {
             this.head = inputStart;
             this.currentState = State.Q0;
             this.stepCount = 0;
-            output.append("Initial tape: ").append(Arrays.toString(tape)).append("\n");
+            output.append("\nInitial tape: ").append(Arrays.toString(tape)).append("\n");
         }
 
         public String run() {
@@ -52,7 +52,7 @@ public class TuringMachineController {
                 }
                 char currentSymbol = tape[head];
                 stepCount++;
-                output.append("Step ").append(stepCount).append(": Head at index ").append(head).append(", symbol: ").append(currentSymbol).append(", state: ").append(currentState).append("\n");
+                output.append("\nStep ").append(stepCount).append(": \nHead at index ").append(head).append(", symbol: ").append(currentSymbol).append(", \nstate: ").append(currentState).append("\n");
 
                 switch (currentState) {
                     case Q1:
@@ -104,38 +104,37 @@ public class TuringMachineController {
                 }
                 output.append("Tape after state ").append(currentState).append(": ").append(Arrays.toString(tape)).append("\n");
             }
-            output.append("Final tape: ").append(Arrays.toString(tape)).append("\n");
-            output.append("Total steps taken: ").append(stepCount).append("\n");
+            output.append("\nFinal tape: ").append(Arrays.toString(tape)).append("\n");
+            output.append("\nTotal steps taken: ").append(stepCount).append("\n");
             return output.toString();
         }
     }
 
     // Action handler for the 'Simulate' button
     @FXML
+    public void handleValidate() {
+        String binary1 = Binput1.getText();
+        String binary2 = Binput2.getText();
 
-        public void handleValidate() {
-            String binary1 = Binput1.getText();
-            String binary2 = Binput2.getText();
+        if (!binary1.isEmpty() && !binary2.isEmpty()) {
+            // Prepare the Turing Machine input
+            String input = binary1 + "+" + binary2;
+            TuringMachine tm = new TuringMachine(input);
 
-            if (!binary1.isEmpty() && !binary2.isEmpty()) {
-                // Prepare the Turing Machine input
-                String input = binary1 + "+" + binary2;
-                TuringMachine tm = new TuringMachine(input);
+            // Run the simulation and get the result
+            String result = tm.run();
 
-                // Run the simulation and get the result
-                String result = tm.run();
+            // Create a Text node to display the result
+            Text outputText = new Text("Binary1: " + binary1 + "\nBinary2: " + binary2 + "\n" + result);
 
-                // Create a Text node to display the result
-                Text outputText = new Text("Binary1: " + binary1 + "\nBinary2: " + binary2 + "\n" + result);
+            // Clear the previous output and add the new result to OutputTM
+            OutputTM.getChildren().clear();
+            OutputTM.getChildren().add(outputText);
 
-                // Clear the previous output and add the new result to OutputTM
-                OutputTM.getChildren().clear();
-                OutputTM.getChildren().add(outputText);
-
-                // Adjust the position and layout of the output text within the AnchorPane
-                AnchorPane.setTopAnchor(outputText, 10.0);
-                AnchorPane.setLeftAnchor(outputText, 10.0);
-            }}
+            // Adjust the position and layout of the output text within the FlowPane
+            FlowPane.setMargin(outputText, new javafx.geometry.Insets(10.0, 10.0, 10.0, 10.0));
+        }
+    }
 
     @FXML
     public void handleClear() {
