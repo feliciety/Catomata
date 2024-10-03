@@ -1,5 +1,6 @@
 package project.autox;
 
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
@@ -7,6 +8,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
+import javafx.scene.control.ScrollPane;
 
 import java.util.Arrays;
 
@@ -20,10 +22,12 @@ public class TuringMachineController {
     private AnchorPane OutputTM;
     @FXML
     private Pane Result;
+    @FXML
+    private ScrollPane scrollPane;  // Add a reference to the ScrollPane
 
     // Turing Machine Inner Class
     public static class TuringMachine {
-        private enum State {Q1, Q2, Q0, Q3, Q4, Q5f }
+        private enum State {Q1, Q2, Q0, Q3, Q4, Q5f}
 
         private char[] tape;
         private int head;
@@ -149,8 +153,22 @@ public class TuringMachineController {
             // Adjust the position and layout of the output text within the AnchorPane
             AnchorPane.setTopAnchor(outputText, 10.0);
             AnchorPane.setLeftAnchor(outputText, 10.0);
+
+            // Dynamically adjust the height of the OutputTM based on content
+            double lineHeight = 20;  // Adjust as necessary
+            int numberOfLines = turingResult.split("\n").length + 3; // +3 for the input binary lines
+            double newHeight = numberOfLines * lineHeight;
+
+            OutputTM.setPrefHeight(newHeight); // Update the preferred height
+            scrollPane.setPrefHeight(newHeight + 20); // Add some padding if needed
+
+            // Scroll to the bottom of the ScrollPane
+            Platform.runLater(() -> {
+                scrollPane.setVvalue(1.0);  // Scroll to the bottom
+            });
         }
     }
+
 
     @FXML
     public void handleClear() {
