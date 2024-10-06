@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="727b3115-6b64-474a-9dda-efd002915432" name="Changes" comment="Here’s a simple commit message for that:&#10;&#10;🔧 Changed Anchorpane to Flowpane">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/project/autox/FXML/TM.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/autox/DFAController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/autox/DFAController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/autox/TuringMachineController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/autox/TuringMachineController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/project/autox/FXML/TuringMachine.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/autox/FXML/TuringMachine.fxml" afterDir="false" />
-    </list>
+    <list default="true" id="727b3115-6b64-474a-9dda-efd002915432" name="Changes" comment="Here’s a simple commit message for that:&#10;&#10;✔️Turing Machine Complete" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -137,6 +130,7 @@
       <workItem from="1727933684788" duration="5098000" />
       <workItem from="1728041881019" duration="623000" />
       <workItem from="1728054993525" duration="353000" />
+      <workItem from="1728180023546" duration="410000" />
     </task>
     <task id="LOCAL-00001" summary="working code">
       <option name="closed" value="true" />
@@ -338,7 +332,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727925377935</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Here’s a simple commit message for that:&#10;&#10;✔️Turing Machine Complete">
+      <option name="closed" value="true" />
+      <created>1728180070326</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1728180070326</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -374,6 +376,7 @@
     <MESSAGE value="Here's a simple commit message with an emoji:&#10;&#10; Finished DFA animation with correct logic." />
     <MESSAGE value="Here’s a simple commit message for that:&#10;&#10; Fixed PDA button issue on homepage." />
     <MESSAGE value="Here’s a simple commit message for that:&#10;&#10; Changed Anchorpane to Flowpane" />
-    <option name="LAST_COMMIT_MESSAGE" value="Here’s a simple commit message for that:&#10;&#10; Changed Anchorpane to Flowpane" />
+    <MESSAGE value="Here’s a simple commit message for that:&#10;&#10;✔️Turing Machine Complete" />
+    <option name="LAST_COMMIT_MESSAGE" value="Here’s a simple commit message for that:&#10;&#10;✔️Turing Machine Complete" />
   </component>
 </project>
