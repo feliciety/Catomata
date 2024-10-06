@@ -1,10 +1,14 @@
 package project.autox;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
 
 import java.util.Arrays;
 
@@ -17,7 +21,7 @@ public class TuringMachineController {
     @FXML
     private FlowPane OutputTM;
     @FXML
-    private Pane Result;
+    private Label Lresult;
 
     // Turing Machine Inner Class
     public static class TuringMachine {
@@ -117,15 +121,32 @@ public class TuringMachineController {
         String binary2 = Binput2.getText();
 
         if (!binary1.isEmpty() && !binary2.isEmpty()) {
+            // Convert binary inputs to integers
+            int bin1Int = Integer.parseInt(binary1, 2);
+            int bin2Int = Integer.parseInt(binary2, 2);
+
+            // Perform binary addition
+            int sum = bin1Int + bin2Int;
+
+            // Convert the sum back to binary string
+            String binarySum = Integer.toBinaryString(sum);
+
+            // Display binary addition result in Lresult
+            Lresult.setText(binarySum); // Set the result text to Lresult
+
+            // Set font style for the Lresult Label
+            Lresult.setFont(Font.font("Arial", FontWeight.BOLD, 16)); // Set font size to 16 and bold
+            Lresult.setTextAlignment(TextAlignment.CENTER); // Center the text (note: this works better for multiline text)
+
             // Prepare the Turing Machine input
             String input = binary1 + "+" + binary2;
             TuringMachine tm = new TuringMachine(input);
 
             // Run the simulation and get the result
-            String result = tm.run();
+            String turingResult = tm.run();
 
-            // Create a Text node to display the result
-            Text outputText = new Text("Binary1: " + binary1 + "\nBinary2: " + binary2 + "\n" + result);
+            // Create a Text node to display the Turing Machine result
+            Text outputText = new Text("Binary1: " + binary1 + "\nBinary2: " + binary2 + "\n" + turingResult);
 
             // Clear the previous output and add the new result to OutputTM
             OutputTM.getChildren().clear();
@@ -136,10 +157,12 @@ public class TuringMachineController {
         }
     }
 
+
+
     @FXML
     public void handleClear() {
         Binput1.clear();
         Binput2.clear();
-        Result.getChildren().clear();
+        Lresult.getChildrenUnmodifiable().clear();
     }
 }

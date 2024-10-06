@@ -172,8 +172,7 @@ public class DFAController {
 
         characterAnimationTimeline.setCycleCount(input.length());
         for (int i = 0; i < input.length(); i++) {
-            final int charIndex; // Capture the current character index
-            charIndex = i;
+            final int charIndex = i; // Capture the current character index
             KeyFrame keyFrame = new KeyFrame(Duration.seconds(i * 1.5), event -> { // Change duration for visible transitions
                 if (index[0] < input.length()) {
                     char ch = input.charAt(index[0]);
