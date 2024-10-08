@@ -5,14 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="727b3115-6b64-474a-9dda-efd002915432" name="Changes" comment="Here’s a simple commit message for that:&#10;&#10;✔️Turing Machine Complete">
-      <change afterPath="$PROJECT_DIR$/src/main/java/project/autox/TowerHanoiController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/project/autox/FXML/TOH.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_1_2024_4_10_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_1_2024_4_10_PM__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_1_2024_4_24_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_1_2024_4_24_PM__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/autox/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/autox/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/project/autox/FXML/Intro2.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/autox/FXML/Intro2.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/autox/NFAController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/autox/NFAController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/project/autox/FXML/NFA.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/autox/FXML/NFA.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/project/autox/FXML/TM.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/project/autox/FXML/TuringMachine.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/autox/FXML/TuringMachine.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

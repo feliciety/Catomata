@@ -84,7 +84,9 @@ public class HelloController {
 
     @FXML
     public void loadNFA() throws IOException {
-        Pane nfaPane = FXMLLoader.load(getClass().getResource("/project/autox/FXML/NFA.fxml"));
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/project/autox/FXML/NFA.fxml"));
+        Pane nfaPane = loader.load();
         contentPane.getChildren().setAll(nfaPane);
     }
 

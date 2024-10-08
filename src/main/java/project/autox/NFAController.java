@@ -9,8 +9,9 @@ import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.util.Duration;
 
-
 public class NFAController {
+
+
     private int currentState = 0; // Start at q0
     private Timeline characterAnimationTimeline;
 
@@ -22,6 +23,7 @@ public class NFAController {
     private Button SimulateBTN;
     @FXML
     private Button ClearBTN;
+
 
     @FXML
     private ImageView q0, q1, q2f;
@@ -198,26 +200,29 @@ public class NFAController {
         switch (currentState) {
             case 0: // q0
                 if (ch == 'a') {
-                    currentState = 1;                    animateSequentially(q0, q1);
+                    currentState = 1; // Transition to q1
+                    animateSequentially(q0, q1); // Animate q0 first, then q1
                 } else if (ch == 'b') {
                     currentState = 4; // Transition to q4
-                    animateSequentially(q0, q0);
+                    animateSequentially(q0, q0); // Animate q0 first, then q4
                 }
                 break;
             case 1: // q1
                 if (ch == 'a') {
-                    currentState = 1;
-                    animateImageView(q1);
+                    currentState = 2; // Trap state
+                    animateImageView(q0);
                 } else if (ch == 'b') {
-                    currentState = 3;
-                    //animateImageView();
+                    currentState = 3; // Transition to q3
+                    animateImageView(q0);
                 }
                 break;
             case 2: // q2 (Trap state)
-                currentState = -1;
-                //animateImageView();
+                currentState = -1; // Trap state
+                animateImageView(q0); // Animate q2 for any input
                 break;
 
+            case 10: // q10f (Final accepting state)
+                break; // No further transitions; stay in q10f
             default:
                 return false; // Transition was unsuccessful
         }
@@ -229,26 +234,29 @@ public class NFAController {
         switch (currentState) {
             case 0: // q0
                 if (ch == 'a') {
-                    currentState = 1;                    animateSequentially(q0, q1);
+                    currentState = 1; // Transition to q1
+                    animateSequentially(q0, q1); // Animate q0 first, then q1
                 } else if (ch == 'b') {
                     currentState = 4; // Transition to q4
-                    animateSequentially(q0, q0);
+                    animateSequentially(q0, q0); // Animate q0 first, then q4
                 }
                 break;
             case 1: // q1
                 if (ch == 'a') {
-                    currentState = 1;
-                    animateImageView(q1);
+                    currentState = 2; // Trap state
+                    animateImageView(q0);
                 } else if (ch == 'b') {
-                    currentState = 3;
-                    //animateImageView();
+                    currentState = 3; // Transition to q3
+                    animateImageView(q0);
                 }
                 break;
             case 2: // q2 (Trap state)
-                currentState = -1;
-                //animateImageView();
+                currentState = -1; // Trap state
+                animateImageView(q0); // Animate q2 for any input
                 break;
 
+            case 10: // q10f (Final accepting state)
+                break; // No further transitions; stay in q10f
             default:
                 return false; // Transition was unsuccessful
         }
