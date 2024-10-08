@@ -4,7 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="727b3115-6b64-474a-9dda-efd002915432" name="Changes" comment="Here’s a simple commit message for that:&#10;&#10;✔️Turing Machine Complete" />
+    <list default="true" id="727b3115-6b64-474a-9dda-efd002915432" name="Changes" comment="Here’s a simple commit message for that:&#10;&#10;✔️Turing Machine Complete">
+      <change afterPath="$PROJECT_DIR$/src/main/java/project/autox/Intro1Controller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/project/autox/Intro2Controller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/project/autox/FXML/Intro1.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/project/autox/FXML/Intro2.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/project/autox/Images/Intro2.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/project/autox/Images/Introduction1a.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/project/autox/Images/LINE.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/project/autox/Images/intro2a.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/project/autox/Images/introduction1.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/project/autox/Introduction1a/Group 37.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_09_2024_10_53_am_[Changes]/DFAlines.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_09_2024_10_53_am_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_09_2024_10_53_am__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_9_30_2024_6_50_PM_[Changes]1/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_9_30_2024_6_50_PM__Changes_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_9_30_2024_8_09_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_9_30_2024_8_09_PM__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/autox/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/autox/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/project/autox/FXML/Hpage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/autox/FXML/Hpage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/project/autox/StyleSheet/Styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/autox/StyleSheet/Styles.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,6 +37,7 @@
       <list>
         <option value="FxmlFile" />
         <option value="JavaFXApplication" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -56,12 +79,15 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Application.Hanoicontroller.executor&quot;: &quot;Run&quot;,
     &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TowerOfHanoiSimulator.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Admin/Desktop/AutoX/src/main/java/project/autox&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Admin/Desktop/AutoX/src/main/resources/project/autox/FXML&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -75,17 +101,49 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Admin\Desktop\AutoX\src\main\java\project\autox" />
       <recent name="C:\Users\Admin\Desktop\AutoX\src\main\resources\project\autox\FXML" />
+      <recent name="C:\Users\Admin\Desktop\AutoX\src\main\resources\project\autox\Images" />
+      <recent name="C:\Users\Admin\Desktop\AutoX\src\main\java\project\autox" />
       <recent name="C:\Users\Admin\IdeaProjects\AutoX\src\main\resources\project\autox\FXML" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Admin\Desktop\AutoX\src\main\resources\project\autox\Images" />
+      <recent name="C:\Users\Admin\Desktop\AutoX\src\main\resources\project\autox\Introduction1a" />
       <recent name="C:\Users\Admin\IdeaProjects\AutoX\src\main\resources\project\autox\Images" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="project.autox" />
+    </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.HelloApplication">
+    <configuration name="Hanoicontroller" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="project.autox.Hanoicontroller" />
+      <module name="AutoX" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="project.autox.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="project.autox.HelloApplication" />
+      <module name="AutoX" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="project.autox.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TowerOfHanoiSimulator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="project.autox.TowerOfHanoiSimulator" />
       <module name="AutoX" />
       <extension name="coverage">
         <pattern>
@@ -100,6 +158,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.HelloApplication" />
+        <item itemvalue="Application.Hanoicontroller" />
+        <item itemvalue="Application.TowerOfHanoiSimulator" />
       </list>
     </recent_temporary>
   </component>
@@ -130,7 +190,12 @@
       <workItem from="1727933684788" duration="5098000" />
       <workItem from="1728041881019" duration="623000" />
       <workItem from="1728054993525" duration="353000" />
-      <workItem from="1728180023546" duration="410000" />
+      <workItem from="1728180023546" duration="1145000" />
+      <workItem from="1728297470919" duration="5457000" />
+      <workItem from="1728315643029" duration="5200000" />
+      <workItem from="1728321028376" duration="1106000" />
+      <workItem from="1728322166788" duration="74000" />
+      <workItem from="1728322435134" duration="400000" />
     </task>
     <task id="LOCAL-00001" summary="working code">
       <option name="closed" value="true" />
@@ -340,7 +405,15 @@
       <option name="project" value="LOCAL" />
       <updated>1728180070326</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Here’s a simple commit message for that:&#10;&#10;✔️Turing Machine Complete">
+      <option name="closed" value="true" />
+      <created>1728180503366</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1728180503366</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -378,5 +451,16 @@
     <MESSAGE value="Here’s a simple commit message for that:&#10;&#10; Changed Anchorpane to Flowpane" />
     <MESSAGE value="Here’s a simple commit message for that:&#10;&#10;✔️Turing Machine Complete" />
     <option name="LAST_COMMIT_MESSAGE" value="Here’s a simple commit message for that:&#10;&#10;✔️Turing Machine Complete" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/project/autox/HelloController.java</url>
+          <line>89</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

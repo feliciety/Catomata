@@ -51,4 +51,25 @@
     -fx-alignment: center;
 }
 
+.continue-button {
+    -fx-background-radius: 21px;
+    -fx-background-color: #FAB000;
+    -fx-text-fill: white;
+    -fx-font-family: 'Inter Black';
+    -fx-font-size: 13.24px;
+    -fx-effect: dropshadow(gaussian, #A77A00, 0, 0, 0, 4);
+    -fx-padding: 10 20;
+    -fx-transition: translate 0.1s ease; /* Added transition for smooth movement */
+}
 
+.continue-button:hover {
+    -fx-background-color: #FBD782;
+}
+
+.continue-button:pressed {
+    -fx-background-color: #93A3AD;
+    -fx-text-fill: #52656D;
+    -fx-effect: none;
+    -fx-translate-y: 4px; /* Move down when pressed */
+    -fx-effect: dropshadow(gaussian, transparent, 0, 0, 0, 0); /* Remove shadow on press */
+}

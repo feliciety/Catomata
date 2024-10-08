@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1500.0" style="-fx-background-color: DEE9CB;" stylesheets="@../StyleSheet/Styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.autox.HelloController">
+<AnchorPane fx:id="HpagePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1500.0" style="-fx-background-color: DEE9CB;" stylesheets="@../StyleSheet/Styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.autox.HelloController">
    <Pane layoutX="-2.0" layoutY="244.0" prefHeight="274.0" prefWidth="290.0" style="-fx-background-color: F6FDFF;" styleClass="pane-shadow" stylesheets="@../StyleSheet/Styles.css" />
    <Pane fx:id="contentPane" layoutX="280.0" layoutY="18.0" prefHeight="668.0" prefWidth="1187.0" style="-fx-background-color: F4FFDE; -fx-background-radius: 25;" styleClass="pane-shadow" stylesheets="@../StyleSheet/Styles.css" />
    <Pane layoutX="270.0" layoutY="240.0" prefHeight="276.73" prefWidth="11.0" style="-fx-background-color: F6FDFF;" stylesheets="@../StyleSheet/Styles.css" />
