@@ -221,8 +221,7 @@ public class NFAController {
                 animateImageView(q0); // Animate q2 for any input
                 break;
 
-            case 10: // q10f (Final accepting state)
-                break; // No further transitions; stay in q10f
+
             default:
                 return false; // Transition was unsuccessful
         }
@@ -255,8 +254,7 @@ public class NFAController {
                 animateImageView(q0); // Animate q2 for any input
                 break;
 
-            case 10: // q10f (Final accepting state)
-                break; // No further transitions; stay in q10f
+
             default:
                 return false; // Transition was unsuccessful
         }
