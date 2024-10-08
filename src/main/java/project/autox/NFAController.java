@@ -46,9 +46,9 @@ public class NFAController {
             if (isValid(input)) { // Check if the input is valid (contains only 'a' and 'b')
                 boolean isAccepted = validateInput(input); // Check if input is accepted by the DFA
                 if (isAccepted) {
-                    System.out.println("Input is accepted by DFA."); // Accepted by the DFA
+                    System.out.println("Input is accepted by NFA."); // Accepted by the DFA
                 } else {
-                    System.out.println("Input is rejected by DFA."); // Rejected by the DFA
+                    System.out.println("Input is rejected by NFA."); // Rejected by the DFA
                 }
             } else {
                 System.out.println("Invalid input. Only 'a' and 'b' are allowed."); // Invalid input error
@@ -196,29 +196,29 @@ public class NFAController {
         pause.play();
     }
 
+
     public boolean transition(char ch) {
         switch (currentState) {
             case 0: // q0
                 if (ch == 'a') {
-                    currentState = 1; // Transition to q1
-                    animateSequentially(q0, q1); // Animate q0 first, then q1
+                    currentState = 2; // Transition to q1
+                    animateSequentially(q0, q2f); // Animate q0 first, then q1
                 } else if (ch == 'b') {
-                    currentState = 4; // Transition to q4
-                    animateSequentially(q0, q0); // Animate q0 first, then q4
+                    currentState = 1; // Transition to q4
+                    animateSequentially(q0, q1); // Animate q0 first, then q4
                 }
                 break;
             case 1: // q1
                 if (ch == 'a') {
-                    currentState = 2; // Trap state
-                    animateImageView(q0);
+                    currentState = 1;
+                    animateImageView(q1);
                 } else if (ch == 'b') {
-                    currentState = 3; // Transition to q3
+                    currentState = 0; // Transition to q3
                     animateImageView(q0);
                 }
                 break;
-            case 2: // q2 (Trap state)
-                currentState = -1; // Trap state
-                animateImageView(q0); // Animate q2 for any input
+            case 2:
+                //accepted
                 break;
 
 
@@ -229,46 +229,16 @@ public class NFAController {
     }
 
 
-    public boolean transitionForValidation(char ch) {
-        switch (currentState) {
-            case 0: // q0
-                if (ch == 'a') {
-                    currentState = 1; // Transition to q1
-                    animateSequentially(q0, q1); // Animate q0 first, then q1
-                } else if (ch == 'b') {
-                    currentState = 4; // Transition to q4
-                    animateSequentially(q0, q0); // Animate q0 first, then q4
-                }
-                break;
-            case 1: // q1
-                if (ch == 'a') {
-                    currentState = 2; // Trap state
-                    animateImageView(q0);
-                } else if (ch == 'b') {
-                    currentState = 3; // Transition to q3
-                    animateImageView(q0);
-                }
-                break;
-            case 2: // q2 (Trap state)
-                currentState = -1; // Trap state
-                animateImageView(q0); // Animate q2 for any input
-                break;
 
-
-            default:
-                return false; // Transition was unsuccessful
-        }
-        return currentState != -1; // If in trap state, return false
-    }
 
     private boolean validateInput(String input) {
         currentState = 0; // Reset to start state (q0) for validation
         for (char ch : input.toCharArray()) {
-            if (!transitionForValidation(ch)) {
+            if (!transition(ch)) {
                 return false; // Input is rejected if we reach a trap state (-1)
             }
         }
-        return currentState == 10; // Accept only if DFA ends in q10f (final state)
+        return currentState == 2; // Accept only if DFA ends in q10f (final state)
     }
 
 
