@@ -5,13 +5,15 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane fx:id="nfaPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="668.0" prefWidth="1187.0" style="-fx-background-color: F4FFDE; -fx-background-radius: 25;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<Pane fx:id="nfaPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="668.0" prefWidth="1187.0" style="-fx-background-color: F4FFDE; -fx-background-radius: 25;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" >
    <children>
       <Text fill="#464545" layoutX="127.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NFA Simulator" wrappingWidth="450.4999999999998">
          <styleClass>
@@ -24,7 +26,7 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Text>
-      <TextField layoutX="127.0" layoutY="127.0" styleClass="text-field" stylesheets="@../StyleSheet/Styles.css" />
+      <TextField fx:id="inputTextField" layoutX="127.0" layoutY="127.0" styleClass="text-field" stylesheets="@../StyleSheet/Styles.css" />
       <Line endX="559.0667724609375" layoutX="202.0" layoutY="89.0" startX="-70.26669311523438" stroke="#e1e1e1" style="-fx-opacity: 10;" styleClass="line-divider" />
       <Line endX="559.0667724609375" layoutX="200.0" layoutY="226.0" startX="-70.26669311523438" stroke="#e1e1e1" style="-fx-opacity: 10;" styleClass="line-divider" />
       <Line endX="559.0667724609375" layoutX="195.0" layoutY="570.0" startX="-70.26669311523438" stroke="#e1e1e1" style="-fx-opacity: 10;" styleClass="line-divider" />
@@ -85,7 +87,23 @@
             </Button>
          </children>
       </HBox>
+      <ImageView fx:id="q0" fitHeight="56.0" fitWidth="56.0" layoutX="232.0" layoutY="284.0">
+         <image>
+            <Image url="@../Images/q0.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="q1" fitHeight="56.0" fitWidth="56.0" layoutX="425.0" layoutY="284.0">
+         <image>
+            <Image url="@../Images/q1.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="q2f" fitHeight="56.0" fitWidth="56.0" layoutX="232.0" layoutY="418.0">
+         <image>
+            <Image url="@../Images/q2.png" />
+         </image>
+      </ImageView>
    </children>
+
    <stylesheets>
       <URL value="@../StyleSheet/Styles.css" />
       <URL value="@../StyleSheet/txtSS.css" />
