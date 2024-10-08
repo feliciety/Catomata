@@ -3,6 +3,7 @@ package project.autox;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.util.Duration;
 import javafx.animation.FillTransition;
@@ -106,5 +107,10 @@ public class HelloController {
         Pane tmPane = loader.load();
         contentPane.getChildren().setAll(tmPane);
 
+    }
+
+    public void loadTH() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/project/autox/FXML/TOH.fxml"));
+        AnchorPane HpagePane = loader.load();
     }
 }
