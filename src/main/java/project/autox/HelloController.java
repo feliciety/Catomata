@@ -112,5 +112,7 @@ public class HelloController {
 
     public void loadTH() throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/project/autox/FXML/TOH.fxml"));
+        Pane THPane = loader.load();
+        contentPane.getChildren().setAll(THPane);
     }
 }

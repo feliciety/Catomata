@@ -1,10 +1,8 @@
 package project.autox;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.FlowPane;
-import javafx.scene.layout.Pane;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
@@ -21,7 +19,7 @@ public class TuringMachineController {
     @FXML
     private FlowPane OutputTM;
     @FXML
-    private Label Lresult;
+    private TextField Lresult; // Changed to TextField
 
     // Turing Machine Inner Class
     public static class TuringMachine {
@@ -131,12 +129,13 @@ public class TuringMachineController {
             // Convert the sum back to binary string
             String binarySum = Integer.toBinaryString(sum);
 
-            // Display binary addition result in Lresult
+            // Display binary addition result in Lresult (TextField now)
             Lresult.setText(binarySum); // Set the result text to Lresult
 
-            // Set font style for the Lresult Label
-            Lresult.setFont(Font.font("Arial", FontWeight.BOLD, 16)); // Set font size to 16 and bold
-            Lresult.setTextAlignment(TextAlignment.CENTER); // Center the text (note: this works better for multiline text)
+            // Set font style for the Lresult TextField
+            Lresult.setStyle("-fx-font-size: 16px; -fx-font-weight: bold;");
+            Lresult.setAlignment(javafx.geometry.Pos.CENTER);
+
 
             // Prepare the Turing Machine input
             String input = binary1 + "+" + binary2;
@@ -157,12 +156,11 @@ public class TuringMachineController {
         }
     }
 
-
-
     @FXML
     public void handleClear() {
         Binput1.clear();
         Binput2.clear();
-        Lresult.getChildrenUnmodifiable().clear();
+        Lresult.clear(); // Clear the TextField
+        OutputTM.getChildren().clear();
     }
 }

@@ -1,4 +1,5 @@
 package project.autox;
+
 import javafx.animation.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -9,7 +10,6 @@ import javafx.scene.paint.Color;
 import javafx.util.Duration;
 
 import java.util.Stack;
-
 
 public class PDAController {
 
@@ -27,7 +27,6 @@ public class PDAController {
     @FXML
     private ImageView q0, q1, q2, q3f;
 
-
     public void initialize() {
         // Set up button animations
         setupButton(Clear_PDA);
@@ -42,20 +41,20 @@ public class PDAController {
 
         Validate_PDA.setOnAction(event -> {
             String input = Input_PDA.getText();
-            if (isValid(input)) {
+            try {
+                int num = Integer.parseInt(input); // Get the number input
+                String generatedInput = generateInput(num); // Generate 'aaaabbbb' based on the number
+                Input_PDA.setText(generatedInput); // Set generated input
                 currentState = 0; // Reset state
                 stack.clear();
-                stack.push('Z');
-
-            } else {
-                System.out.println("Input is invalid. Only 'a' and 'b' are allowed.");
+                stack.push('Z'); // Initial stack symbol
+            } catch (NumberFormatException e) {
+                System.out.println("Input is invalid. Enter a number.");
             }
-
-
         });
 
         Simulate_PDA.setOnAction(event -> {
-            animateInput(Input_PDA.getText());
+            animateInput(Input_PDA.getText()); // Simulate using the generated input
         });
 
         Clear_PDA.setOnAction(event -> {
@@ -71,7 +70,6 @@ public class PDAController {
         shadow.setOffsetY(2); // Vertical offset
         imageView.setEffect(shadow); // Set the shadow effect to the ImageView
     }
-
 
     private void setupButton(Button button) {
         DropShadow shadow = createShadowEffect();
@@ -92,66 +90,35 @@ public class PDAController {
         button.setEffect(shadow);
     }
 
-    private void removeShadowEffect(DropShadow shadow) {
-        animateShadowSize(shadow, 10, 3, 0.2, 0.0, 150);
-    }
-
-    private void restoreShadowEffect(DropShadow shadow) {
-        animateShadowSize(shadow, 3, 10, 0.0, 0.2, 150);
-    }
-
-    private void animateShadowSize(DropShadow shadow, double fromRadius, double toRadius, double fromOpacity, double toOpacity, int durationMillis) {
-        Transition transition = new Transition() {
-            {
-                setCycleDuration(Duration.millis(durationMillis));
-            }
-
-            @Override
-            protected void interpolate(double frac) {
-                double currentRadius = fromRadius + (toRadius - fromRadius) * frac;
-                double currentOpacity = fromOpacity + (toOpacity - fromOpacity) * frac;
-
-                shadow.setRadius(currentRadius);
-                shadow.setColor(Color.rgb(0, 0, 0, currentOpacity)); // Update shadow color with new opacity
-            }
-        };
-        transition.play();
-    }
-
     private void addClickAnimation(Button button, DropShadow shadow) {
         button.setOnMousePressed(event -> {
-            // Shrink the button and gradually reduce the shadow when pressed
             ScaleTransition pressTransition = new ScaleTransition(Duration.millis(150), button);
             pressTransition.setFromX(1.0);
             pressTransition.setFromY(1.0);
-            pressTransition.setToX(0.95);  // Shrink button slightly when pressed
+            pressTransition.setToX(0.95);
             pressTransition.setToY(0.95);
             pressTransition.play();
-
-            removeShadowEffect(shadow);  // Reduce the shadow smoothly
         });
 
         button.setOnMouseReleased(event -> {
-            // Restore the button size and bring back the shadow when released
             ScaleTransition releaseTransition = new ScaleTransition(Duration.millis(150), button);
             releaseTransition.setFromX(0.95);
             releaseTransition.setFromY(0.95);
-            releaseTransition.setToX(1.0);  // Restore button size
+            releaseTransition.setToX(1.0);
             releaseTransition.setToY(1.0);
-            releaseTransition.setOnFinished(e -> restoreShadowEffect(shadow));  // Restore the shadow smoothly
             releaseTransition.play();
         });
-
-
     }
 
-    private boolean isValid(String input) {
-        for (char c : input.toCharArray()) {
-            if (c != 'a' && c != 'b') {
-                return false;
-            }
+    private String generateInput(int n) {
+        StringBuilder input = new StringBuilder();
+        for (int i = 0; i < n; i++) {
+            input.append("a");
         }
-        return true;
+        for (int i = 0; i < n; i++) {
+            input.append("b");
+        }
+        return input.toString();
     }
 
     public void animateInput(String input) {
@@ -177,128 +144,83 @@ public class PDAController {
         timeline.play();
     }
 
-
-    private void animateSequentially(ImageView first, ImageView second) {
-        // Animate the first state (e.g., q0)
-        animateImageView(first);
-
-        // Create a sequential transition to animate the second state after the first
-        PauseTransition pause = new PauseTransition(Duration.seconds(1)); // Add delay between animations
-        pause.setOnFinished(event -> animateImageView(second)); // Animate the second state after the first
-        pause.play();
-    }
-
-    private void animateImageView(ImageView imageView) {
-        imageView.setVisible(true);
-
-        // Create a shadow effect for the ImageView
-        DropShadow shadow = new DropShadow();
-        shadow.setColor(Color.rgb(0, 0, 0, 0.25)); // Initial shadow color with 25% opacity
-        shadow.setRadius(4); // Shadow blur radius
-        shadow.setOffsetX(0); // Horizontal offset
-        shadow.setOffsetY(2); // Vertical offset
-
-        imageView.setEffect(shadow); // Apply the shadow to the imageView
-
-        // Scale transition for the ImageView
-        ScaleTransition scaleTransition = new ScaleTransition(Duration.millis(500), imageView);
-        scaleTransition.setFromX(1);    // Original size
-        scaleTransition.setFromY(1);    // Original size
-        scaleTransition.setToX(1.2);    // Scale up to 120%
-        scaleTransition.setToY(1.2);    // Scale up to 120%
-        scaleTransition.setCycleCount(2); // Scale up and down
-        scaleTransition.setAutoReverse(true); // Reverse scaling back to original size
-
-        // Shadow fade in/out transition synchronized with scaling
-        Timeline shadowFadeEffect = new Timeline(
-                new KeyFrame(Duration.ZERO, new KeyValue(shadow.colorProperty(), Color.rgb(0, 0, 0, 0.50))), // Initial shadow
-                new KeyFrame(Duration.millis(500), new KeyValue(shadow.colorProperty(), Color.rgb(0, 0, 0, 0))), // Fade out shadow
-                new KeyFrame(Duration.millis(1000), new KeyValue(shadow.colorProperty(), Color.rgb(0, 0, 0, 0.50))) // Fade back in
-        );
-
-        // Ensure shadow resets to full opacity at the end of animation
-        scaleTransition.setOnFinished(event -> {
-            shadow.setColor(Color.rgb(0, 0, 0, 0.50)); // Reset shadow to full opacity after animation
-        });
-
-        // Play both the scale transition and shadow fade effect
-        scaleTransition.play();
-        shadowFadeEffect.play();
-    }
-
     public boolean transition(char ch) {
         switch (currentState) {
             case 0:
                 if (ch == 'a') {
-                    // Push 'A' onto the stack for each 'a'
                     stack.push('A');
                     animateSequentially(q0, q1); // Animate transition from q0 to q1
                     currentState = 1; // Move to state q1
-                } else if (ch == 'b') {
-                    // If 'b' is encountered in q0 without an 'A' on the stack, reject
-                    if (stack.isEmpty() || stack.peek() != 'A') {
-                        currentState = -1; // Enter trap state if invalid
-                        return false;
-                    }
-
                 } else {
-                    // Invalid input
                     currentState = -1; // Trap state
                     return false;
                 }
                 break;
 
             case 1:
-                // In state q1, expect either 'a' (push) or 'b' (pop)
                 if (ch == 'a') {
                     stack.push('A');
                     animateImageView(q1); // Stay in q1, loop on 'a'
                 } else if (ch == 'b') {
                     if (stack.isEmpty() || stack.peek() != 'A') {
-                        currentState = -1; // Enter trap state if invalid
+                        currentState = -1; // Trap state
                         return false;
                     }
                     stack.pop(); // Pop 'A' for each 'b'
                     animateImageView(q2); // Animate q1 -> q2 transition
                     currentState = 2; // Move to state q2
                 } else {
-                    currentState = -1; // Trap state for invalid input
+                    currentState = -1; // Trap state
                     return false;
                 }
                 break;
 
             case 2:
-                // In state q2, expect only 'b' (keep popping from stack)
                 if (ch == 'b') {
                     if (stack.isEmpty() || stack.peek() != 'A') {
-                        currentState = -1; // Enter trap state if invalid
+                        currentState = -1; // Trap state
                         return false;
                     }
                     stack.pop(); // Pop 'A' for 'b'
                     animateImageView(q2); // Stay in q2 while processing 'b'
-
                 } else {
-                    currentState = -1; // Invalid transition to trap state
+                    currentState = -1; // Trap state
                     return false;
                 }
                 break;
 
-
             default:
-                // If in trap state (-1), reject the input
                 return false;
         }
 
-        // If we have processed all characters, check if the stack is empty and we're in state q2
-
+        // Check if stack is empty and in final state
         if (stack.size() == 1 && stack.peek() == 'Z' && currentState == 2) {
-            stack.pop(); // Pop 'Z' from the stack
-            currentState = 3; // Move to final state q3f (accepted)
-            animateSequentially(q2, q3f); // Animate transition from q2 to q3f
-            System.out.println("accepted"); // Indicate acceptance
-            return true; // Input accepted
+            stack.pop();
+            currentState = 3; // Final state q3f
+            animateSequentially(q2, q3f); // Animate q2 -> q3f
+            System.out.println("accepted");
+            return true;
         }
 
-        return false; // Input not yet accepted (continue processing)
+        return false;
+    }
+
+    private void animateSequentially(ImageView first, ImageView second) {
+        animateImageView(first);
+        PauseTransition pause = new PauseTransition(Duration.seconds(1));
+        pause.setOnFinished(event -> animateImageView(second));
+        pause.play();
+    }
+
+    private void animateImageView(ImageView imageView) {
+        imageView.setVisible(true);
+        ScaleTransition scaleTransition = new ScaleTransition(Duration.millis(500), imageView);
+        scaleTransition.setFromX(1);
+        scaleTransition.setFromY(1);
+        scaleTransition.setToX(1.2);
+        scaleTransition.setToY(1.2);
+        scaleTransition.setCycleCount(2);
+        scaleTransition.setAutoReverse(true);
+        scaleTransition.play();
     }
 }

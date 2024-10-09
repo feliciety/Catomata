@@ -43,7 +43,7 @@ public class CFGController {
         InputCFG.clear();  // Clear the input field
         OutputCFG.clear(); // Clear the output text area
     }
-
+    @FXML
     private void derive(String input, StringBuilder current) {
         int index = current.indexOf("S");
 
