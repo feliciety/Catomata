@@ -11,9 +11,7 @@ import javafx.util.Duration;
 
 public class NFAController {
 
-
     private int currentState = 0; // Start at q0
-    private Timeline characterAnimationTimeline;
 
     @FXML
     private TextField inputTextField;
@@ -24,34 +22,25 @@ public class NFAController {
     @FXML
     private Button ClearBTN;
 
-
     @FXML
     private ImageView q0, q1, q2f;
 
     public void initialize() {
-        // Set up button animations
         setupButton(ValidateBTN);
         setupButton(SimulateBTN);
         setupButton(ClearBTN);
 
-        // Apply shadow effect to state indicators
         applyShadowToImageView(q0);
         applyShadowToImageView(q1);
         applyShadowToImageView(q2f);
 
-
-
         ValidateBTN.setOnAction(event -> {
-            String input = inputTextField.getText(); // Get input from the text field
-            if (isValid(input)) { // Check if the input is valid (contains only 'a' and 'b')
-                boolean isAccepted = validateInput(input); // Check if input is accepted by the DFA
-                if (isAccepted) {
-                    System.out.println("Input is accepted by NFA."); // Accepted by the DFA
-                } else {
-                    System.out.println("Input is rejected by NFA."); // Rejected by the DFA
-                }
+            String input = inputTextField.getText();
+            if (isValid(input)) {
+                boolean isAccepted = validateInput(input);
+                System.out.println(isAccepted ? "Input is accepted by NFA." : "Input is rejected by NFA.");
             } else {
-                System.out.println("Invalid input. Only 'a' and 'b' are allowed."); // Invalid input error
+                System.out.println("Invalid input. Only 'a' and 'b' are allowed.");
             }
         });
 
@@ -60,39 +49,36 @@ public class NFAController {
         });
 
         ClearBTN.setOnAction(event -> {
-            clearInput(); // Call the clearInput method
+            clearInput();
         });
     }
 
     private void clearInput() {
-        if (characterAnimationTimeline != null) {
-            characterAnimationTimeline.stop(); // Stop the current animation
-        }
-        inputTextField.clear(); // Clear the input text field
-        currentState = 0; // Reset current state when clearing input
+        inputTextField.clear();
+        currentState = 0;
     }
 
     private void applyShadowToImageView(ImageView imageView) {
         DropShadow shadow = new DropShadow();
-        shadow.setColor(Color.rgb(0, 0, 0, 0.50)); // RGB color with alpha
-        shadow.setRadius(5); // Gaussian blur radius
-        shadow.setOffsetX(0); // Horizontal offset
-        shadow.setOffsetY(2); // Vertical offset
-        imageView.setEffect(shadow); // Set the shadow effect to the ImageView
+        shadow.setColor(Color.rgb(0, 0, 0, 0.50));
+        shadow.setRadius(5);
+        shadow.setOffsetX(0);
+        shadow.setOffsetY(2);
+        imageView.setEffect(shadow);
     }
 
     private void setupButton(Button button) {
         DropShadow shadow = createShadowEffect();
-        addFloatingEffect(button, shadow); // Add shadow to the button
-        addClickAnimation(button, shadow); // Add click animation to the button
+        addFloatingEffect(button, shadow);
+        addClickAnimation(button, shadow);
     }
 
     private DropShadow createShadowEffect() {
         DropShadow newShadow = new DropShadow();
-        newShadow.setColor(Color.rgb(0, 0, 0, 0.25)); // RGB color with alpha
-        newShadow.setRadius(4); // Gaussian blur radius
-        newShadow.setOffsetX(0); // Horizontal offset
-        newShadow.setOffsetY(1); // Vertical offset
+        newShadow.setColor(Color.rgb(0, 0, 0, 0.25));
+        newShadow.setRadius(4);
+        newShadow.setOffsetX(0);
+        newShadow.setOffsetY(1);
         return newShadow;
     }
 
@@ -100,53 +86,27 @@ public class NFAController {
         button.setEffect(shadow);
     }
 
-    private void removeShadowEffect(DropShadow shadow) {
-        animateShadowSize(shadow, 10, 3, 0.2, 0.0, 150);
-    }
-
-    private void restoreShadowEffect(DropShadow shadow) {
-        animateShadowSize(shadow, 3, 10, 0.0, 0.2, 150);
-    }
-
-    private void animateShadowSize(DropShadow shadow, double fromRadius, double toRadius, double fromOpacity, double toOpacity, int durationMillis) {
-        Transition transition = new Transition() {
-            {
-                setCycleDuration(Duration.millis(durationMillis));
-            }
-
-            @Override
-            protected void interpolate(double frac) {
-                double currentRadius = fromRadius + (toRadius - fromRadius) * frac;
-                double currentOpacity = fromOpacity + (toOpacity - fromOpacity) * frac;
-
-                shadow.setRadius(currentRadius);
-                shadow.setColor(Color.rgb(0, 0, 0, currentOpacity)); // Update shadow color with new opacity
-            }
-        };
-        transition.play();
-    }
-
     private void addClickAnimation(Button button, DropShadow shadow) {
         button.setOnMousePressed(event -> {
-            // Shrink the button and gradually reduce the shadow when pressed
             ScaleTransition pressTransition = new ScaleTransition(Duration.millis(150), button);
             pressTransition.setFromX(1.0);
             pressTransition.setFromY(1.0);
-            pressTransition.setToX(0.95);  // Shrink button slightly when pressed
+            pressTransition.setToX(0.95);
             pressTransition.setToY(0.95);
             pressTransition.play();
 
-            removeShadowEffect(shadow);  // Reduce the shadow smoothly
+            shadow.setColor(Color.rgb(0, 0, 0, 0.1));
         });
 
         button.setOnMouseReleased(event -> {
-            // Restore the button size and bring back the shadow when released
             ScaleTransition releaseTransition = new ScaleTransition(Duration.millis(150), button);
             releaseTransition.setFromX(0.95);
             releaseTransition.setFromY(0.95);
-            releaseTransition.setToX(1.0);  // Restore button size
+            releaseTransition.setToX(1.0);
             releaseTransition.setToY(1.0);
-            releaseTransition.setOnFinished(e -> restoreShadowEffect(shadow));  // Restore the shadow smoothly
+            releaseTransition.setOnFinished(e -> {
+                shadow.setColor(Color.rgb(0, 0, 0, 0.25));
+            });
             releaseTransition.play();
         });
     }
@@ -162,74 +122,73 @@ public class NFAController {
 
     public void animateInput(String input) {
         currentState = 0; // Reset to the initial state
-        Timeline characterAnimationTimeline = new Timeline(); // Initialize the timeline
         int[] index = {0}; // Using array to modify in lambda
 
-        characterAnimationTimeline.setCycleCount(input.length());
-        for (int i = 0; i < input.length(); i++) {
-            final int charIndex = i; // Capture the current character index
-            KeyFrame keyFrame = new KeyFrame(Duration.seconds(i * 1.5), event -> { // Change duration for visible transitions
-                if (index[0] < input.length()) {
-                    char ch = input.charAt(index[0]);
-                    if (currentState == -1) {
-                        System.out.println("In Trap state.");
-                        return; // Exit if in trap state
-                    }
-                    transition(ch); // Transition based on the character
-                    index[0]++; // Move to the next character
+        // Animate the initial state q0
+        animateImageView(q0, () -> {
+            // After animating q0, start processing the input
+            animateNextCharacter(input, index);
+        });
+    }
+
+    private void animateNextCharacter(String input, int[] index) {
+        if (index[0] < input.length()) {
+            char ch = input.charAt(index[0]);
+            boolean transitionSuccessful = transition(ch);
+
+            if (transitionSuccessful) {
+                // Animate the corresponding state
+                ImageView currentImageView = null;
+                if (currentState == 0) {
+                    currentImageView = q0;
+                } else if (currentState == 1) {
+                    currentImageView = q1;
+                } else if (currentState == 2) {
+                    currentImageView = q2f;
                 }
-            });
-            characterAnimationTimeline.getKeyFrames().add(keyFrame); // Add keyframe to the character animation timeline
+
+                if (currentImageView != null) {
+                    // Animate the current state
+                    animateImageView(currentImageView, () -> {
+                        // After the animation, wait briefly before moving to the next character
+                        PauseTransition pause = new PauseTransition(Duration.seconds(0.5));
+                        pause.setOnFinished(event -> {
+                            index[0]++; // Move to the next character
+                            animateNextCharacter(input, index); // Call again for the next character
+                        });
+                        pause.play();
+                    });
+                }
+            } else {
+                System.out.println("Transition failed for character: " + ch);
+            }
         }
-        characterAnimationTimeline.play(); // Play the character animation timeline
     }
-
-
-
-    private void animateSequentially(ImageView first, ImageView second) {
-        // Animate the first state (e.g., q0)
-        animateImageView(first);
-
-        // Create a sequential transition to animate the second state after the first
-        PauseTransition pause = new PauseTransition(Duration.seconds(1.0)); // Add delay between animations
-        pause.setOnFinished(event -> animateImageView(second)); // Animate the second state after the first
-        pause.play();
-    }
-
 
     public boolean transition(char ch) {
         switch (currentState) {
             case 0: // q0
                 if (ch == 'a') {
-                    currentState = 2; // Transition to q1
-                    animateSequentially(q0, q2f); // Animate q0 first, then q1
+                    currentState = 2; // Transition to q2
                 } else if (ch == 'b') {
-                    currentState = 1; // Transition to q4
-                    animateSequentially(q0, q1); // Animate q0 first, then q4
+                    currentState = 1; // Transition to q1
                 }
                 break;
             case 1: // q1
                 if (ch == 'a') {
-                    currentState = 1;
-                    animateImageView(q1);
+                    currentState = 1; // Stay in q1
                 } else if (ch == 'b') {
-                    currentState = 0; // Transition to q3
-                    animateImageView(q0);
+                    currentState = 0; // Transition back to q0
                 }
                 break;
             case 2:
-                //accepted
+                // Accepted state logic (could be expanded)
                 break;
-
-
             default:
                 return false; // Transition was unsuccessful
         }
         return true; // Transition was successful
     }
-
-
-
 
     private boolean validateInput(String input) {
         currentState = 0; // Reset to start state (q0) for validation
@@ -238,11 +197,10 @@ public class NFAController {
                 return false; // Input is rejected if we reach a trap state (-1)
             }
         }
-        return currentState == 2; // Accept only if DFA ends in q10f (final state)
+        return currentState == 2; // Accept only if DFA ends in q2 (final state)
     }
 
-
-    private void animateImageView(ImageView imageView) {
+    private void animateImageView(ImageView imageView, Runnable onFinished) {
         ScaleTransition scaleTransition = new ScaleTransition(Duration.seconds(0.5), imageView);
         scaleTransition.setFromX(1.0);
         scaleTransition.setFromY(1.0);
@@ -250,6 +208,13 @@ public class NFAController {
         scaleTransition.setToY(1.2);
         scaleTransition.setCycleCount(2);
         scaleTransition.setAutoReverse(true);
-        scaleTransition.play();
+
+        scaleTransition.setOnFinished(event -> {
+            if (onFinished != null) {
+                onFinished.run(); // Call the callback if provided
+            }
+        });
+
+        scaleTransition.play(); // Start the animation
     }
 }

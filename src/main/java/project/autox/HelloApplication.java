@@ -10,7 +10,7 @@ public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/project/autox/FXML/Intro1.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/project/autox/FXML/Hpage.fxml"));
             Scene scene = new Scene(fxmlLoader.load(), 1500, 700);
             stage.setTitle("AutoX");
             stage.setScene(scene);
