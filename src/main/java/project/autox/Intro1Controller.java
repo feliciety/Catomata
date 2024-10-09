@@ -20,7 +20,7 @@ public class Intro1Controller {
         continueBtn.setOnAction(event -> {
             try {
                 // Load the next scene (Intro2.fxml)
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/project/autox/FXML/Intro2.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/project/autox/FXML/Hpage.fxml"));
                 Parent intro2Root = loader.load();
 
                 // Get the current stage

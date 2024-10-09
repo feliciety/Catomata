@@ -8,12 +8,7 @@
 
 <AnchorPane prefHeight="700.0" prefWidth="1500.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.autox.Intro2Controller">
    <children>
-      <ImageView fitHeight="254.0" fitWidth="230.0" layoutX="614.0" layoutY="199.0">
-         <image>
-            <Image url="@../Images/Intro2.gif" />
-         </image>
-      </ImageView>
-      <Button fx:id="continueBtn" layoutX="1230.0" layoutY="617.0" lineSpacing="0.8" mnemonicParsing="false" prefHeight="57.0" prefWidth="205.0" style="-fx-background-radius: 21;" styleClass="continue-button" stylesheets="@../StyleSheet/Styles.css" text="CONTINUE">
+      <Button fx:id="continueBtn" layoutX="681.0" layoutY="486.0" lineSpacing="0.8" mnemonicParsing="false" prefHeight="57.0" prefWidth="205.0" style="-fx-background-radius: 21;" styleClass="continue-button" stylesheets="@../StyleSheet/Styles.css" text="START">
          <font>
             <Font name="Inter Black" size="13.24" />
          </font>
@@ -23,9 +18,9 @@
             <Image url="@../Images/LINE.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="301.0" fitWidth="251.0" layoutX="603.0" layoutY="143.0">
+      <ImageView fitHeight="248.0" fitWidth="453.0" layoutX="564.0" layoutY="199.0">
          <image>
-            <Image url="@../Images/intro2a.png" />
+            <Image url="@../Images/logo.png" />
          </image>
       </ImageView>
    </children>

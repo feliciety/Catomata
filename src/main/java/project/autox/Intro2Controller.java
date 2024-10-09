@@ -19,9 +19,9 @@ public class Intro2Controller {
     private void initialize() {
         continueBtn.setOnAction(event -> {
             try {
-                // Load the next scene (HPage.fxml)
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/project/autox/FXML/HPage.fxml"));
-                Parent hPageRoot = loader.load();
+                // Load the next scene (Intro1.fxml)
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/project/autox/FXML/Intro1.fxml"));
+                Parent intro1Root = loader.load();
 
                 // Get the current stage
                 Stage stage = (Stage) continueBtn.getScene().getWindow();
@@ -32,7 +32,7 @@ public class Intro2Controller {
                 fadeOut.setToValue(0.0);
                 fadeOut.setOnFinished(e -> {
                     // When fade-out is done, set the new scene
-                    Scene scene = new Scene(hPageRoot, 1500, 700);
+                    Scene scene = new Scene(intro1Root, 1500, 700);
 
                     // Create a fade-in transition for the new scene
                     stage.setScene(scene);
