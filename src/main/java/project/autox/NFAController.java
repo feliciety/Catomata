@@ -9,9 +9,12 @@ import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.util.Duration;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class NFAController {
 
-    private int currentState = 0; // Start at q0
+    private Set<Integer> currentStates = new HashSet<>(); // Track multiple states
 
     @FXML
     private TextField inputTextField;
@@ -23,16 +26,18 @@ public class NFAController {
     private Button ClearBTN;
 
     @FXML
-    private ImageView q0, q1, q2f;
+    private ImageView q0, q1f, q2;
 
     public void initialize() {
+        currentStates.add(0); // Start at q0
+
         setupButton(ValidateBTN);
         setupButton(SimulateBTN);
         setupButton(ClearBTN);
 
         applyShadowToImageView(q0);
-        applyShadowToImageView(q1);
-        applyShadowToImageView(q2f);
+        applyShadowToImageView(q1f);
+        applyShadowToImageView(q2);
 
         ValidateBTN.setOnAction(event -> {
             String input = inputTextField.getText();
@@ -55,7 +60,8 @@ public class NFAController {
 
     private void clearInput() {
         inputTextField.clear();
-        currentState = 0;
+        currentStates.clear();
+        currentStates.add(0); // Reset to q0
     }
 
     private void applyShadowToImageView(ImageView imageView) {
@@ -121,7 +127,8 @@ public class NFAController {
     }
 
     public void animateInput(String input) {
-        currentState = 0; // Reset to the initial state
+        currentStates.clear(); // Reset to initial states
+        currentStates.add(0);
         int[] index = {0}; // Using array to modify in lambda
 
         // Animate the initial state q0
@@ -137,14 +144,16 @@ public class NFAController {
             boolean transitionSuccessful = transition(ch);
 
             if (transitionSuccessful) {
-                // Animate the corresponding state
+                // Animate the corresponding states
                 ImageView currentImageView = null;
-                if (currentState == 0) {
+                if (currentStates.contains(0)) {
                     currentImageView = q0;
-                } else if (currentState == 1) {
-                    currentImageView = q1;
-                } else if (currentState == 2) {
-                    currentImageView = q2f;
+                }
+                if (currentStates.contains(1)) {
+                    currentImageView = q1f;
+                }
+                if (currentStates.contains(2)) {
+                    currentImageView = q2;
                 }
 
                 if (currentImageView != null) {
@@ -166,38 +175,44 @@ public class NFAController {
     }
 
     public boolean transition(char ch) {
-        switch (currentState) {
-            case 0: // q0
-                if (ch == 'a') {
-                    currentState = 2; // Transition to q2
-                } else if (ch == 'b') {
-                    currentState = 1; // Transition to q1
-                }
-                break;
-            case 1: // q1
-                if (ch == 'a') {
-                    currentState = 1; // Stay in q1
-                } else if (ch == 'b') {
-                    currentState = 0; // Transition back to q0
-                }
-                break;
-            case 2:
-                // Accepted state logic (could be expanded)
-                break;
-            default:
-                return false; // Transition was unsuccessful
+        Set<Integer> nextStates = new HashSet<>();
+
+        for (Integer state : currentStates) {
+            switch (state) {
+                case 0: // q0
+                    if (ch == 'a') {
+                        nextStates.add(1); // Transition to q1
+                        nextStates.add(2); // Transition to q2
+                    } else if (ch == 'b') {
+                        nextStates.add(0); // Stay in q0
+                    }
+                    break;
+                case 1: // q1
+                    if (ch == 'a') {
+                        nextStates.add(1); // Stay in q1
+                    }
+                    break;
+                case 2:
+                    // Handle accepted state logic if necessary
+                    break;
+                default:
+                    return false; // Invalid state
+            }
         }
-        return true; // Transition was successful
+        currentStates = nextStates; // Update to the new set of active states
+        return !currentStates.isEmpty(); // Return true if there are active states
     }
 
     private boolean validateInput(String input) {
-        currentState = 0; // Reset to start state (q0) for validation
+        currentStates.clear(); // Reset for validation
+        currentStates.add(0); // Start from q0
+
         for (char ch : input.toCharArray()) {
             if (!transition(ch)) {
-                return false; // Input is rejected if we reach a trap state (-1)
+                return false; // Input is rejected if we reach an invalid transition
             }
         }
-        return currentState == 2; // Accept only if DFA ends in q2 (final state)
+        return currentStates.contains(2); // Accept only if we end in q2 (final state)
     }
 
     private void animateImageView(ImageView imageView, Runnable onFinished) {
