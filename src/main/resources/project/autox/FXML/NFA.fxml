@@ -13,8 +13,13 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane fx:id="nfaPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="668.0" prefWidth="1187.0" style="-fx-background-color: F4FFDE; -fx-background-radius: 25;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.autox.NFAController" >
+<Pane fx:id="nfaPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="668.0" prefWidth="1187.0" style="-fx-background-color: F4FFDE; -fx-background-radius: 25;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.autox.NFAController">
    <children>
+      <ImageView fitHeight="293.0" fitWidth="317.0" layoutX="178.0" layoutY="249.0">
+         <image>
+            <Image url="@../Images/NFAlines.png" />
+         </image>
+      </ImageView>
       <Text fill="#464545" layoutX="127.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NFA Simulator" wrappingWidth="450.4999999999998">
          <styleClass>
             <String fx:value="display-flex" />
@@ -87,19 +92,19 @@
             </Button>
          </children>
       </HBox>
-      <ImageView fx:id="q0" fitHeight="56.0" fitWidth="56.0" layoutX="232.0" layoutY="284.0">
+      <ImageView fx:id="q0" fitHeight="65.0" fitWidth="65.0" layoutX="224.0" layoutY="313.0">
          <image>
             <Image url="@../Images/q0.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="q1" fitHeight="56.0" fitWidth="56.0" layoutX="425.0" layoutY="284.0">
+      <ImageView fx:id="q1" fitHeight="65.0" fitWidth="65.0" layoutX="420.0" layoutY="314.0">
          <image>
             <Image url="@../Images/q1.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="q2f" fitHeight="56.0" fitWidth="56.0" layoutX="232.0" layoutY="418.0">
+      <ImageView fx:id="q2f" fitHeight="65.0" fitWidth="65.0" layoutX="224.0" layoutY="498.0">
          <image>
-            <Image url="@../Images/q2.png" />
+            <Image url="@../Images/q2f.png" />
          </image>
       </ImageView>
    </children>
