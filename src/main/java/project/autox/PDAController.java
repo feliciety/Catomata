@@ -2,6 +2,7 @@ package project.autox;
 
 import javafx.animation.*;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.fxml.FXML;
 import javafx.scene.effect.DropShadow;
@@ -26,6 +27,8 @@ public class PDAController {
     private Button Clear_PDA;
     @FXML
     private ImageView q0, q1, q2, q3f;
+    @FXML
+    private Label PDAresult; // Declare the Label for displaying the result
 
     public void initialize() {
         // Set up button animations
@@ -44,7 +47,7 @@ public class PDAController {
             try {
                 int num = Integer.parseInt(input); // Get the number input
                 String generatedInput = generateInput(num); // Generate 'aaaabbbb' based on the number
-                Input_PDA.setText(generatedInput); // Set generated input
+                PDAresult.setText(generatedInput); // Update PDAresult with generated input
                 currentState = 0; // Reset state
                 stack.clear();
                 stack.push('Z'); // Initial stack symbol
@@ -54,11 +57,17 @@ public class PDAController {
         });
 
         Simulate_PDA.setOnAction(event -> {
-            animateInput(Input_PDA.getText()); // Simulate using the generated input
+            String input = PDAresult.getText(); // Get the generated input
+            if (!input.isEmpty()) { // Check if input is not empty
+                animateInput(input); // Simulate using the generated input
+            } else {
+                System.out.println("Input is empty. Please enter a value to simulate.");
+            }
         });
 
         Clear_PDA.setOnAction(event -> {
             Input_PDA.clear();
+            PDAresult.setText(""); // Clear the result label
         });
     }
 
@@ -128,14 +137,17 @@ public class PDAController {
         timeline.setCycleCount(input.length());
         for (int i = 0; i < input.length(); i++) {
             final int charIndex = i;
-            KeyFrame keyFrame = new KeyFrame(Duration.seconds(i * 2), event -> {
+            KeyFrame keyFrame = new KeyFrame(Duration.seconds(i * 1), event -> { // Adjust duration for visibility
                 if (index[0] < input.length()) {
                     char ch = input.charAt(index[0]);
-                    if (currentState == -1) {
-                        System.out.println("In Trap state.");
-                        return; // Exit if in trap state
+                    System.out.println("Current Character: " + ch); // Debug statement
+
+                    boolean accepted = transition(ch);
+                    if (accepted) {
+                        System.out.println("Transition Accepted for character: " + ch);
+                    } else {
+                        System.out.println("Transition Not Accepted for character: " + ch);
                     }
-                    transition(ch);
                     index[0]++;
                 }
             });
@@ -152,8 +164,7 @@ public class PDAController {
                     animateSequentially(q0, q1); // Animate transition from q0 to q1
                     currentState = 1; // Move to state q1
                 } else {
-                    currentState = -1; // Trap state
-                    return false;
+                    return false; // Transition not accepted
                 }
                 break;
 
@@ -163,34 +174,30 @@ public class PDAController {
                     animateImageView(q1); // Stay in q1, loop on 'a'
                 } else if (ch == 'b') {
                     if (stack.isEmpty() || stack.peek() != 'A') {
-                        currentState = -1; // Trap state
-                        return false;
+                        return false; // Transition not accepted
                     }
                     stack.pop(); // Pop 'A' for each 'b'
                     animateImageView(q2); // Animate q1 -> q2 transition
                     currentState = 2; // Move to state q2
                 } else {
-                    currentState = -1; // Trap state
-                    return false;
+                    return false; // Transition not accepted
                 }
                 break;
 
             case 2:
                 if (ch == 'b') {
                     if (stack.isEmpty() || stack.peek() != 'A') {
-                        currentState = -1; // Trap state
-                        return false;
+                        return false; // Transition not accepted
                     }
                     stack.pop(); // Pop 'A' for 'b'
                     animateImageView(q2); // Stay in q2 while processing 'b'
                 } else {
-                    currentState = -1; // Trap state
-                    return false;
+                    return false; // Transition not accepted
                 }
                 break;
 
             default:
-                return false;
+                return false; // Transition not accepted
         }
 
         // Check if stack is empty and in final state
@@ -198,11 +205,11 @@ public class PDAController {
             stack.pop();
             currentState = 3; // Final state q3f
             animateSequentially(q2, q3f); // Animate q2 -> q3f
-            System.out.println("accepted");
+            System.out.println("Accepted");
             return true;
         }
 
-        return false;
+        return false; // Not in final accepting state
     }
 
     private void animateSequentially(ImageView first, ImageView second) {
