@@ -43,13 +43,13 @@ public class CFGController {
         InputCFG.clear();  // Clear the input field
         OutputCFG.clear(); // Clear the output text area
     }
-    @FXML
+
     private void derive(String input, StringBuilder current) {
         int index = current.indexOf("S");
 
-        // Base case: If there's no more 'S', stop recursion
+        // Base case: If there's no more 'S', output the final derivation
         if (index == -1) {
-            OutputCFG.appendText("S -> " + current.toString() + "\n");
+            OutputCFG.appendText(current.toString() + "\n"); // Output the final string
             return;
         }
 
@@ -63,27 +63,24 @@ public class CFGController {
 
         // Apply rules based on the next character
         if (nextChar == 'a') {
-            // Display the production rule and update in one step
-            System.out.println("S -> " + current.toString().replace("S", "aSa"));
-            // Replace 'S' with 'aSa'
             current.replace(index, index + 1, "aSa");
             OutputCFG.appendText("S -> " + current.toString() + "\n"); // Show derivation step
             derive(input, current); // Continue with new derivation
-
         } else if (nextChar == 'b') {
-            // Display the production rule and update in one step
-            System.out.println("S -> " + current.toString().replace("S", "bSb"));
-            // Replace 'S' with 'bSb'
             current.replace(index, index + 1, "bSb");
             OutputCFG.appendText("S -> " + current.toString() + "\n"); // Show derivation step
             derive(input, current); // Continue with new derivation
         }
 
-        // If S still exists, replace with 'c' to show a completed derivation
+        // After processing, if 'S' still exists, replace it with 'C'
         if (current.indexOf("S") != -1) {
-            current.replace(current.indexOf("S"), current.indexOf("S") + 1, "c");
-            System.out.println("S -> " + current.toString());
-            OutputCFG.appendText("S -> " + current.toString() + "\n"); // Show final replacement
+            current.replace(current.indexOf("S"), current.indexOf("S") + 1, "C"); // Replace 'S' with 'C'
+            OutputCFG.appendText("S -> " + current.toString() + "\n"); // Show intermediate string
+
+            // Generate output after replacing 'S' with 'C'
+            // We replace 'C' with an empty string, simulating the derivation process
+            current.replace(current.indexOf("C"), current.indexOf("C") + 1, ""); // Remove 'C'
+            OutputCFG.appendText("S -> " + current.toString() + "\n"); // Output the result after C is removed
         }
     }
 }
