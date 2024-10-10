@@ -14,6 +14,8 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
 
+import static java.awt.Color.black;
+
 public class TowerOfHanoiController {
 
     @FXML
@@ -95,11 +97,25 @@ public class TowerOfHanoiController {
         Label disk = new Label("Disk " + size);
 
         int diskWidth = 300 - (size - 1) * 40; // Width decreases for larger disks
-
         disk.setPrefWidth(diskWidth);  // Set width based on disk size
-        disk.setPrefHeight(20);  // Fixed height for all disks
-        disk.setStyle("-fx-background-color: lightblue; -fx-border-color: black; "
-                + "-fx-border-width: 2px; -fx-alignment: center;");
+        disk.setPrefHeight(40);  // Fixed height for all disks
+
+        // Define an array of pastel colors
+        String[] pastelColors = {
+                "#FFB3BA",  // Light pink
+                "#FFDFBA",  // Light peach
+                "#FFFFBA",  // Light yellow
+                "#BFFCC6",  // Light mint green
+                "#BAE1FF",  // Light blue
+                "#D5BAFF"   // Light lavender
+        };
+
+        // Cycle through colors based on disk size
+        String color = pastelColors[(size - 1) % pastelColors.length]; // Ensure it wraps around if more disks
+
+        // Set background color to a pastel color based on the disk size
+        disk.setStyle("-fx-background-color: " + color + "; -fx-border-color: black; "
+                + "-fx-border-width: 0.5px; -fx-alignment: center; " +  "-fx-border-radius: 10px; " +"-fx-background-radius: 10px; " );
 
         return disk;
     }

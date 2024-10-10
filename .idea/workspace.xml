@@ -5,11 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="727b3115-6b64-474a-9dda-efd002915432" name="Changes" comment="Here’s a simple commit message for that:&#10;&#10;✔️fix bug open nfa">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_8_2024_3_58_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_8_2024_3_58_PM__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/project/autox/Images/rod.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/autox/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/autox/HelloController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/autox/TowerOfHanoiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/autox/TowerOfHanoiController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/project/autox/FXML/Hpage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/autox/FXML/Hpage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/project/autox/FXML/NFA.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/autox/FXML/NFA.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/project/autox/FXML/TOH.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/autox/FXML/TOH.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/project/autox/Images/NFAlines.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/autox/Images/NFAlines.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/project/autox/StyleSheet/Styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/autox/StyleSheet/Styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,12 +45,12 @@
     &quot;assignee&quot;: &quot;Jomm911&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/feliciety/AutoX.git",
-    "accountId": "e47121c6-0037-4d7a-82c3-533c6bd52fd5"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/feliciety/AutoX.git&quot;,
+    &quot;accountId&quot;: &quot;e47121c6-0037-4d7a-82c3-533c6bd52fd5&quot;
   }
-}]]></component>
+}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/main/java/project/autox/Intro2Controller.java" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -90,6 +95,7 @@
       <recent name="C:\Users\Admin\IdeaProjects\AutoX\src\main\resources\project\autox\FXML" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Admin\Desktop\AutoX\src\main\resources\project\autox\Images" />
       <recent name="C:\Users\Student\IdeaProjects\AutoX\src\main\resources\project\autox\Images" />
       <recent name="C:\Users\Admin\IdeaProjects\AutoX\src\main\resources\project\autox\Images" />
     </key>
@@ -362,7 +368,15 @@
       <option name="project" value="LOCAL" />
       <updated>1728386262321</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Here’s a simple commit message for that:&#10;&#10;✔️fix bug open nfa">
+      <option name="closed" value="true" />
+      <created>1728541129122</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1728541129122</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

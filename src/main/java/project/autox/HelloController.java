@@ -16,7 +16,7 @@ public class HelloController {
     private Pane contentPane;
 
     @FXML
-    private Button dfaButton, nfaButton, cfgButton, pdaButton, tmButton;
+    private Button dfaButton, nfaButton, cfgButton, pdaButton, tmButton, toButton;
 
     private Button activeButton = null; // Keep track of the active button
     private final Color originalColor = Color.web("#F6FDFF"); // Original color
@@ -30,6 +30,7 @@ public class HelloController {
         setButtonColor(cfgButton);
         setButtonColor(pdaButton);
         setButtonColor(tmButton);
+        setButtonColor(toButton);
 
         // Add click event handlers to each button
         dfaButton.setOnMouseClicked(e -> handleButtonClick(dfaButton));

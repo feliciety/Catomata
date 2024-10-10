@@ -4,18 +4,20 @@
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane fx:id="nfaPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="668.0" prefWidth="1187.0" style="-fx-background-color: ffffff; -fx-background-radius: 25;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.autox.NFAController">
+<Pane fx:id="nfaPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="668.0" prefWidth="1187.0" style="-fx-background-color: #F4FFDE; -fx-background-radius: 25;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.autox.NFAController">
    <children>
-      <ImageView fitHeight="293.0" fitWidth="317.0" layoutX="178.0" layoutY="249.0">
+      <ImageView fitHeight="293.0" fitWidth="317.0" layoutX="273.0" layoutY="238.0">
          <image>
             <Image url="@../Images/NFAlines.png" />
          </image>
@@ -83,17 +85,17 @@
             </Button>
          </children>
       </HBox>
-      <ImageView fx:id="q0" fitHeight="65.0" fitWidth="65.0" layoutX="224.0" layoutY="313.0">
+      <ImageView fx:id="q0" fitHeight="65.0" fitWidth="65.0" layoutX="319.0" layoutY="302.0">
          <image>
             <Image url="@../Images/q0.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="q1f" fitHeight="65.0" fitWidth="65.0" layoutX="421.0" layoutY="313.0">
+      <ImageView fx:id="q1f" fitHeight="65.0" fitWidth="65.0" layoutX="516.0" layoutY="302.0">
          <image>
             <Image url="@../Images/q1.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="q2" fitHeight="65.0" fitWidth="65.0" layoutX="224.0" layoutY="498.0">
+      <ImageView fx:id="q2" fitHeight="65.0" fitWidth="65.0" layoutX="319.0" layoutY="487.0">
          <image>
             <Image url="@../Images/q2f.png" />
          </image>
@@ -107,6 +109,16 @@
             <URL value="@../StyleSheet/Styles.css" />
          </stylesheets>
       </Button>
+      <ScrollPane layoutX="794.0" layoutY="138.0" prefHeight="450.0" prefWidth="362.0">
+         <content>
+            <FlowPane fx:id="OutputTM" alignment="CENTER" prefHeight="444.0" prefWidth="356.0" />
+         </content>
+      </ScrollPane>
+      <Text fill="#464545" layoutX="794.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-twotoldok" text="State Transition:" wrappingWidth="118.0283203125">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
    </children>
 
    <stylesheets>
