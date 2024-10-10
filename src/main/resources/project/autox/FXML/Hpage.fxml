@@ -14,5 +14,5 @@
    <Button fx:id="cfgButton" layoutY="328.0" mnemonicParsing="false" onAction="#loadCFG" prefHeight="56.0" prefWidth="281.0" style="-fx-background-color: F5F9FA;" styleClass="button-main" stylesheets="@../StyleSheet/Styles.css" text="CONTEXT FREE GRAMMER" />
    <Button fx:id="tmButton" layoutY="438.0" mnemonicParsing="false" onAction="#loadTM" prefHeight="56.0" prefWidth="281.0" style="-fx-background-color: F5F9FA;" styleClass="button-main" stylesheets="@../StyleSheet/Styles.css" text="TURING MACHINE" />
    <Button fx:id="thButton" layoutX="-1.0" layoutY="495.0" mnemonicParsing="false" onAction="#loadTM" prefHeight="56.0" prefWidth="281.0" style="-fx-background-color: F5F9FA;" styleClass="button-main" stylesheets="@../StyleSheet/Styles.css" text="TOWER OF HANOI" />
-   <Button fx:id="TowerOfHanoi" layoutY="516.0" mnemonicParsing="false" onAction="#loadTH" prefHeight="56.0" prefWidth="281.0" style="-fx-background-color: F5F9FA;" styleClass="button-main" stylesheets="@../StyleSheet/Styles.css" text="TOWER OF HANOI" />
+   <Button fx:id="TowerOfHanoi" layoutY="495.0" mnemonicParsing="false" onAction="#loadTH" prefHeight="56.0" prefWidth="281.0" style="-fx-background-color: F5F9FA;" styleClass="button-main" stylesheets="@../StyleSheet/Styles.css" text="TOWER OF HANOI" />
 </AnchorPane>

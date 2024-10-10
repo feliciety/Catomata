@@ -5,20 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="727b3115-6b64-474a-9dda-efd002915432" name="Changes" comment="Here’s a simple commit message for that:&#10;&#10;✔️fix bug open nfa">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/project/autox/Images/logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_2_2024_10_06_PM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_2_2024_10_06_PM__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_2_2024_9_42_PM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_2_2024_9_42_PM__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_4_2024_7_44_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_4_2024_7_44_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_6_2024_10_02_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_6_2024_10_02_AM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_8_2024_3_58_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_8_2024_3_58_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/autox/Intro1Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/autox/Intro1Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/autox/Intro2Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/autox/Intro2Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/autox/TowerOfHanoiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/autox/TowerOfHanoiController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/project/autox/FXML/Hpage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/autox/FXML/Hpage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/project/autox/FXML/Intro2.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/autox/FXML/Intro2.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/project/autox/FXML/TOH.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/autox/FXML/TOH.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,12 +40,12 @@
     &quot;assignee&quot;: &quot;Jomm911&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/feliciety/AutoX.git&quot;,
-    &quot;accountId&quot;: &quot;5b37c23e-910e-4867-91bd-66bc9fc38478&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/feliciety/AutoX.git",
+    "accountId": "e47121c6-0037-4d7a-82c3-533c6bd52fd5"
   }
-}</component>
+}]]></component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/main/java/project/autox/Intro2Controller.java" root0="FORCE_HIGHLIGHTING" />
   </component>
