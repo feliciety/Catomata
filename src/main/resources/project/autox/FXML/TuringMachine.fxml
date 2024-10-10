@@ -17,7 +17,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane fx:id="tmPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="668.0" prefWidth="1187.0" style="-fx-background-color: F4FFDE; -fx-background-radius: 25;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.autox.TuringMachineController">
+<Pane fx:id="tmPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="668.0" prefWidth="1187.0" style="-fx-background-radius: 25;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.autox.TuringMachineController">
    <children>
       <Text fill="#464545" layoutX="91.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Turing Machine Simulator" wrappingWidth="630.33349609375">
          <styleClass>
@@ -67,7 +67,7 @@
                <children>
             
                                           <!-- Buttons for Actions -->
-                  <Button fx:id="AddBTN" alignment="CENTER" minHeight="34.0" mnemonicParsing="false" onAction="#handleValidate" prefHeight="34.0" prefWidth="125.0" styleClass="button-valsim" stylesheets="@../StyleSheet/Styles.css" text="Compute">
+                  <Button fx:id="AddBTN" alignment="CENTER" minHeight="34.0" mnemonicParsing="false" onAction="#handleValidate" prefHeight="34.0" prefWidth="125.0" styleClass="continue-button" stylesheets="@../StyleSheet/Styles.css" text="Compute">
                      <font>
                         <Font name="Segoe UI" size="14.0" />
                      </font>
@@ -75,7 +75,7 @@
                         <Insets right="30.0" />
                      </HBox.margin>
                   </Button>
-                  <Button fx:id="ClearBTN" alignment="CENTER" contentDisplay="CENTER" minHeight="34.0" mnemonicParsing="false" onAction="#handleClear" prefHeight="34.0" prefWidth="125.0" styleClass="button-valsim" text="Clear">
+                  <Button fx:id="ClearBTN" alignment="CENTER" contentDisplay="CENTER" minHeight="34.0" mnemonicParsing="false" onAction="#handleClear" prefHeight="34.0" prefWidth="125.0" styleClass="continue-button" text="Clear">
                      <font>
                         <Font name="Segoe UI" size="14.0" />
                      </font>

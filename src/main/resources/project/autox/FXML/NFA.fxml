@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane fx:id="nfaPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="668.0" prefWidth="1187.0" style="-fx-background-color: F4FFDE; -fx-background-radius: 25;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.autox.NFAController">
+<Pane fx:id="nfaPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="668.0" prefWidth="1187.0" style="-fx-background-color: ffffff; -fx-background-radius: 25;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.autox.NFAController">
    <children>
       <ImageView fitHeight="293.0" fitWidth="317.0" layoutX="178.0" layoutY="249.0">
          <image>
@@ -59,9 +59,9 @@
             </Text>
          </children>
       </Pane>
-      <HBox alignment="CENTER" layoutX="126.0" layoutY="175.0" prefHeight="46.0" prefWidth="345.0" stylesheets="@../StyleSheet/Styles.css">
+      <HBox alignment="CENTER" layoutX="126.0" layoutY="175.0" prefHeight="46.0" prefWidth="240.0" stylesheets="@../StyleSheet/Styles.css">
          <children>
-            <Button fx:id="ValidateBTN" alignment="CENTER" minHeight="34.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="101.0" styleClass="button-valsim" stylesheets="@../StyleSheet/Styles.css" text="Validate">
+            <Button fx:id="ValidateBTN" alignment="CENTER" minHeight="34.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="101.0" styleClass="continue-button" stylesheets="@../StyleSheet/Styles.css" text="Validate">
                <font>
                   <Font name="Segoe UI" size="14.0" />
                </font>
@@ -69,7 +69,7 @@
                   <Insets right="20.0" />
                </HBox.margin>
             </Button>
-            <Button fx:id="SimulateBTN" alignment="CENTER" minHeight="34.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="100.0" styleClass="button-valsim" text="Simulate">
+            <Button fx:id="SimulateBTN" alignment="CENTER" minHeight="34.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="100.0" styleClass="continue-button" text="Simulate">
                <font>
                   <Font name="Segoe UI" size="14.0" />
                </font>
@@ -80,15 +80,6 @@
                <HBox.margin>
                   <Insets right="20.0" />
                </HBox.margin>
-            </Button>
-            <Button fx:id="ClearBTN" alignment="CENTER" minHeight="34.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="100.0" styleClass="button-valsim" text="Clear">
-               <font>
-                  <Font name="Segoe UI" size="14.0" />
-               </font>
-               <stylesheets>
-                  <URL value="@../StyleSheet/txtSS.css" />
-                  <URL value="@../StyleSheet/Styles.css" />
-               </stylesheets>
             </Button>
          </children>
       </HBox>
@@ -97,16 +88,25 @@
             <Image url="@../Images/q0.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="q1f" fitHeight="65.0" fitWidth="65.0" layoutX="420.0" layoutY="314.0">
+      <ImageView fx:id="q1f" fitHeight="65.0" fitWidth="65.0" layoutX="421.0" layoutY="313.0">
          <image>
-            <Image url="@../Images/q1f.png" />
+            <Image url="@../Images/q1.png" />
          </image>
       </ImageView>
       <ImageView fx:id="q2" fitHeight="65.0" fitWidth="65.0" layoutX="224.0" layoutY="498.0">
          <image>
-            <Image url="@../Images/q2.png" />
+            <Image url="@../Images/q2f.png" />
          </image>
       </ImageView>
+      <Button fx:id="ClearBTN" alignment="CENTER" layoutX="665.0" layoutY="182.0" minHeight="34.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="100.0" styleClass="continue-button" text="Clear">
+         <font>
+            <Font name="Segoe UI" size="14.0" />
+         </font>
+         <stylesheets>
+            <URL value="@../StyleSheet/txtSS.css" />
+            <URL value="@../StyleSheet/Styles.css" />
+         </stylesheets>
+      </Button>
    </children>
 
    <stylesheets>
