@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <?import java.lang.String?>
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
@@ -11,8 +10,11 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
+<?import project.autox.CFGController?>
 
-<Pane fx:id="cfgPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="668.0" prefWidth="1187.0" style="-fx-background-color: #F4FFDE; -fx-background-radius: 25;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<Pane fx:id="cfgPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+      prefHeight="668.0" prefWidth="1187.0" style="-fx-background-color: #F4FFDE; -fx-background-radius: 25;"
+      xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.autox.CFGController">
    <stylesheets>
       <URL value="@../StyleSheet/Styles.css" />
       <URL value="@../StyleSheet/txtSS.css" />
@@ -46,7 +48,7 @@
    </Pane>
    <HBox alignment="CENTER" layoutX="125.0" layoutY="174.0" prefHeight="46.0" prefWidth="216.0">
       <children>
-         <Button fx:id="ValidateCFG" alignment="CENTER" minHeight="34.0" mnemonicParsing="false"  prefHeight="34.0" prefWidth="101.0" styleClass="button-valsim" text="Validate">
+         <Button fx:id="ValidateCFG" alignment="CENTER" minHeight="34.0" mnemonicParsing="false"  prefHeight="34.0" prefWidth="101.0" styleClass="button-valsim" text="Validate" onAction="#handleValidateCFG">
             <font>
                <Font name="Segoe UI" size="14.0" />
             </font>
@@ -54,7 +56,7 @@
                <Insets right="20.0" />
             </HBox.margin>
          </Button>
-         <Button fx:id="clearBTN" alignment="CENTER" minHeight="34.0" mnemonicParsing="false"  prefHeight="34.0" prefWidth="100.0" styleClass="button-valsim" text="Clear">
+         <Button fx:id="clearBTN" alignment="CENTER" minHeight="34.0" mnemonicParsing="false"  prefHeight="34.0" prefWidth="100.0" styleClass="button-valsim" text="Clear" onAction="#handleClear">
             <font>
                <Font name="Segoe UI" size="14.0" />
             </font>

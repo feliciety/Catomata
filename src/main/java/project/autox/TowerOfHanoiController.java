@@ -57,9 +57,9 @@ public class TowerOfHanoiController {
         // Get the number of disks from ComboBox
         totalDisks = Integer.parseInt(comboBox.getValue());
 
-        // Initialize the disks on the first tower (Box 1), largest at the bottom
-        for (int i = totalDisks; i >= 1; i--) {
-            towers[0].push(i);
+        // Initialize the disks on the first tower (Box 1), smallest at the bottom
+        for (int i = 1; i <= totalDisks; i++) {
+            towers[0].push(i);  // Push Disk 1 at the bottom, Disk 3 at the top
         }
 
         clearTowers();
@@ -79,14 +79,14 @@ public class TowerOfHanoiController {
         clearTowers();
 
         // Add disks to the VBox for each tower
-        for (int disk : towers[0]) {
-            firstTower.getChildren().add(createDisk(disk));
+        for (int i = towers[0].size() - 1; i >= 0; i--) {  // Reverse order to display correctly
+            firstTower.getChildren().add(createDisk(towers[0].get(i)));
         }
-        for (int disk : towers[1]) {
-            secondTower.getChildren().add(createDisk(disk));
+        for (int i = towers[1].size() - 1; i >= 0; i--) {
+            secondTower.getChildren().add(createDisk(towers[1].get(i)));
         }
-        for (int disk : towers[2]) {
-            thirdTower.getChildren().add(createDisk(disk));
+        for (int i = towers[2].size() - 1; i >= 0; i--) {
+            thirdTower.getChildren().add(createDisk(towers[2].get(i)));
         }
     }
 
@@ -100,6 +100,7 @@ public class TowerOfHanoiController {
         disk.setPrefHeight(20);  // Fixed height for all disks
         disk.setStyle("-fx-background-color: lightblue; -fx-border-color: black; "
                 + "-fx-border-width: 2px; -fx-alignment: center;");
+
         return disk;
     }
 
@@ -121,15 +122,20 @@ public class TowerOfHanoiController {
         }
 
         timeline = new Timeline();
-        timeline.setCycleCount(Timeline.INDEFINITE);
+        timeline.setCycleCount(Timeline.INDEFINITE); // Allow for indefinite cycle count
 
         // Animation for each move
         for (int i = 0; i < totalMoves; i++) {
             int[] move = movesQueue.poll(); // Get the next move
             if (move != null) {
                 // Add the move to the timeline
+                int finalI = i;
                 KeyFrame keyFrame = new KeyFrame(Duration.seconds(i + 1), event -> {
                     moveOneDisk(move[0], move[1]); // Move the disk
+                    // Stop the timeline after the last move
+                    if (finalI == totalMoves - 1) {
+                        timeline.stop(); // Stop the animation after the last move
+                    }
                 });
                 timeline.getKeyFrames().add(keyFrame);
             }
@@ -138,31 +144,22 @@ public class TowerOfHanoiController {
         timeline.play(); // Start the animation
     }
 
-    // Recursive function to generate disk moves with Disk 3 moved first to the third tower
+    // Recursive function to generate disk moves
     private void generateMoves(int numDisks, int fromTower, int toTower, int auxTower) {
-        if (numDisks == 3) {
-            // Special case: Move Disk 3 (the largest disk) directly to tower 3 first
-            movesQueue.add(new int[]{fromTower - 1, toTower - 1}); // Move Disk 3 from Tower 1 to Tower 3
-
-            // Now move the smaller disks (Disks 1 and 2) according to the standard rules
-            generateMoves(2, fromTower, auxTower, toTower); // Move the first 2 disks to auxiliary (Tower 2)
-            movesQueue.add(new int[]{auxTower - 1, toTower - 1}); // Move Disk 2 to Tower 3
-            movesQueue.add(new int[]{fromTower - 1, toTower - 1}); // Move Disk 1 to Tower 3
-
-        } else if (numDisks == 1) {
+        if (numDisks == 1) {
             // Move the smallest disk
             movesQueue.add(new int[]{fromTower - 1, toTower - 1});
             return;
-        } else {
-            // Move top n-1 disks from source to auxiliary, using destination as a buffer
-            generateMoves(numDisks - 1, fromTower, auxTower, toTower);
-
-            // Move the nth disk (largest) from source to destination
-            movesQueue.add(new int[]{fromTower - 1, toTower - 1});
-
-            // Move the n-1 disks from auxiliary to destination, using source as a buffer
-            generateMoves(numDisks - 1, auxTower, toTower, fromTower);
         }
+
+        // Move top n-1 disks from source to auxiliary, using destination as a buffer
+        generateMoves(numDisks - 1, fromTower, auxTower, toTower);
+
+        // Move the nth disk (largest) from source to destination
+        movesQueue.add(new int[]{fromTower - 1, toTower - 1});
+
+        // Move the n-1 disks from auxiliary to destination, using source as a buffer
+        generateMoves(numDisks - 1, auxTower, toTower, fromTower);
     }
 
     // Move one disk from one tower to another visually

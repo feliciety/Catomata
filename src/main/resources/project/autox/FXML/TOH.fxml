@@ -89,7 +89,7 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                     <children>
-                        <Button fx:id="restartGame" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="Restart Game" textAlignment="CENTER" textFill="#6f0909" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER">
+                        <Button fx:id="restartGame" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="Reset Game" textAlignment="CENTER" textFill="#6f0909" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER">
                             <font>
                                 <Font name="System Bold" size="14.0" />
                             </font>
@@ -102,14 +102,9 @@
                         </Button>
                         <Group GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER">
                             <children>
-                        <HBox layoutX="-50.0" layoutY="-34.0" prefHeight="37.0" prefWidth="229.0">
+                        <HBox layoutX="-50.0" layoutY="-34.0" prefHeight="37.0" prefWidth="204.0">
                            <children>
-                                      <Label alignment="CENTER" contentDisplay="CENTER" text="Moves" textAlignment="CENTER" textFill="#4d041d">
-                                          <font>
-                                              <Font name="System Bold Italic" size="12.0" />
-                                          </font>
-                                      </Label>
-                                      <TextField fx:id="numberOfMoves" alignment="CENTER" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="136.0" text="0" />
+                                      <TextField fx:id="numberOfMoves" alignment="CENTER" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="88.0" text="0" />
                            </children>
                         </HBox>
                             </children>
@@ -127,13 +122,18 @@
                                 </Label>
                             </children>
                         </Group>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="79.0" text="Moves" textAlignment="CENTER" textFill="#4d041d" GridPane.columnIndex="2">
+                     <font>
+                        <Font name="System Bold Italic" size="12.0" />
+                     </font>
+                  </Label>
                     </children>
                 </GridPane>
             </children>
         </GridPane>
         <StackPane fx:id="towersRegion" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
             <children>
-                <GridPane>
+                <GridPane prefHeight="412.0" prefWidth="1187.0">
                     <columnConstraints>
                         <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
                         <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
@@ -144,7 +144,7 @@
                     </rowConstraints>
                     <children>
                         <VBox fx:id="firstTower" alignment="BOTTOM_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-                        <VBox fx:id="secondTower" alignment="BOTTOM_CENTER" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                        <VBox fx:id="secondTower" alignment="BOTTOM_CENTER" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="486.0" prefWidth="396.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
                         <VBox fx:id="thirdTower" alignment="BOTTOM_CENTER" layoutX="227.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
                     </children>
                 </GridPane>
