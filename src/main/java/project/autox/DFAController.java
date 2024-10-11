@@ -80,7 +80,10 @@ public class DFAController {
 
                 if (currentState == 10) { // Check if the final state is q10 (accepting state)
                     transitions.append("ACCEPTED"); // Add ACCEPTED to the output
-                } else {
+                } else if(currentState == -1){
+                    transitions.append("IN TRAP STATE");
+                    }
+                else {
                     transitions.append("REJECTED"); // Add REJECTED to the output
                 }
 
@@ -248,7 +251,7 @@ public class DFAController {
                 break;
             case 1: // q1
                 if (ch == 'a') {
-                    currentState = 2; // Trap state
+                    currentState = -1; // Trap state
                     animateImageView(q2);
                 } else if (ch == 'b') {
                     currentState = 3; // Transition to q3
@@ -342,6 +345,8 @@ public class DFAController {
                 transitionLabel.setTextFill(Color.GREEN); // Set color to green for ACCEPTED
             } else if (line.trim().equals("REJECTED")) {
                 transitionLabel.setTextFill(Color.RED); // Set color to red for REJECTED
+            } else if (line.trim().equals("IN TRAP STATE")) {
+                transitionLabel.setTextFill(Color.RED); // Set color to red for REJECTED
             }
 
             OutputTM.getChildren().add(transitionLabel); // Add the label to the FlowPane
@@ -364,7 +369,7 @@ public class DFAController {
                 break;
             case 1: // q1
                 if (ch == 'a') {
-                    currentState = 2; // Trap state
+                    currentState = -1; // Trap state
                 } else if (ch == 'b') {
                     currentState = 3; // Transition to q3
                 }
