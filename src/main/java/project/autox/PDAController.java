@@ -7,6 +7,7 @@ import javafx.scene.control.TextField;
 import javafx.fxml.FXML;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.FlowPane;
 import javafx.scene.paint.Color;
 import javafx.util.Duration;
 
@@ -16,6 +17,7 @@ public class PDAController {
 
     private Stack<Character> stack = new Stack<>();
     private static int currentState = 0; // Initial state q0
+    private Timeline animationTimeline; // Declare the timeline variable
 
     @FXML
     private TextField Input_PDA;
@@ -29,6 +31,8 @@ public class PDAController {
     private ImageView q0, q1, q2, q3f;
     @FXML
     private Label PDAresult; // Declare the Label for displaying the result
+    @FXML
+    private FlowPane OutputPDA; // FlowPane for visualizing the stack
 
     public void initialize() {
         // Set up button animations
@@ -51,6 +55,7 @@ public class PDAController {
                 currentState = 0; // Reset state
                 stack.clear();
                 stack.push('Z'); // Initial stack symbol
+                updateStackVisualization(); // Update FlowPane to show initial stack state
             } catch (NumberFormatException e) {
                 System.out.println("Input is invalid. Enter a number.");
             }
@@ -68,7 +73,18 @@ public class PDAController {
         Clear_PDA.setOnAction(event -> {
             Input_PDA.clear();
             PDAresult.setText(""); // Clear the result label
+            stack.clear(); // Clear stack
+            updateStackVisualization(); // Update stack visualization after clearing
         });
+    }
+
+    private void updateStackVisualization() {
+        OutputPDA.getChildren().clear(); // Clear previous stack visualization
+        for (Character c : stack) {
+            Label label = new Label(String.valueOf(c)); // Create label for each stack element
+            label.setStyle("-fx-border-color: black; -fx-padding: 5;"); // Add some styling
+            OutputPDA.getChildren().add(label); // Add label to the FlowPane
+        }
     }
 
     private void applyShadowToImageView(ImageView imageView) {
@@ -131,103 +147,103 @@ public class PDAController {
     }
 
     public void animateInput(String input) {
-        Timeline timeline = new Timeline();
+        animationTimeline = new Timeline(); // Initialize the timeline variable
         int[] index = {0}; // Using array to modify in lambda
 
-        timeline.setCycleCount(input.length());
-        for (int i = 0; i < input.length(); i++) {
+        animationTimeline.setCycleCount(input.length() + 1); // Adjusted for ε transition
+        for (int i = 0; i < input.length(); i++) { // Loop through the input
             final int charIndex = i;
             KeyFrame keyFrame = new KeyFrame(Duration.seconds(i * 1), event -> { // Adjust duration for visibility
-                if (index[0] < input.length()) {
-                    char ch = input.charAt(index[0]);
-                    System.out.println("Current Character: " + ch); // Debug statement
-
-                    boolean accepted = transition(ch);
-                    if (accepted) {
-                        System.out.println("Transition Accepted for character: " + ch);
-                    } else {
-                        System.out.println("Transition Not Accepted for character: " + ch);
-                    }
-                    index[0]++;
+                char ch = input.charAt(charIndex);
+                System.out.println("Current Character: " + ch); // Debug statement
+                if (!transition(ch)) { // Call transition without storing the result
+                    animationTimeline.stop(); // Stop animation if transition fails
                 }
+                updateStackVisualization(); // Update stack visualization after each step
             });
-            timeline.getKeyFrames().add(keyFrame);
+            animationTimeline.getKeyFrames().add(keyFrame);
         }
-        timeline.play();
+
+        // Add epsilon transition immediately after the last character
+        KeyFrame epsilonFrame = new KeyFrame(Duration.seconds(input.length()), event -> {
+            if (!transition('ε')) { // Add epsilon transition at the end
+                animationTimeline.stop(); // Stop if transition fails
+            }
+            updateStackVisualization(); // Update stack visualization for ε transition
+        });
+        animationTimeline.getKeyFrames().add(epsilonFrame);
+
+        animationTimeline.play();
     }
 
     public boolean transition(char ch) {
         switch (currentState) {
-            case 0:
-                if (ch == 'a') {
-                    stack.push('A');
-                    animateSequentially(q0, q1); // Animate transition from q0 to q1
-                    currentState = 1; // Move to state q1
-                } else {
-                    return false; // Transition not accepted
-                }
-                break;
+            case 0: // From q0
+                // Do not read 'a' in q0, just animate and move to state q1
+                animateImageView(q0); // Animate q0 (without fade)
+                currentState = 1; // Move to state q1
+                return true;
 
-            case 1:
-                if (ch == 'a') {
-                    stack.push('A');
-                    animateImageView(q1); // Stay in q1, loop on 'a'
-                } else if (ch == 'b') {
-                    if (stack.isEmpty() || stack.peek() != 'A') {
+            case 1: // In q1
+                if (ch == 'a') { // Expecting 'a' in state q1
+                    stack.push('A'); // Push A onto the stack for each 'a'
+                    animateImageView(q1); // Animate q1 (without fade)
+                    return true;
+                } else if (ch == 'b') { // Move to state q2 on 'b'
+                    if (stack.isEmpty()) {
                         return false; // Transition not accepted
                     }
-                    stack.pop(); // Pop 'A' for each 'b'
-                    animateImageView(q2); // Animate q1 -> q2 transition
+                    stack.pop(); // Pop A for each 'b'
+                    animateImageView(q1); // Animate q1 (without fade)
                     currentState = 2; // Move to state q2
-                } else {
-                    return false; // Transition not accepted
+                    return true;
                 }
                 break;
 
-            case 2:
+            case 2: // In q2
                 if (ch == 'b') {
-                    if (stack.isEmpty() || stack.peek() != 'A') {
+                    if (stack.isEmpty()) {
                         return false; // Transition not accepted
                     }
-                    stack.pop(); // Pop 'A' for 'b'
-                    animateImageView(q2); // Stay in q2 while processing 'b'
-                } else {
-                    return false; // Transition not accepted
+                    stack.pop(); // Pop A for each 'b'
+                    animateImageView(q2); // Animate q2 (without fade)
+                    return true;
                 }
                 break;
+        }
 
-            default:
-                return false; // Transition not accepted
+        // Check for epsilon transition
+        if (currentState == 2 && ch == 'ε') {
+            if (stack.isEmpty()) {
+                animateImageView(q3f); // Animate q3f (without fade)
+                currentState = 3; // Move to state q3f
+                System.out.println("Accepted");
+                return true; // Accepted
+            }
         }
 
         // Check if stack is empty and in final state
         if (stack.size() == 1 && stack.peek() == 'Z' && currentState == 2) {
             stack.pop();
             currentState = 3; // Final state q3f
-            animateSequentially(q2, q3f); // Animate q2 -> q3f
+            animateImageView(q3f); // Animate q3f (without fade)
             System.out.println("Accepted");
             return true;
         }
 
-        return false; // Not in final accepting state
+        return false; // If no valid transition is found, reject the input
     }
 
-    private void animateSequentially(ImageView first, ImageView second) {
-        animateImageView(first);
-        PauseTransition pause = new PauseTransition(Duration.seconds(1));
-        pause.setOnFinished(event -> animateImageView(second));
-        pause.play();
-    }
-
+    // Simple image view animation (for staying in the same state)
     private void animateImageView(ImageView imageView) {
         imageView.setVisible(true);
         ScaleTransition scaleTransition = new ScaleTransition(Duration.millis(500), imageView);
-        scaleTransition.setFromX(1);
-        scaleTransition.setFromY(1);
+        scaleTransition.setFromX(1.0);
+        scaleTransition.setFromY(1.0);
         scaleTransition.setToX(1.2);
         scaleTransition.setToY(1.2);
-        scaleTransition.setCycleCount(2);
         scaleTransition.setAutoReverse(true);
+        scaleTransition.setCycleCount(2); // Scale up and down once
         scaleTransition.play();
     }
 }
