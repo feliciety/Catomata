@@ -54,7 +54,7 @@
       </Pane>
       <Pane layoutX="327.0" layoutY="618.0" prefHeight="25.0" prefWidth="320.0" style="-fx-background-color: #EDF2F7;" styleClass="background-exp">
          <children>
-            <Text layoutX="21.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="{w∈{0,1} ∗ ∣w starts with b and ends with a}" wrappingWidth="277.8369255065918">
+            <Text layoutX="21.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="{w∈{a,b} ∗ ∣w starts with b and ends with a}" wrappingWidth="277.8369255065918">
                <font>
                   <Font name="Segoe UI" size="14.0" />
                </font>
