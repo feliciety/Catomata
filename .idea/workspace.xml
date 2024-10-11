@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="727b3115-6b64-474a-9dda-efd002915432" name="Changes" comment="Here’s a simple commit message for that:&#10;&#10;✔hanoi button">
+    <list default="true" id="727b3115-6b64-474a-9dda-efd002915432" name="Changes" comment="Here’s a simple commit message for that:&#10;&#10;✔pda line fixed moderfoker">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_8_2024_3_58_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_8_2024_3_58_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/project/autox/FXML/TOH.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/autox/FXML/TOH.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/project/autox/FXML/CFG.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/autox/FXML/CFG.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,7 +146,7 @@
       <workItem from="1728454838504" duration="3288000" />
       <workItem from="1728478837548" duration="1069000" />
       <workItem from="1728656750258" duration="1421000" />
-      <workItem from="1728658854206" duration="1730000" />
+      <workItem from="1728658854206" duration="2957000" />
     </task>
     <task id="LOCAL-00001" summary="working code">
       <option name="closed" value="true" />
@@ -403,7 +404,15 @@
       <option name="project" value="LOCAL" />
       <updated>1728659306156</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Here’s a simple commit message for that:&#10;&#10;✔pda line fixed moderfoker">
+      <option name="closed" value="true" />
+      <created>1728660796890</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1728660796890</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -445,7 +454,8 @@
     <MESSAGE value="Here’s a simple commit message for that:&#10;&#10;✔dfa" />
     <MESSAGE value="Here’s a simple commit message for that:&#10;&#10;✔dfa trapstate" />
     <MESSAGE value="Here’s a simple commit message for that:&#10;&#10;✔hanoi button" />
-    <option name="LAST_COMMIT_MESSAGE" value="Here’s a simple commit message for that:&#10;&#10;✔hanoi button" />
+    <MESSAGE value="Here’s a simple commit message for that:&#10;&#10;✔pda line fixed moderfoker" />
+    <option name="LAST_COMMIT_MESSAGE" value="Here’s a simple commit message for that:&#10;&#10;✔pda line fixed moderfoker" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
