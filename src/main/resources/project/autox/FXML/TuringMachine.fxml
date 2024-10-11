@@ -128,7 +128,7 @@
          <Image url="@../Images/q5f.png" />
       </ImageView>
       <ScrollPane layoutX="647.0" layoutY="55.0" prefHeight="555.0" prefWidth="502.0">
-         <FlowPane fx:id="OutputTM" alignment="CENTER" prefHeight="541.0" prefWidth="494.0" />
+         <FlowPane fx:id="OutputTM" alignment="CENTER" prefHeight="542.0" prefWidth="487.0" />
       </ScrollPane>
       <Separator layoutX="612.0" layoutY="69.0" orientation="VERTICAL" prefHeight="555.0" prefWidth="2.0" />
    </children>
