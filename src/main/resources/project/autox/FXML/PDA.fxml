@@ -12,12 +12,11 @@
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane fx:id="pdaPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="668.0" prefWidth="1187.0" style="-fx-background-color: F4FFDE; -fx-background-radius: 25;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.autox.PDAController">
+<Pane fx:id="pdaPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="668.0" prefWidth="1187.0" style="-fx-background-color: F4FFDE; -fx-background-radius: 25;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.autox.PDAController">
    <children>
       <Text fill="#464545" layoutX="118.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PDA Simulator" wrappingWidth="630.33349609375">
          <styleClass>
@@ -56,7 +55,7 @@
             </Text>
          </children>
       </Pane>
-      <ImageView fitHeight="106.0" fitWidth="527.0" layoutX="141.0" layoutY="360.0">
+      <ImageView fitHeight="106.0" fitWidth="527.0" layoutX="138.0" layoutY="354.0">
          <image>
             <Image url="@../../../../../../../../Downloads/PDAlines.png" />
          </image>
@@ -114,11 +113,6 @@
             </Button>
          </children>
       </HBox>
-      <VBox layoutX="854.0" layoutY="48.0" prefHeight="562.0" prefWidth="109.0">
-         <children>
-            <FlowPane prefHeight="563.0" prefWidth="86.0" />
-         </children>
-      </VBox>
       <Line endX="559.0667724609375" layoutX="205.0" layoutY="580.0" startX="-70.26669311523438" stroke="#e1e1e1" style="-fx-opacity: 10;" styleClass="line-divider" />
       <Line endX="559.0667724609375" layoutX="205.0" layoutY="580.0" startX="-70.26669311523438" stroke="#e1e1e1" style="-fx-opacity: 10;" styleClass="line-divider" />
       <TextField layoutX="118.0" layoutY="202.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="10.0" prefWidth="522.0" />
@@ -133,12 +127,12 @@
          </font>
       </Text>
       <Label fx:id="PDAresult" layoutX="182.0" layoutY="202.0" prefHeight="40.0" prefWidth="572.0" />
-      <ScrollPane layoutX="785.0" layoutY="138.0" prefHeight="450.0" prefWidth="362.0">
+      <ScrollPane layoutX="785.0" layoutY="138.0" prefHeight="450.0" prefWidth="68.0">
          <content>
-            <FlowPane fx:id="OutputTM" alignment="CENTER" prefHeight="444.0" prefWidth="356.0" />
+            <FlowPane fx:id="OutputPDA" alignment="CENTER" prefHeight="444.0" prefWidth="64.0" />
          </content>
       </ScrollPane>
-      <Text fill="#464545" layoutX="786.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-twotoldok" text="State Transition:" wrappingWidth="118.0283203125">
+      <Text fill="#464545" layoutX="800.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-twotoldok" text="Stack" wrappingWidth="38.0283203125">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
