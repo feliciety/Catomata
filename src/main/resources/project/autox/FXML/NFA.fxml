@@ -15,9 +15,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane fx:id="nfaPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="668.0" prefWidth="1187.0" style="-fx-background-color: #F4FFDE; -fx-background-radius: 25;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.autox.NFAController">
+<Pane fx:id="nfaPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="668.0" prefWidth="1187.0" style="-fx-background-color: #F4FFDE; -fx-background-radius: 25;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.autox.NFAController">
    <children>
-      <ImageView fitHeight="293.0" fitWidth="317.0" layoutX="273.0" layoutY="238.0">
+      <ImageView fitHeight="284.0" fitWidth="503.0" layoutX="162.0" layoutY="269.0">
          <image>
             <Image url="@../Images/NFALines.png" />
          </image>
@@ -43,18 +43,18 @@
          </font>
       </Text>
       <Text fill="#464545" layoutX="124.0" layoutY="638.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-twotoldok" text="Language Accepted:" wrappingWidth="216.4283447265625" />
-      <Pane layoutX="333.0" layoutY="583.0" prefHeight="25.0" prefWidth="68.0" style="-fx-background-color: #EDF2F7;" styleClass="background-exp">
+      <Pane layoutX="333.0" layoutY="583.0" prefHeight="25.0" prefWidth="85.0" style="-fx-background-color: #EDF2F7;" styleClass="background-exp">
          <children>
-            <Text layoutX="10.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0+ c 0+" wrappingWidth="317.23688888549805">
+            <Text layoutX="12.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="b(a+b) ∗ a" wrappingWidth="76.23688888549805">
                <font>
                   <Font name="Segoe UI" size="14.0" />
                </font>
             </Text>
          </children>
       </Pane>
-      <Pane layoutX="333.0" layoutY="618.0" prefHeight="24.0" prefWidth="201.0" style="-fx-background-color: #EDF2F7;" styleClass="background-exp">
+      <Pane layoutX="327.0" layoutY="618.0" prefHeight="25.0" prefWidth="320.0" style="-fx-background-color: #EDF2F7;" styleClass="background-exp">
          <children>
-            <Text layoutX="21.0" layoutY="17.0" strokeType="OUTSIDE" strokeWidth="0.0" text="{ 0^m c 0^n | m, n ≥ 1 }" wrappingWidth="158.8369255065918">
+            <Text layoutX="21.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="{w∈{a,b} ∗ ∣w starts with b and ends with a}" wrappingWidth="277.8369255065918">
                <font>
                   <Font name="Segoe UI" size="14.0" />
                </font>
@@ -85,17 +85,17 @@
             </Button>
          </children>
       </HBox>
-      <ImageView fx:id="q0" fitHeight="65.0" fitWidth="65.0" layoutX="319.0" layoutY="302.0">
+      <ImageView fx:id="q0" fitHeight="65.0" fitWidth="65.0" layoutX="204.0" layoutY="337.0">
          <image>
             <Image url="@../Images/q0.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="q1f" fitHeight="65.0" fitWidth="65.0" layoutX="516.0" layoutY="302.0">
+      <ImageView fx:id="q1" fitHeight="65.0" fitWidth="65.0" layoutX="391.0" layoutY="338.0">
          <image>
             <Image url="@../Images/q1.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="q2" fitHeight="65.0" fitWidth="65.0" layoutX="319.0" layoutY="487.0">
+      <ImageView fx:id="q2f" fitHeight="65.0" fitWidth="65.0" layoutX="591.0" layoutY="337.0">
          <image>
             <Image url="@../Images/q2f.png" />
          </image>

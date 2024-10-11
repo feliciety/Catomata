@@ -38,6 +38,7 @@ public class HelloController {
         cfgButton.setOnMouseClicked(e -> handleButtonClick(cfgButton));
         pdaButton.setOnMouseClicked(e -> handleButtonClick(pdaButton));
         tmButton.setOnMouseClicked(e -> handleButtonClick(tmButton));
+        toButton.setOnMouseClicked(e -> handleButtonClick(toButton));
     }
 
     private void setButtonColor(Button button) {
