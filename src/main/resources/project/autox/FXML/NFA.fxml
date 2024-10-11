@@ -15,9 +15,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane fx:id="nfaPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="668.0" prefWidth="1187.0" style="-fx-background-color: #F4FFDE; -fx-background-radius: 25;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.autox.NFAController">
+<Pane fx:id="nfaPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="668.0" prefWidth="1187.0" style="-fx-background-color: #F4FFDE; -fx-background-radius: 25;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.autox.NFAController">
    <children>
-      <ImageView fitHeight="284.0" fitWidth="503.0" layoutX="162.0" layoutY="269.0">
+      <ImageView fitHeight="135.0" fitWidth="577.0" layoutX="117.0" layoutY="344.0">
          <image>
             <Image url="@../Images/NFALines.png" />
          </image>
@@ -85,19 +85,14 @@
             </Button>
          </children>
       </HBox>
-      <ImageView fx:id="q0" fitHeight="65.0" fitWidth="65.0" layoutX="204.0" layoutY="337.0">
+      <ImageView fx:id="q0" fitHeight="65.0" fitWidth="65.0" layoutX="157.0" layoutY="408.0">
          <image>
             <Image url="@../Images/q0.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="q1" fitHeight="65.0" fitWidth="65.0" layoutX="391.0" layoutY="338.0">
+      <ImageView fx:id="q1" fitHeight="65.0" fitWidth="65.0" layoutX="335.0" layoutY="407.0">
          <image>
             <Image url="@../Images/q1.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="q2f" fitHeight="65.0" fitWidth="65.0" layoutX="591.0" layoutY="337.0">
-         <image>
-            <Image url="@../Images/q2f.png" />
          </image>
       </ImageView>
       <Button fx:id="ClearBTN" alignment="CENTER" layoutX="665.0" layoutY="182.0" minHeight="34.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="100.0" styleClass="continue-button" text="Clear">
@@ -119,6 +114,16 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Text>
+      <ImageView fx:id="q2" fitHeight="65.0" fitWidth="65.0" layoutX="511.0" layoutY="408.0">
+         <image>
+            <Image url="@../Images/q2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="q3f" fitHeight="65.0" fitWidth="65.0" layoutX="686.0" layoutY="407.0">
+         <image>
+            <Image url="@../Images/q3f.png" />
+         </image>
+      </ImageView>
    </children>
 
    <stylesheets>

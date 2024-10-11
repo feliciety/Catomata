@@ -17,123 +17,124 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane fx:id="tmPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="668.0" prefWidth="1187.0" style="-fx-background-radius: 25;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.autox.TuringMachineController">
-   <children>
-      <Text fill="#464545" layoutX="91.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Turing Machine Simulator" wrappingWidth="630.33349609375">
-         <styleClass>
-            <String fx:value="display-flex" />
-            <String fx:value="text-title" />
-         </styleClass>
-      </Text>
-      <Pane fx:id="Result" layoutX="127.0" layoutY="262.0" prefHeight="34.0" prefWidth="100.0" />
-      <VBox layoutX="99.0" layoutY="102.0" prefHeight="116.0" prefWidth="442.0">
-         <children>
-            <HBox prefHeight="100.0" prefWidth="200.0">
-               <children>
-                  <Text fill="#464545" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-twotoldok" text="Input Binary 1:" wrappingWidth="118.0283203125">
-                     <font>
-                        <Font name="System Bold" size="12.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets right="110.0" />
-                     </HBox.margin>
-                  </Text>
-            
-                                          <!-- Input Fields for Binary Numbers -->
-                  <Text fill="#464545" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-twotoldok" text="Input Binary 2:" wrappingWidth="118.0283203125">
-                     <font>
-                        <Font name="System Bold" size="12.0" />
-                     </font>
-                  </Text>
-               </children>
-            </HBox>
-            <HBox prefHeight="23.0" prefWidth="298.0">
-               <VBox.margin>
-                  <Insets bottom="10.0" />
-               </VBox.margin>
-      
-                     <TextField fx:id="Binput1" prefHeight="42.0" prefWidth="208.0" styleClass="text-field" stylesheets="@../StyleSheet/Styles.css">
-                  <HBox.margin>
-                     <Insets right="5.0" />
-                  </HBox.margin>
-               </TextField>
-               <TextField fx:id="Binput2" prefWidth="112.0" styleClass="text-field" stylesheets="@../StyleSheet/Styles.css">
-                  <HBox.margin>
-                     <Insets left="5.0" />
-                  </HBox.margin>
-               </TextField>
-            </HBox>
-            <HBox alignment="CENTER" prefHeight="37.0" prefWidth="369.0">
-               <children>
-            
-                                          <!-- Buttons for Actions -->
-                  <Button fx:id="AddBTN" alignment="CENTER" minHeight="34.0" mnemonicParsing="false" onAction="#handleValidate" prefHeight="34.0" prefWidth="125.0" styleClass="continue-button" stylesheets="@../StyleSheet/Styles.css" text="Compute">
-                     <font>
-                        <Font name="Segoe UI" size="14.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets right="30.0" />
-                     </HBox.margin>
-                  </Button>
-                  <Button fx:id="ClearBTN" alignment="CENTER" contentDisplay="CENTER" minHeight="34.0" mnemonicParsing="false" onAction="#handleClear" prefHeight="34.0" prefWidth="125.0" styleClass="continue-button" text="Clear">
-                     <font>
-                        <Font name="Segoe UI" size="14.0" />
-                     </font>
-                     <stylesheets>
-                        <URL value="@../StyleSheet/txtSS.css" />
-                        <URL value="@../StyleSheet/Styles.css" />
-                     </stylesheets>
-                     <HBox.margin>
-                        <Insets right="30.0" />
-                     </HBox.margin>
-                  </Button>
-               </children>
-               <VBox.margin>
-                  <Insets bottom="20.0" />
-               </VBox.margin>
-            </HBox>
-            <Text fill="#464545" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-twotoldok" text="Result:" wrappingWidth="118.0283203125">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-               <VBox.margin>
-                  <Insets bottom="5.0" />
-               </VBox.margin>
-            </Text>
-            <TextField fx:id="Lresult" prefHeight="42.0" prefWidth="103.0" />
-            <Pane fx:id="ResultPane" prefHeight="42.0" prefWidth="159.0" />
-         </children>
-      </VBox>
-      <ImageView fitHeight="320.0" fitWidth="532.0" layoutX="67.0" layoutY="320.0">
-         <image>
-            <Image url="@../Images/TMlines.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="q0" fitHeight="52.0" fitWidth="52.0" layoutX="106.0" layoutY="502.0">
-         <Image url="@../Images/q0.png" />
-      </ImageView>
-      <ImageView fx:id="q1" fitHeight="52.0" fitWidth="52.0" layoutX="106.0" layoutY="379.0">
-         <Image url="@../Images/q1.png" />
-      </ImageView>
-      <ImageView fx:id="q2" fitHeight="52.0" fitWidth="52.0" layoutX="499.0" layoutY="383.0">
-         <Image url="@../Images/q2.png" />
-      </ImageView>
-      <ImageView fx:id="q3" fitHeight="52.0" fitWidth="52.0" layoutX="499.0" layoutY="506.0">
-         <Image url="@../Images/q3.png" />
-      </ImageView>
-      <ImageView fx:id="q4" fitHeight="52.0" fitWidth="52.0" layoutX="244.0" layoutY="454.0">
-         <Image url="@../Images/q4.png" />
-      </ImageView>
-      <ImageView fx:id="q5f" fitHeight="52.0" fitWidth="52.0" layoutX="384.0" layoutY="454.0">
-         <Image url="@../Images/q5f.png" />
-      </ImageView>
-      <ScrollPane layoutX="647.0" layoutY="55.0" prefHeight="555.0" prefWidth="502.0">
-         <FlowPane fx:id="OutputTM" alignment="CENTER" prefHeight="542.0" prefWidth="487.0" />
-      </ScrollPane>
-      <Separator layoutX="612.0" layoutY="69.0" orientation="VERTICAL" prefHeight="555.0" prefWidth="2.0" />
-   </children>
+<Pane fx:id="tmPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+      prefHeight="668.0" prefWidth="1187.0" style="-fx-background-radius: 25;" xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.autox.TuringMachineController">
    <stylesheets>
-      <URL value="@../StyleSheet/Styles.css" />
-      <URL value="@../StyleSheet/txtSS.css" />
+      <URL value="@../StyleSheet/Styles.css"/>
+      <URL value="@../StyleSheet/txtSS.css"/>
    </stylesheets>
+   <Text fill="#464545" layoutX="91.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0"
+         text="Turing Machine Simulator" wrappingWidth="630.33349609375">
+      <styleClass>
+         <String fx:value="display-flex"/>
+         <String fx:value="text-title"/>
+      </styleClass>
+   </Text>
+   <Pane fx:id="Result" layoutX="127.0" layoutY="262.0" prefHeight="34.0" prefWidth="100.0"/>
+   <VBox layoutX="99.0" layoutY="102.0" prefHeight="116.0" prefWidth="442.0">
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <VBox.margin>
+            <Insets bottom="5.0"/>
+         </VBox.margin>
+         <Text fill="#464545" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-twotoldok"
+               text="Input Binary 1:" wrappingWidth="118.0283203125">
+            <font>
+               <Font name="System Bold" size="12.0"/>
+            </font>
+            <HBox.margin>
+               <Insets right="110.0"/>
+            </HBox.margin>
+         </Text>
+
+         <!-- Input Fields for Binary Numbers -->
+         <Text fill="#464545" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-twotoldok"
+               text="Input Binary 2:" wrappingWidth="118.0283203125">
+            <font>
+               <Font name="System Bold" size="12.0"/>
+            </font>
+         </Text>
+      </HBox>
+      <HBox prefHeight="23.0" prefWidth="298.0">
+         <VBox.margin>
+            <Insets bottom="10.0"/>
+         </VBox.margin>
+
+         <TextField fx:id="Binput1" prefHeight="42.0" prefWidth="208.0" styleClass="text-field"
+                    stylesheets="@../StyleSheet/Styles.css">
+            <HBox.margin>
+               <Insets right="5.0"/>
+            </HBox.margin>
+         </TextField>
+         <TextField fx:id="Binput2" prefWidth="112.0" styleClass="text-field"
+                    stylesheets="@../StyleSheet/Styles.css">
+            <HBox.margin>
+               <Insets left="5.0"/>
+            </HBox.margin>
+         </TextField>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="37.0" prefWidth="369.0">
+         <VBox.margin>
+            <Insets bottom="20.0" top="10.0"/>
+         </VBox.margin>
+
+         <!-- Buttons for Actions -->
+         <Button fx:id="AddBTN" alignment="CENTER" minHeight="34.0" mnemonicParsing="false"
+                 onAction="#handleValidate" prefHeight="34.0" prefWidth="125.0" styleClass="continue-button"
+                 stylesheets="@../StyleSheet/Styles.css" text="Compute">
+            <font>
+               <Font name="Segoe UI" size="14.0"/>
+            </font>
+            <HBox.margin>
+               <Insets right="30.0"/>
+            </HBox.margin>
+         </Button>
+         <Button fx:id="ClearBTN" alignment="CENTER" contentDisplay="CENTER" minHeight="34.0"
+                 mnemonicParsing="false" onAction="#handleClear" prefHeight="34.0" prefWidth="125.0"
+                 styleClass="continue-button" stylesheets="@../StyleSheet/Styles.css" text="Clear">
+            <font>
+               <Font name="Segoe UI" size="14.0"/>
+            </font>
+            <HBox.margin>
+               <Insets right="30.0"/>
+            </HBox.margin>
+         </Button>
+      </HBox>
+      <Text fill="#464545" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-twotoldok" text="Result:"
+            wrappingWidth="118.0283203125">
+         <font>
+            <Font name="System Bold" size="12.0"/>
+         </font>
+         <VBox.margin>
+            <Insets bottom="5.0"/>
+         </VBox.margin>
+      </Text>
+      <TextField fx:id="Lresult" prefHeight="42.0" prefWidth="103.0"/>
+      <Pane fx:id="ResultPane" prefHeight="42.0" prefWidth="159.0"/>
+   </VBox>
+   <ImageView fitHeight="320.0" fitWidth="532.0" layoutX="67.0" layoutY="320.0">
+      <Image url="@../Images/TMlines.png"/>
+   </ImageView>
+   <ImageView fx:id="q0" fitHeight="52.0" fitWidth="52.0" layoutX="106.0" layoutY="502.0">
+      <Image url="@../Images/q0.png"/>
+   </ImageView>
+   <ImageView fx:id="q1" fitHeight="52.0" fitWidth="52.0" layoutX="106.0" layoutY="379.0">
+      <Image url="@../Images/q1.png"/>
+   </ImageView>
+   <ImageView fx:id="q2" fitHeight="52.0" fitWidth="52.0" layoutX="499.0" layoutY="383.0">
+      <Image url="@../Images/q2.png"/>
+   </ImageView>
+   <ImageView fx:id="q3" fitHeight="52.0" fitWidth="52.0" layoutX="499.0" layoutY="506.0">
+      <Image url="@../Images/q3.png"/>
+   </ImageView>
+   <ImageView fx:id="q4" fitHeight="52.0" fitWidth="52.0" layoutX="244.0" layoutY="454.0">
+      <Image url="@../Images/q4.png"/>
+   </ImageView>
+   <ImageView fx:id="q5f" fitHeight="52.0" fitWidth="52.0" layoutX="384.0" layoutY="454.0">
+      <Image url="@../Images/q5f.png"/>
+   </ImageView>
+   <ScrollPane layoutX="647.0" layoutY="55.0" prefHeight="555.0" prefWidth="502.0">
+      <FlowPane fx:id="OutputTM" alignment="CENTER" prefHeight="542.0" prefWidth="487.0"/>
+   </ScrollPane>
+   <Separator layoutX="612.0" layoutY="69.0" orientation="VERTICAL" prefHeight="555.0" prefWidth="2.0"/>
 </Pane>
