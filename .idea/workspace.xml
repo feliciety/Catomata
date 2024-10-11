@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="727b3115-6b64-474a-9dda-efd002915432" name="Changes" comment="Here’s a simple commit message for that:&#10;&#10;✔dfa">
+    <list default="true" id="727b3115-6b64-474a-9dda-efd002915432" name="Changes" comment="Here’s a simple commit message for that:&#10;&#10;✔dfa trapstate">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/project/autox/Images/NFALines.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/autox/DFAController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/autox/DFAController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/autox/NFAController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/autox/NFAController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/project/autox/FXML/NFA.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/autox/FXML/NFA.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/project/autox/Images/NFAlines.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +70,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Admin/Desktop/AutoX/src/main/java/project/autox",
+    "last_opened_file_path": "C:/Users/Admin/.p2/AutomataSimulator/AutoX/src/main/resources/project/autox/Images",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -82,6 +85,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Admin\.p2\AutomataSimulator\AutoX\src\main\resources\project\autox\Images" />
       <recent name="C:\Users\Admin\Desktop\AutoX\src\main\java\project\autox" />
       <recent name="C:\Users\Admin\Desktop\AutoX\src\main\resources\project\autox\FXML" />
       <recent name="C:\Users\Admin\IdeaProjects\AutoX\src\main\resources\project\autox\FXML" />
@@ -385,7 +389,15 @@
       <option name="project" value="LOCAL" />
       <updated>1728647628428</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Here’s a simple commit message for that:&#10;&#10;✔dfa trapstate">
+      <option name="closed" value="true" />
+      <created>1728650277194</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1728650277194</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -425,7 +437,8 @@
     <MESSAGE value="Here’s a simple commit message for that:&#10;&#10;✔️fix bug open nfa" />
     <MESSAGE value="Here’s a simple commit message for that:&#10;&#10;✔️Done Tower of Hanoi" />
     <MESSAGE value="Here’s a simple commit message for that:&#10;&#10;✔dfa" />
-    <option name="LAST_COMMIT_MESSAGE" value="Here’s a simple commit message for that:&#10;&#10;✔dfa" />
+    <MESSAGE value="Here’s a simple commit message for that:&#10;&#10;✔dfa trapstate" />
+    <option name="LAST_COMMIT_MESSAGE" value="Here’s a simple commit message for that:&#10;&#10;✔dfa trapstate" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
