@@ -58,7 +58,7 @@
       </Pane>
       <ImageView fitHeight="106.0" fitWidth="527.0" layoutX="141.0" layoutY="360.0">
          <image>
-            <Image url="@../Images/PDAlines.png" />
+            <Image url="@../../../../../../../../Downloads/PDAlines.png" />
          </image>
       </ImageView>
       <ImageView fx:id="q0" fitHeight="56.0" fitWidth="56.0" layoutX="177.0" layoutY="407.0">
