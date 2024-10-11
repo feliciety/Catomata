@@ -55,11 +55,15 @@ public class PDAController {
                 currentState = 0; // Reset state
                 stack.clear();
                 stack.push('Z'); // Initial stack symbol
+
+                // Output should always match the number of 'a's and 'b's
+                System.out.println("Generated Input: " + generatedInput); // Debugging output
                 updateStackVisualization(); // Update FlowPane to show initial stack state
             } catch (NumberFormatException e) {
                 System.out.println("Input is invalid. Enter a number.");
             }
         });
+
 
         Simulate_PDA.setOnAction(event -> {
             String input = PDAresult.getText(); // Get the generated input
@@ -80,11 +84,22 @@ public class PDAController {
 
     private void updateStackVisualization() {
         OutputPDA.getChildren().clear(); // Clear previous stack visualization
+
+        // StringBuilder to hold stack elements with \n for new lines
+        StringBuilder stackOutput = new StringBuilder();
+
         for (Character c : stack) {
-            Label label = new Label(String.valueOf(c)); // Create label for each stack element
-            label.setStyle("-fx-border-color: black; -fx-padding: 5;"); // Add some styling
-            OutputPDA.getChildren().add(label); // Add label to the FlowPane
+            stackOutput.append(c).append("\n"); // Append stack element with \n for each character
         }
+
+        // Create a single label for the entire stack output
+        Label stackLabel = new Label(stackOutput.toString());
+
+        // Apply bold, larger text, and border styling
+        stackLabel.setStyle("-fx-font-weight: bold; -fx-font-size: 18px; -fx-border-color: black; -fx-padding: 5; -fx-font-family: 'Monospaced';");
+
+        // Add label to FlowPane
+        OutputPDA.getChildren().add(stackLabel);
     }
 
     private void applyShadowToImageView(ImageView imageView) {
@@ -138,14 +153,13 @@ public class PDAController {
     private String generateInput(int n) {
         StringBuilder input = new StringBuilder();
         for (int i = 0; i < n; i++) {
-            input.append("a");
+            input.append("a"); // Add 'a' n times
         }
         for (int i = 0; i < n; i++) {
-            input.append("b");
+            input.append("b"); // Add 'b' n times
         }
-        return input.toString();
+        return input.toString(); // Correctly returns 'aaaabbbb' for n = 4
     }
-
     public void animateInput(String input) {
         animationTimeline = new Timeline(); // Initialize the timeline variable
         int[] index = {0}; // Using array to modify in lambda
@@ -178,62 +192,56 @@ public class PDAController {
 
     public boolean transition(char ch) {
         switch (currentState) {
-            case 0: // From q0
-                // Do not read 'a' in q0, just animate and move to state q1
-                animateImageView(q0); // Animate q0 (without fade)
-                currentState = 1; // Move to state q1
-                return true;
-
-            case 1: // In q1
-                if (ch == 'a') { // Expecting 'a' in state q1
-                    stack.push('A'); // Push A onto the stack for each 'a'
-                    animateImageView(q1); // Animate q1 (without fade)
+            case 0: // Initial state q0
+                System.out.println("Current State: " + currentState + ", Stack Size: " + stack.size());
+                if (ch == 'a') { // Handle first 'a' in q0
+                    stack.push('A'); // Push 'A' for the first 'a'
+                    animateImageView(q1);
+                    currentState = 1; // Move to q1 after pushing 'A'
                     return true;
-                } else if (ch == 'b') { // Move to state q2 on 'b'
+                }
+                return false; // If anything else is encountered in state 0, reject it
+
+            case 1: // In state q1
+                if (ch == 'a') { // Expecting 'a'
+                    System.out.println("Current State: " + currentState + ", Stack Size: " + stack.size());
+                    stack.push('A'); // Push 'A' onto the stack
+                    animateImageView(q1); // Animate q1
+                    return true; // Continue processing
+                } else if (ch == 'b') { // Transition to state q2 on 'b'
                     if (stack.isEmpty()) {
                         return false; // Transition not accepted
                     }
-                    stack.pop(); // Pop A for each 'b'
-                    animateImageView(q1); // Animate q1 (without fade)
+                    // Only transition to q2 if there is something in the stack
                     currentState = 2; // Move to state q2
-                    return true;
+                    return transition(ch); // Call transition again for 'b'
                 }
                 break;
 
-            case 2: // In q2
+            case 2: // In state q2
                 if (ch == 'b') {
                     if (stack.isEmpty()) {
                         return false; // Transition not accepted
                     }
-                    stack.pop(); // Pop A for each 'b'
-                    animateImageView(q2); // Animate q2 (without fade)
-                    return true;
+                    stack.pop(); // Pop 'A' for each 'b'
+                    animateImageView(q2); // Animate q2
+                    return true; // Continue processing
                 }
                 break;
         }
 
-        // Check for epsilon transition
-        if (currentState == 2 && ch == 'ε') {
-            if (stack.isEmpty()) {
-                animateImageView(q3f); // Animate q3f (without fade)
-                currentState = 3; // Move to state q3f
-                System.out.println("Accepted");
-                return true; // Accepted
-            }
-        }
-
-        // Check if stack is empty and in final state
-        if (stack.size() == 1 && stack.peek() == 'Z' && currentState == 2) {
-            stack.pop();
+        // Handle epsilon transition and other conditions as required
+        if (currentState == 2 && ch == 'ε' && !stack.isEmpty() && stack.peek() == 'Z') {
+            stack.pop(); // Pop 'Z'
+            stack.push('ε'); // Push empty symbol (you can represent it as 'ε')
+            updateStackVisualization(); // Update the stack visualization after pop and push
+            animateImageView(q3f); // Animate q3f
             currentState = 3; // Final state q3f
-            animateImageView(q3f); // Animate q3f (without fade)
-            System.out.println("Accepted");
-            return true;
+            return true; // Accepted
         }
 
-        return false; // If no valid transition is found, reject the input
+        return false; // Return false if no valid transition is found
     }
-
     // Simple image view animation (for staying in the same state)
     private void animateImageView(ImageView imageView) {
         imageView.setVisible(true);
