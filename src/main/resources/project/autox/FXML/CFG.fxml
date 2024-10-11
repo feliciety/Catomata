@@ -17,34 +17,28 @@
       <URL value="@../StyleSheet/Styles.css" />
       <URL value="@../StyleSheet/txtSS.css" />
    </stylesheets>
-   <Text fill="#464545" layoutX="127.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CFG Simulator" wrappingWidth="630.333">
+   <Text fill="#464545" layoutX="257.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CFG Simulator" wrappingWidth="630.333">
       <styleClass>
          <String fx:value="display-flex" />
          <String fx:value="text-title" />
       </styleClass>
    </Text>
-   <Text fill="#464545" layoutX="127.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-twotoldok" text="Input String:" wrappingWidth="118.028">
+   <Text fill="#464545" layoutX="260.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-twotoldok" text="Input String:" wrappingWidth="118.028">
       <font>
          <Font name="System Bold" size="12.0" />
       </font>
    </Text>
-   <TextField fx:id="InputCFG" layoutX="127.0" layoutY="127.0" styleClass="text-field" />
-   <Line endX="559.067" layoutX="202.0" layoutY="89.0" startX="-70.267" stroke="#e1e1e1" style="-fx-opacity: 10;" styleClass="line-divider" />
-   <Line endX="559.067" layoutX="200.0" layoutY="226.0" startX="-70.267" stroke="#e1e1e1" style="-fx-opacity: 10;" styleClass="line-divider" />
-   <Line endX="559.067" layoutX="195.0" layoutY="570.0" startX="-70.267" stroke="#e1e1e1" style="-fx-opacity: 10;" styleClass="line-divider" />
-   <Text fill="#464545" layoutX="124.0" layoutY="603.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-twotoldok" text="Regular Expression:" wrappingWidth="201.371">
+   <TextField fx:id="InputCFG" layoutX="260.0" layoutY="127.0" styleClass="text-field" />
+   <Line endX="559.067" layoutX="335.0" layoutY="89.0" startX="-70.267" stroke="#e1e1e1" style="-fx-opacity: 10;" styleClass="line-divider" />
+   <Line endX="559.067" layoutX="333.0" layoutY="226.0" startX="-70.267" stroke="#e1e1e1" style="-fx-opacity: 10;" styleClass="line-divider" />
+   <Line endX="559.067" layoutX="328.0" layoutY="570.0" startX="-70.267" stroke="#e1e1e1" style="-fx-opacity: 10;" styleClass="line-divider" />
+   <Text fill="#464545" layoutX="731.0" layoutY="261.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-twotoldok" text="Regular Expression:" wrappingWidth="133.1042763671875">
       <font>
          <Font name="Segoe Script" size="12.0" />
       </font>
    </Text>
-   <Pane layoutX="271.0" layoutY="585.0" prefHeight="25.0" prefWidth="168.0" style="-fx-background-color: #EDF2F7;" styleClass="background-exp">
-      <Text layoutX="6.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="L = {wcwR | w -&gt; (a, b)*}" wrappingWidth="168.237">
-         <font>
-            <Font name="Segoe UI" size="14.0" />
-         </font>
-      </Text>
-   </Pane>
-   <HBox alignment="CENTER" layoutX="125.0" layoutY="174.0" prefHeight="46.0" prefWidth="216.0">
+   <Pane layoutX="713.0" layoutY="270.0" prefHeight="27.0" prefWidth="168.0" style="-fx-background-color: #EDF2F7;" styleClass="background-exp" />
+   <HBox alignment="CENTER" layoutX="259.0" layoutY="174.0" prefHeight="46.0" prefWidth="216.0">
       <children>
          <Button fx:id="ValidateCFG" alignment="CENTER" minHeight="34.0" mnemonicParsing="false" onAction="#handleValidateCFG" prefHeight="34.0" prefWidth="101.0" styleClass="continue-button" stylesheets="@../StyleSheet/Styles.css" text="Validate">
             <font>
@@ -61,5 +55,22 @@
          </Button>
       </children>
    </HBox>
-   <TextArea fx:id="OutputCFG" layoutX="140.0" layoutY="246.0" prefHeight="310.0" prefWidth="227.0" />
+   <TextArea fx:id="OutputCFG" layoutX="264.0" layoutY="244.0" prefHeight="310.0" prefWidth="425.0" />
+   <Text layoutX="771.0" layoutY="289.0" strokeType="OUTSIDE" strokeWidth="0.0" text="S → aSa" wrappingWidth="52.503662597656245">
+      <font>
+         <Font name="Segoe UI" size="14.0" />
+      </font>
+   </Text>
+   <Pane layoutX="713.0" layoutY="303.0" prefHeight="27.0" prefWidth="168.0" style="-fx-background-color: #EDF2F7;" styleClass="background-exp" />
+   <Text layoutX="771.0" layoutY="322.0" strokeType="OUTSIDE" strokeWidth="0.0" text="S → bSb" wrappingWidth="52.503662597656245">
+      <font>
+         <Font name="Segoe UI" size="14.0" />
+      </font>
+   </Text>
+   <Pane layoutX="713.0" layoutY="336.0" prefHeight="27.0" prefWidth="168.0" style="-fx-background-color: #EDF2F7;" styleClass="background-exp" />
+   <Text layoutX="771.0" layoutY="355.0" strokeType="OUTSIDE" strokeWidth="0.0" text="S → C" wrappingWidth="52.503662597656245">
+      <font>
+         <Font name="Segoe UI" size="14.0" />
+      </font>
+   </Text>
 </Pane>
