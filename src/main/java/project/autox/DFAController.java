@@ -251,23 +251,25 @@ public class DFAController {
                 break;
             case 1: // q1
                 if (ch == 'a') {
-                    currentState = -1; // Trap state
+                    currentState = 2; // Transition to q2
                     animateImageView(q2);
                 } else if (ch == 'b') {
                     currentState = 3; // Transition to q3
                     animateImageView(q3);
                 }
                 break;
-            case 2: // q2 (Trap state)
-                currentState = -1; // Trap state
-                animateImageView(q2); // Animate q2 for any input
+            case 2: // q2 (loops on 'a' and 'b')
+                if (ch == 'a' || ch == 'b') {
+                    currentState = 2; // Stay in q2
+                    animateImageView(q2);
+                }
                 break;
             case 3: // q3
                 if (ch == 'a') {
                     currentState = 6; // Transition to q6
                     animateImageView(q6);
                 } else if (ch == 'b') {
-                    currentState = -1; // Trap state
+                    currentState = 2; // Transition to q2
                     animateImageView(q2);
                 }
                 break;
@@ -276,20 +278,20 @@ public class DFAController {
                     currentState = 5; // Transition to q5
                     animateImageView(q5);
                 } else if (ch == 'b') {
-                    currentState = -1; // Trap state
+                    currentState = 2; // Transition to q2
                     animateImageView(q2);
                 }
                 break;
             case 5: // q5
                 if (ch == 'a') {
-                    currentState = -1; // Trap state
+                    currentState = 2; // Transition to q2
                     animateImageView(q2);
                 } else if (ch == 'b') {
                     currentState = 6; // Transition to q6
                     animateImageView(q6);
                 }
                 break;
-            case 6: // q6
+            case 6: // q6 (loops on 'a')
                 if (ch == 'a') {
                     currentState = 6; // Stay in q6
                     animateImageView(q6);
@@ -298,7 +300,7 @@ public class DFAController {
                     animateImageView(q7);
                 }
                 break;
-            case 7: // q7
+            case 7: // q7 (loops on 'b')
                 if (ch == 'a') {
                     currentState = 8; // Transition to q8
                     animateImageView(q8);
@@ -309,7 +311,7 @@ public class DFAController {
                 break;
             case 8: // q8
                 if (ch == 'a') {
-                    currentState = 6; // Transition back to q6
+                    currentState = 6; // Transition to q6
                     animateImageView(q6);
                 } else if (ch == 'b') {
                     currentState = 9; // Transition to q9
@@ -318,17 +320,18 @@ public class DFAController {
                 break;
             case 9: // q9
                 if (ch == 'a' || ch == 'b') {
-                    currentState = 10; // Transition to final state q10f
-                    animateImageView(q10f); // Animate q10f
+                    currentState = 10; // Transition to final state q10
+                    animateImageView(q10f); // Animate q10
                 }
                 break;
-            case 10: // q10f (Final accepting state)
-                break; // No further transitions; stay in q10f
+            case 10: // q10 (Final accepting state)
+                break; // No further transitions; stay in q10
             default:
                 return false; // Transition was unsuccessful
         }
         return true; // Transition was successful
     }
+
     private void addTransitionToOutput(String transition) {
         // Split the transition string by line breaks to handle each line separately
         String[] lines = transition.split("\n");
