@@ -3,11 +3,18 @@ package project.autox;
 import javafx.animation.*;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.paint.Color;
 import javafx.util.Duration;
+import javafx.scene.layout.FlowPane; // Import FlowPane
+
+
+
+
 
 public class DFAController {
 
@@ -22,6 +29,9 @@ public class DFAController {
     private Button SimulateBTN;
     @FXML
     private Button ClearBTN;
+
+    @FXML
+    private FlowPane OutputTM;
 
     @FXML
     private ImageView q0, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10f;
@@ -47,18 +57,41 @@ public class DFAController {
 
 
         ValidateBTN.setOnAction(event -> {
+            OutputTM.getChildren().clear();
             String input = inputTextField.getText(); // Get input from the text field
             if (isValid(input)) { // Check if the input is valid (contains only 'a' and 'b')
-                boolean isAccepted = validateInput(input); // Check if input is accepted by the DFA
-                if (isAccepted) {
-                    System.out.println("Input is accepted by DFA."); // Accepted by the DFA
-                } else {
-                    System.out.println("Input is rejected by DFA."); // Rejected by the DFA
+                StringBuilder transitions = new StringBuilder(); // Use StringBuilder to collect transitions
+                currentState = 0; // Start from the initial state (q0)
+
+                for (int i = 0; i < input.length(); i++) {
+                    char ch = input.charAt(i);
+                    int previousState = currentState; // Store the current state before transition
+                    boolean success = transitionForValidation(ch); // Perform the transition
+
+                    // Append the current transition to the StringBuilder with newline
+                    transitions.append("δ: q").append(previousState)
+                            .append(" x ").append(ch)
+                            .append(" → q").append(currentState)
+                            .append("\n");
+
+
+
                 }
+
+                if (currentState == 10) { // Check if the final state is q10 (accepting state)
+                    transitions.append("ACCEPTED"); // Add ACCEPTED to the output
+                } else {
+                    transitions.append("REJECTED"); // Add REJECTED to the output
+                }
+
+                // Finally, add the transitions to the FlowPane
+                addTransitionToOutput(transitions.toString());
             } else {
                 System.out.println("Invalid input. Only 'a' and 'b' are allowed."); // Invalid input error
             }
         });
+
+
 
         SimulateBTN.setOnAction(event -> {
             animateInput(inputTextField.getText());
@@ -75,6 +108,7 @@ public class DFAController {
         }
         inputTextField.clear(); // Clear the input text field
         currentState = 0; // Reset current state when clearing input
+        OutputTM.getChildren().clear();
     }
 
     private void applyShadowToImageView(ImageView imageView) {
@@ -292,6 +326,31 @@ public class DFAController {
         }
         return true; // Transition was successful
     }
+    private void addTransitionToOutput(String transition) {
+        // Split the transition string by line breaks to handle each line separately
+        String[] lines = transition.split("\n");
+
+        for (String line : lines) {
+            Label transitionLabel = new Label(line);
+
+            // Set default text color for transition details
+            transitionLabel.setTextFill(Color.BLACK);
+            transitionLabel.setStyle("-fx-font-size: 16px; -fx-font-weight: bold");
+
+            // Check if the line is "ACCEPTED" or "REJECTED" and set the color accordingly
+            if (line.trim().equals("ACCEPTED")) {
+                transitionLabel.setTextFill(Color.GREEN); // Set color to green for ACCEPTED
+            } else if (line.trim().equals("REJECTED")) {
+                transitionLabel.setTextFill(Color.RED); // Set color to red for REJECTED
+            }
+
+            OutputTM.getChildren().add(transitionLabel); // Add the label to the FlowPane
+            FlowPane.setMargin(transitionLabel, new javafx.geometry.Insets(10.0, 10.0, 10.0, 10.0)); // Set margin for each label
+        }
+    }
+
+
+
 
 
     public boolean transitionForValidation(char ch) {
@@ -368,6 +427,7 @@ public class DFAController {
         return currentState != -1; // If in trap state, return false
     }
 
+
     private boolean validateInput(String input) {
         currentState = 0; // Reset to start state (q0) for validation
         for (char ch : input.toCharArray()) {
@@ -389,4 +449,6 @@ public class DFAController {
         scaleTransition.setAutoReverse(true);
         scaleTransition.play();
     }
+
+
 }
