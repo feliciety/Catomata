@@ -3,18 +3,13 @@ package project.autox;
 import javafx.animation.*;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.paint.Color;
 import javafx.util.Duration;
-import javafx.scene.layout.FlowPane; // Import FlowPane
-
-
-
-
+import javafx.scene.layout.FlowPane;
 
 public class NFAController {
 
@@ -47,14 +42,11 @@ public class NFAController {
         applyShadowToImageView(q1);
         applyShadowToImageView(q2f);
 
-
         ValidateBTN.setOnAction(event -> {
             OutputTM.getChildren().clear();
             String input = inputTextField.getText(); // Get input from the text field
             if (isValid(input)) { // Check if the input is valid (contains only 'a' and 'b')
                 StringBuilder transitions = new StringBuilder(); // Use StringBuilder to collect transitions
-
-
 
                 for (int i = 0; i < input.length(); i++) {
                     char ch = input.charAt(i);
@@ -66,17 +58,11 @@ public class NFAController {
                             .append(" x ").append(ch)
                             .append(" → q").append(currentState)
                             .append("\n");
-
-
-
-
                 }
 
-                if (currentState == 2) { // Check if the final state is q10 (accepting state)
+                if (currentState == 2) { // Check if the final state is q2 (accepting state)
                     transitions.append("ACCEPTED"); // Add ACCEPTED to the output
-                }
-
-                 else {
+                } else {
                     transitions.append("REJECTED"); // Add REJECTED to the output
                 }
 
@@ -87,10 +73,13 @@ public class NFAController {
             }
         });
 
-
-
         SimulateBTN.setOnAction(event -> {
-            animateInput(inputTextField.getText());
+            String input = inputTextField.getText(); // Get the input from the text field
+            if (isValid(input)) { // Check if the input is valid
+                animateInput(input); // Proceed with the animation if input is valid
+            } else {
+                System.out.println("Invalid input. Only 'a' and 'b' are allowed."); // Notify about invalid input
+            }
         });
 
         ClearBTN.setOnAction(event -> {
@@ -200,6 +189,7 @@ public class NFAController {
     }
 
 
+
     public void animateInput(String input) {
         currentState = 0; // Reset to the initial state
         Timeline characterAnimationTimeline = new Timeline(); // Initialize the timeline
@@ -233,33 +223,78 @@ public class NFAController {
         pause.play();
     }
 
+
+    public void simulateTransition(String input) {
+        // Reset the current state to the initial state (q0)
+        currentState = 0;
+
+        // Validate the input first
+        if (!validateInput(input)) {
+            System.out.println("Invalid input: Input can only contain 'a' and 'b'");
+            return; // Stop the simulation if input is invalid
+        }
+
+        // Process each character in the input string
+        for (char ch : input.toCharArray()) {
+            if (!transition(ch)) {
+                System.out.println("Transition unsuccessful for character: " + ch);
+                return; // Stop the simulation if transition fails
+            }
+        }
+
+        // Check if the final state is accepting or not
+        if (currentState == 2) {
+            System.out.println("Input accepted");
+        } else {
+            System.out.println("Input not accepted");
+        }
+    }
+
     public boolean transition(char ch) {
         switch (currentState) {
             case 0: // q0
-
-                if (ch == 'b') {
-                    currentState = 1; // Transition to q1
-                    animateSequentially(q0, q1); // Animate q0 first, then q1
+                switch (ch) {
+                    case 'a':
+                        currentState = 2; // Transition to q2
+                        animateSequentially(q0, q2f); // Animate q0 first, then q2
+                        break;
+                    case 'b':
+                        animateImageView(q0); // Stay in q0
+                        break;
+                    default:
+                        return false; // Invalid character (shouldn't reach here due to validation)
                 }
                 break;
-            case 1: // q1
-                if (ch == 'a') {
-                    currentState = 2; // Trap state
-                    animateImageView(q2f);
-                } else if (ch == 'b') {
-                    animateImageView(q1);
+            case 1: // q1 (non-accepting state)
+                switch (ch) {
+                    case 'a':
+                        currentState = 1; // Stay in q1
+                        animateImageView(q1);
+                        break;
+                    case 'b':
+                        currentState = 0; // Transition back to q0
+                        animateImageView(q0);
+                        break;
+                    default:
+                        return false; // Invalid character (shouldn't reach here due to validation)
                 }
                 break;
-            case 2: // q2 (Trap state)
-                if (ch == 'a') {
-                    currentState = 2; // Trap state
-                    animateImageView(q2f);
-                } else if (ch == 'b') {
-                    animateImageView(q1);
+            case 2: // q2 (accepting state)
+                switch (ch) {
+                    case 'a':
+                        currentState = 2; // Stay in q2
+                        animateImageView(q2f);
+                        break;
+                    case 'b':
+                        currentState = 2; // Stay in q2
+                        animateImageView(q2f);
+                        break;
+                    default:
+                        return false; // Invalid character (shouldn't reach here due to validation)
                 }
                 break;
             default:
-                return false; // Transition was unsuccessful
+                return false; // Invalid state
         }
 
         // Stop animation if still in q0
@@ -269,6 +304,7 @@ public class NFAController {
 
         return true; // Transition was successful
     }
+
 
 
     private void addTransitionToOutput(String transition) {
@@ -331,13 +367,18 @@ public class NFAController {
 
 
     private boolean validateInput(String input) {
-        currentState = 0; // Reset to start state (q0) for validation
-        for (char ch : input.toCharArray()) {
-            if (!transitionForValidation(ch)) {
-                return false; // Reject if stuck in q0
+        if (input.isEmpty() || input.charAt(0) == 'a') {
+            return false; // Return false if the first character is 'a'
+        }
+
+        // Continue checking the rest of the characters
+        for (char c : input.toCharArray()) {
+            if (c != 'a' && c != 'b') {
+                return false; // Return false if any other character is not 'a' or 'b'
             }
         }
-        return currentState == 2; // Accept only if DFA ends in final state q2f
+
+        return true; // Return true if the input is valid and does not start with 'a'
     }
 
 

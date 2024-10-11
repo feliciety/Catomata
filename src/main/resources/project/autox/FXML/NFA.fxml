@@ -17,6 +17,11 @@
 
 <Pane fx:id="nfaPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="668.0" prefWidth="1187.0" style="-fx-background-color: #F4FFDE; -fx-background-radius: 25;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.autox.NFAController">
    <children>
+      <ImageView fitHeight="261.0" fitWidth="334.0" layoutX="270.0" layoutY="252.0">
+         <image>
+            <Image url="@../Images/NFALines.png" />
+         </image>
+      </ImageView>
       <Text fill="#464545" layoutX="127.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NFA Simulator" wrappingWidth="450.4999999999998">
          <styleClass>
             <String fx:value="display-flex" />
@@ -80,17 +85,17 @@
             </Button>
          </children>
       </HBox>
-      <ImageView fx:id="q0" fitHeight="65.0" fitWidth="65.0" layoutX="204.0" layoutY="337.0">
+      <ImageView fx:id="q0" fitHeight="65.0" fitWidth="65.0" layoutX="320.0" layoutY="313.0">
          <image>
             <Image url="@../Images/q0.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="q1" fitHeight="65.0" fitWidth="65.0" layoutX="391.0" layoutY="338.0">
+      <ImageView fx:id="q1" fitHeight="65.0" fitWidth="65.0" layoutX="324.0" layoutY="490.0">
          <image>
             <Image url="@../Images/q1.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="q2f" fitHeight="65.0" fitWidth="65.0" layoutX="591.0" layoutY="337.0">
+      <ImageView fx:id="q2f" fitHeight="65.0" fitWidth="65.0" layoutX="526.0" layoutY="313.0">
          <image>
             <Image url="@../Images/q2f.png" />
          </image>

@@ -17,7 +17,7 @@
       <URL value="@../StyleSheet/Styles.css" />
       <URL value="@../StyleSheet/txtSS.css" />
    </stylesheets>
-   <Text fill="#464545" layoutX="257.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CFG Simulator" wrappingWidth="630.333">
+   <Text fill="#464545" layoutX="257.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Context Free Grammar" wrappingWidth="630.333">
       <styleClass>
          <String fx:value="display-flex" />
          <String fx:value="text-title" />
@@ -32,7 +32,7 @@
    <Line endX="559.067" layoutX="335.0" layoutY="89.0" startX="-70.267" stroke="#e1e1e1" style="-fx-opacity: 10;" styleClass="line-divider" />
    <Line endX="559.067" layoutX="333.0" layoutY="226.0" startX="-70.267" stroke="#e1e1e1" style="-fx-opacity: 10;" styleClass="line-divider" />
    <Line endX="559.067" layoutX="328.0" layoutY="570.0" startX="-70.267" stroke="#e1e1e1" style="-fx-opacity: 10;" styleClass="line-divider" />
-   <Text fill="#464545" layoutX="731.0" layoutY="261.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-twotoldok" text="Regular Expression:" wrappingWidth="133.1042763671875">
+   <Text fill="#464545" layoutX="731.0" layoutY="261.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-twotoldok" text="Production Rule:" wrappingWidth="133.1042763671875">
       <font>
          <Font name="Segoe Script" size="12.0" />
       </font>

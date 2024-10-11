@@ -21,15 +21,6 @@ public class CFGController {
 
     @FXML
     public void initialize() {
-        // Increase text size and change font for InputCFG
-        InputCFG.setStyle("-fx-font-size: 18px; -fx-font-family: 'Arial'; -fx-padding: 10px;");
-
-        // Increase text size and change font for OutputCFG
-        OutputCFG.setStyle("-fx-font-size: 16px; -fx-font-family: 'Arial'; -fx-padding: 10px;");
-
-        // Style buttons to have larger text
-        ValidateCFG.setStyle("-fx-font-size: 16px; -fx-font-family: 'Arial';");
-        clearBTN.setStyle("-fx-font-size: 16px; -fx-font-family: 'Arial';");
     }
 
     // Handle the validation button click

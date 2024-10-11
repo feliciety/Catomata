@@ -48,7 +48,7 @@
       </Pane>
       <Pane layoutX="333.0" layoutY="618.0" prefHeight="24.0" prefWidth="141.0" style="-fx-background-color: #EDF2F7;" styleClass="background-exp">
          <children>
-            <Text layoutX="8.0" layoutY="17.0" strokeType="OUTSIDE" strokeWidth="0.0" text="{ 0^n c 0^n | n ≥ 1 }" wrappingWidth="158.8369255065918">
+            <Text layoutX="8.0" layoutY="17.0" strokeType="OUTSIDE" strokeWidth="0.0" text="{wcwR | w e (a,b)*}" wrappingWidth="158.8369255065918">
                <font>
                   <Font name="Segoe UI" size="14.0" />
                </font>
