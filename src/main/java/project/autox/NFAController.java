@@ -190,8 +190,6 @@ public class NFAController {
                 case 1: // q1
                     if (ch == 'a') {
                         nextStates.add(1); // Stay in q1 (loop on 'a')
-                    } else if (ch == 'b') {
-                        nextStates.add(0); // Transition back to q0 on 'b'
                     }
                     break;
                 case 2: // q2
