@@ -121,7 +121,7 @@
       </Text>
       <ScrollPane layoutX="794.0" layoutY="357.0" prefHeight="219.0" prefWidth="362.0">
          <content>
-            <FlowPane fx:id="rejectedOutputArea" alignment="CENTER" prefHeight="212.0" prefWidth="356.0" style="-fx-background-color: white;" />
+            <FlowPane fx:id="RejectedOutputTM" alignment="CENTER" prefHeight="212.0" prefWidth="356.0" style="-fx-background-color: white;" />
          </content>
       </ScrollPane>
       <ImageView fitHeight="266.0" fitWidth="320.0" layoutX="457.0" layoutY="259.0">
