@@ -17,7 +17,7 @@
 
 <Pane fx:id="nfaPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="668.0" prefWidth="1187.0" style="-fx-background-color: #F4FFDE; -fx-background-radius: 25;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.autox.NFAController">
    <children>
-      <ImageView fitHeight="261.0" fitWidth="334.0" layoutX="270.0" layoutY="252.0">
+      <ImageView fitHeight="266.0" fitWidth="320.0" layoutX="115.0" layoutY="258.0">
          <image>
             <Image url="@../Images/NFALines.png" />
          </image>
@@ -85,17 +85,17 @@
             </Button>
          </children>
       </HBox>
-      <ImageView fx:id="q0" fitHeight="65.0" fitWidth="65.0" layoutX="320.0" layoutY="313.0">
+      <ImageView fx:id="q0" fitHeight="65.0" fitWidth="65.0" layoutX="161.0" layoutY="311.0">
          <image>
             <Image url="@../Images/q0.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="q1" fitHeight="65.0" fitWidth="65.0" layoutX="324.0" layoutY="490.0">
+      <ImageView fx:id="q1" fitHeight="65.0" fitWidth="65.0" layoutX="162.0" layoutY="483.0">
          <image>
             <Image url="@../Images/q1.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="q2f" fitHeight="65.0" fitWidth="65.0" layoutX="526.0" layoutY="313.0">
+      <ImageView fx:id="q2f" fitHeight="65.0" fitWidth="65.0" layoutX="361.0" layoutY="314.0">
          <image>
             <Image url="@../Images/q2f.png" />
          </image>
@@ -109,12 +109,47 @@
             <URL value="@../StyleSheet/Styles.css" />
          </stylesheets>
       </Button>
-      <ScrollPane layoutX="794.0" layoutY="138.0" prefHeight="450.0" prefWidth="362.0">
+      <ScrollPane layoutX="794.0" layoutY="138.0" prefHeight="219.0" prefWidth="362.0">
          <content>
-            <FlowPane fx:id="OutputTM" alignment="CENTER" prefHeight="444.0" prefWidth="356.0" />
+            <FlowPane fx:id="OutputTM" alignment="CENTER" prefHeight="212.0" prefWidth="356.0" style="-fx-background-color: white;" />
          </content>
       </ScrollPane>
       <Text fill="#464545" layoutX="794.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-twotoldok" text="State Transition:" wrappingWidth="118.0283203125">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+      <ScrollPane layoutX="794.0" layoutY="357.0" prefHeight="219.0" prefWidth="362.0">
+         <content>
+            <FlowPane fx:id="rejectedOutputArea" alignment="CENTER" prefHeight="212.0" prefWidth="356.0" style="-fx-background-color: white;" />
+         </content>
+      </ScrollPane>
+      <ImageView fitHeight="266.0" fitWidth="320.0" layoutX="457.0" layoutY="259.0">
+         <image>
+            <Image url="@../Images/NFALines.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="q01" fitHeight="65.0" fitWidth="65.0" layoutX="504.0" layoutY="312.0">
+         <image>
+            <Image url="@../Images/q0.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="q11" fitHeight="65.0" fitWidth="65.0" layoutX="505.0" layoutY="484.0">
+         <image>
+            <Image url="@../Images/q1.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="q2f1" fitHeight="65.0" fitWidth="65.0" layoutX="703.0" layoutY="315.0">
+         <image>
+            <Image url="@../Images/q2f.png" />
+         </image>
+      </ImageView>
+      <Text fill="#464545" layoutX="123.0" layoutY="263.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-twotoldok" text="Accepted:" wrappingWidth="118.0283203125">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+      <Text fill="#464545" layoutX="466.0" layoutY="264.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-twotoldok" text="Rejected:" wrappingWidth="118.0283203125">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
