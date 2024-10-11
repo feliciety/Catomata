@@ -85,22 +85,21 @@ public class PDAController {
     private void updateStackVisualization() {
         OutputPDA.getChildren().clear(); // Clear previous stack visualization
 
-        // StringBuilder to hold stack elements with \n for new lines
-        StringBuilder stackOutput = new StringBuilder();
-
         for (Character c : stack) {
-            stackOutput.append(c).append("\n"); // Append stack element with \n for each character
+            Label stackLabel = new Label(c.toString()); // Create a label for each stack element
+
+            // Apply styling to make the label look like a square
+            stackLabel.setMinWidth(40); // Set a fixed width
+            stackLabel.setMinHeight(40); // Set a fixed height (same as width for a square)
+            stackLabel.setStyle("-fx-border-color: black; -fx-border-width: 2px; " +
+                    "-fx-alignment: center; -fx-font-size: 18px; " +
+                    "-fx-font-family: 'Monospaced'; -fx-background-color: lightgray;");
+
+            // Add individual labels to the FlowPane
+            OutputPDA.getChildren().add(stackLabel);
         }
-
-        // Create a single label for the entire stack output
-        Label stackLabel = new Label(stackOutput.toString());
-
-        // Apply bold, larger text, and border styling
-        stackLabel.setStyle("-fx-font-weight: bold; -fx-font-size: 18px; -fx-border-color: black; -fx-padding: 5; -fx-font-family: 'Monospaced';");
-
-        // Add label to FlowPane
-        OutputPDA.getChildren().add(stackLabel);
     }
+
 
     private void applyShadowToImageView(ImageView imageView) {
         DropShadow shadow = new DropShadow();
