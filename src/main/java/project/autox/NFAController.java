@@ -8,7 +8,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.paint.Color;
-import javafx.util.Duration;
 import javafx.scene.layout.FlowPane;
 import javafx.geometry.Insets;
 
@@ -63,27 +62,26 @@ public class NFAController {
                 for (int i = 0; i < input.length(); i++) {
                     char ch = input.charAt(i);
 
-                    // Handle non-deterministic transitions explicitly
+                    // Handle non-deterministic transitions explicitly for 'b' at q0
                     if (currentState == 0 && ch == 'b') {
-                        // Accepted transitions for 'b' at q0
+                        // For accepted path: transition from q0 to q2
                         acceptedTransitions.append("δ: q0 x b → q2 (Accepted Path)\n");
                         addTransitionToOutput(acceptedTransitions.toString(), OutputTM);
-                        acceptedTransitions.setLength(0);
+                        acceptedTransitions.setLength(0); // Clear the acceptedTransitions buffer
                         currentState = 2;
 
-                        // Rejected transitions for 'b' at q0
+                        // For rejected path: transition from q0 to q0 (self-loop)
                         rejectedTransitions.append("δ: q0 x b → q0 (Rejected Path)\n");
                         addTransitionToOutput(rejectedTransitions.toString(), RejectedOutputTM);
-                        rejectedTransitions.setLength(0);
-                        rejectedState = 0;
+                        rejectedTransitions.setLength(0); // Clear the rejectedTransitions buffer
+                        rejectedState = 0; // Remains in q0 for the rejected path
                     } else {
                         // Handle normal transitions for both paths
                         int prevState = currentState;
                         int prevRejectedState = rejectedState;
-                        boolean success = transition(ch);
-                        boolean rejectedSuccess = rejectedTransition(ch);
 
-                        // Add transitions to respective outputs
+                        // Process accepted path transition
+                        boolean success = Acceptedtransition(ch);
                         acceptedTransitions.append("δ: q")
                                 .append(prevState)
                                 .append(" x ").append(ch)
@@ -92,6 +90,8 @@ public class NFAController {
                         addTransitionToOutput(acceptedTransitions.toString(), OutputTM);
                         acceptedTransitions.setLength(0);
 
+                        // Process rejected path transition
+                        boolean rejectedSuccess = rejectedTransition(ch);
                         rejectedTransitions.append("δ: q")
                                 .append(prevRejectedState)
                                 .append(" x ").append(ch)
@@ -102,16 +102,27 @@ public class NFAController {
                     }
                 }
 
-                // Add ACCEPTED or REJECTED to the end of the transitions for both paths
-                acceptedTransitions.append(currentState == 2 ? "ACCEPTED" : "REJECTED");
+                // Add ACCEPTED or REJECTED status at the end of each path's output
+                if (currentState == 2) {
+                    acceptedTransitions.append("ACCEPTED");
+                } else {
+                    acceptedTransitions.append("REJECTED");
+                }
                 addTransitionToOutput(acceptedTransitions.toString(), OutputTM);
 
-                rejectedTransitions.append(rejectedState == 2 ? "ACCEPTED" : "REJECTED");
+                if (rejectedState == 2) {
+                    rejectedTransitions.append("ACCEPTED");
+                } else {
+                    rejectedTransitions.append("REJECTED");
+                }
                 addTransitionToOutput(rejectedTransitions.toString(), RejectedOutputTM);
             } else {
                 System.out.println("Invalid input. Only 'a' and 'b' are allowed.");
             }
         });
+
+
+
 
         //SimulateBTN.setOnAction(event -> animateInput(inputTextField.getText()));
         ClearBTN.setOnAction(event -> {
@@ -150,7 +161,7 @@ public class NFAController {
         return input.matches("[ab]*");
     }
 
-    public boolean transition(char ch) {
+    public boolean Acceptedtransition(char ch) {
         switch (currentState) {
             case 0:
                 if (ch == 'a') {

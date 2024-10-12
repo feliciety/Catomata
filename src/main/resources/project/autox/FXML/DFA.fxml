@@ -122,7 +122,7 @@
       </font>
    </Text>
    <Line endX="559.0667724609375" layoutX="205.0" layoutY="580.0" startX="-70.26669311523438" stroke="#e1e1e1" style="-fx-opacity: 10;" styleClass="line-divider" />
-   <Text fill="#464545" layoutX="134.0" layoutY="632.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-twotoldok" text="Language Accepted:" wrappingWidth="201.37109375">
+   <Text fill="#464545" layoutX="134.0" layoutY="632.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-twotoldok" text="Regular Expression:" wrappingWidth="201.37109375">
       <font>
          <Font name="Segoe Script" size="12.0" />
       </font>
