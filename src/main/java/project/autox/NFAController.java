@@ -68,38 +68,28 @@ public class NFAController {
             for (int i = 0; i < input.length(); i++) {
                 char ch = input.charAt(i);
 
-                if (currentState == 0 && ch == 'b') {
-                    acceptedTransitions.append("δ: q0 x b → q2 (Accepted Path)\n");
-                    addTransitionToOutput(acceptedTransitions.toString(), AcceptedOutputTM);
-                    acceptedTransitions.setLength(0);
-                    currentState = 2;
+                int prevState = currentState;
+                int prevRejectedState = rejectedState;
 
-                    rejectedTransitions.append("δ: q0 x b → q0 (Rejected Path)\n");
-                    addTransitionToOutput(rejectedTransitions.toString(), RejectedOutputTM);
-                    rejectedTransitions.setLength(0);
-                    rejectedState = 0;
-                } else {
-                    int prevState = currentState;
-                    int prevRejectedState = rejectedState;
+                acceptedTransition(ch);
+                acceptedTransitions.append("δ: q")
+                        .append(prevState)
+                        .append(" x ").append(ch)
+                        .append(" → q").append(currentState)
+                        .append("\n");
 
-                    acceptedTransition(ch);
-                    acceptedTransitions.append("δ: q")
-                            .append(prevState)
-                            .append(" x ").append(ch)
-                            .append(" → q").append(currentState)
-                            .append("\n");
-                    addTransitionToOutput(acceptedTransitions.toString(), AcceptedOutputTM);
-                    acceptedTransitions.setLength(0);
+                rejectedTransition(ch);
+                rejectedTransitions.append("δ: q")
+                        .append(prevRejectedState)
+                        .append(" x ").append(ch)
+                        .append(" → q").append(rejectedState)
+                        .append("\n");
 
-                    rejectedTransition(ch);
-                    rejectedTransitions.append("δ: q")
-                            .append(prevRejectedState)
-                            .append(" x ").append(ch)
-                            .append(" → q").append(rejectedState)
-                            .append("\n");
-                    addTransitionToOutput(rejectedTransitions.toString(), RejectedOutputTM);
-                    rejectedTransitions.setLength(0);
-                }
+                addTransitionToOutput(acceptedTransitions.toString(), AcceptedOutputTM);
+                addTransitionToOutput(rejectedTransitions.toString(), RejectedOutputTM);
+
+                acceptedTransitions.setLength(0);
+                rejectedTransitions.setLength(0);
             }
 
             addTransitionToOutput(currentState == 2 ? "ACCEPTED" : "REJECTED", AcceptedOutputTM);
@@ -132,12 +122,27 @@ public class NFAController {
         imageView.setEffect(dropShadow);
     }
 
-    private void addTransitionToOutput(String transition, FlowPane pane) {
-        Label transitionLabel = new Label(transition);
-        transitionLabel.setTextFill(Color.BLACK);
-        transitionLabel.setStyle("-fx-font-size: 16px; -fx-font-weight: normal");
-        pane.getChildren().add(transitionLabel);
-        FlowPane.setMargin(transitionLabel, new Insets(10.0, 10.0, 10.0, 10.0));
+    private void addTransitionToOutput(String transition, FlowPane outputPane) {
+        // Split the transition string by line breaks to handle each line separately
+        String[] lines = transition.split("\n");
+
+        for (String line : lines) {
+            Label transitionLabel = new Label(line);
+
+            // Set default text color for transition details
+            transitionLabel.setTextFill(Color.BLACK);
+            transitionLabel.setStyle("-fx-font-size: 16px; -fx-font-weight: bold");
+
+            // Check if the line is "ACCEPTED" or "REJECTED" and set the color accordingly
+            if (line.trim().equals("ACCEPTED")) {
+                transitionLabel.setTextFill(Color.GREEN);
+            } else if (line.trim().equals("REJECTED")) {
+                transitionLabel.setTextFill(Color.RED);
+            }
+
+            outputPane.getChildren().add(transitionLabel);
+            FlowPane.setMargin(transitionLabel, new Insets(10.0, 10.0, 10.0, 10.0));
+        }
     }
 
     private boolean isValid(String input) {
@@ -165,25 +170,66 @@ public class NFAController {
     private void acceptedTransition(char ch) {
         switch (currentState) {
             case 0:
-                currentState = (ch == 'a') ? 1 : (ch == 'b') ? 2 : 0;
+                if (ch == 'b') {
+                    currentState = 2;
+                    animateImageView(q2f);
+                } else if (ch == 'a') {
+                    currentState = 1;
+                    animateImageView(q1);
+                }
                 break;
             case 1:
-                currentState = 1;
+                if (ch == 'a') {
+                    currentState = -1;
+                    animateImageView(q1);
+                }
                 break;
             case 2:
-                currentState = 2;
+                animateImageView(q2f);
                 break;
+            default:
+                currentState = -1; // Trap state for invalid input
         }
     }
 
     private void rejectedTransition(char ch) {
         switch (rejectedState) {
             case 0:
-                rejectedState = (ch == 'a') ? 1 : 0;
+                if (ch == 'b') {
+                    rejectedState = 0;
+                    animateImageView(q0reject);
+                } else if (ch == 'a') {
+                    rejectedState = 1;
+                    animateImageView(q1rejected);
+                }
                 break;
             case 1:
-                rejectedState = 1;
+                if (ch == 'a') {
+                    rejectedState = -1;
+                    animateImageView(q1rejected);
+                }
                 break;
+            default:
+                rejectedState = -1; // Trap state for invalid input
         }
+    }
+
+    private void animateSequentially(ImageView first, ImageView second) {
+        animateImageView(first);
+
+        PauseTransition pause = new PauseTransition(Duration.seconds(1.0));
+        pause.setOnFinished(event -> animateImageView(second));
+        pause.play();
+    }
+
+    private void animateImageView(ImageView imageView) {
+        ScaleTransition scaleTransition = new ScaleTransition(Duration.seconds(0.5), imageView);
+        scaleTransition.setFromX(1.0);
+        scaleTransition.setFromY(1.0);
+        scaleTransition.setToX(1.2);
+        scaleTransition.setToY(1.2);
+        scaleTransition.setCycleCount(2);
+        scaleTransition.setAutoReverse(true);
+        scaleTransition.play();
     }
 }
