@@ -80,7 +80,7 @@ public class DFAController {
 
                 if (currentState == 10) { // Check if the final state is q10 (accepting state)
                     transitions.append("ACCEPTED"); // Add ACCEPTED to the output
-                } else if(currentState == -1){
+                } else if(currentState == 2){
                     transitions.append("IN TRAP STATE");
                     }
                 else {
@@ -213,7 +213,7 @@ public class DFAController {
             KeyFrame keyFrame = new KeyFrame(Duration.seconds(i * 1.5), event -> { // Change duration for visible transitions
                 if (index[0] < input.length()) {
                     char ch = input.charAt(index[0]);
-                    if (currentState == -1) {
+                    if (currentState == 2) {
                         System.out.println("In Trap state.");
                         return; // Exit if in trap state
                     }
@@ -372,31 +372,31 @@ public class DFAController {
                 break;
             case 1: // q1
                 if (ch == 'a') {
-                    currentState = -1; // Trap state
+                    currentState = 2; // Trap state
                 } else if (ch == 'b') {
                     currentState = 3; // Transition to q3
                 }
                 break;
             case 2: // q2 (Trap state)
-                currentState = -1; // Trap state
+                currentState = 2; // Trap state
                 break;
             case 3: // q3
                 if (ch == 'a') {
                     currentState = 6; // Transition to q6
                 } else if (ch == 'b') {
-                    currentState = -1; // Trap state
+                    currentState = 2; // Trap state
                 }
                 break;
             case 4: // q4
                 if (ch == 'a') {
                     currentState = 5; // Transition to q5
                 } else if (ch == 'b') {
-                    currentState = -1; // Trap state
+                    currentState = 2; // Trap state
                 }
                 break;
             case 5: // q5
                 if (ch == 'a') {
-                    currentState = -1; // Trap state
+                    currentState = 2; // Trap state
                 } else if (ch == 'b') {
                     currentState = 6; // Transition to q6
                 }
@@ -432,7 +432,7 @@ public class DFAController {
             default:
                 return false; // Transition was unsuccessful
         }
-        return currentState != -1; // If in trap state, return false
+        return currentState != 2; // If in trap state, return false
     }
 
 
