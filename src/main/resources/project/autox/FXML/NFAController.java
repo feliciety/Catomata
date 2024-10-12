@@ -1,4 +1,4 @@
-package project.autox;
+package project.autox.FXML;
 
 import javafx.animation.*;
 import javafx.fxml.FXML;
@@ -63,21 +63,29 @@ public class NFAController {
                 for (int i = 0; i < input.length(); i++) {
                     char ch = input.charAt(i);
 
-                    // Handle non-deterministic transitions explicitly
+                    // Non-deterministic transitions for 'b' input at q0
                     if (currentState == 0 && ch == 'b') {
-                        // Accepted transitions for 'b' at q0
+                        // Accepted transitions for 'b' in q0
+                        acceptedTransitions.append("δ: q0 x b → q0 (Accepted Path)\n");
+                        addTransitionToOutput(acceptedTransitions.toString(), OutputTM);
+                        acceptedTransitions.setLength(0);
+
                         acceptedTransitions.append("δ: q0 x b → q2 (Accepted Path)\n");
                         addTransitionToOutput(acceptedTransitions.toString(), OutputTM);
                         acceptedTransitions.setLength(0);
                         currentState = 2;
 
-                        // Rejected transitions for 'b' at q0
+                        // Rejected transitions for 'b' in q0
                         rejectedTransitions.append("δ: q0 x b → q0 (Rejected Path)\n");
                         addTransitionToOutput(rejectedTransitions.toString(), RejectedOutputTM);
                         rejectedTransitions.setLength(0);
-                        rejectedState = 0;
+
+                        rejectedTransitions.append("δ: q0 x b → q2 (Rejected Path)\n");
+                        addTransitionToOutput(rejectedTransitions.toString(), RejectedOutputTM);
+                        rejectedTransitions.setLength(0);
+                        rejectedState = 2;
                     } else {
-                        // Handle normal transitions for both paths
+                        // Handle normal transitions for both accepted and rejected paths
                         int prevState = currentState;
                         int prevRejectedState = rejectedState;
                         boolean success = transition(ch);
@@ -113,7 +121,7 @@ public class NFAController {
             }
         });
 
-        //SimulateBTN.setOnAction(event -> animateInput(inputTextField.getText()));
+        SimulateBTN.setOnAction(event -> animateInput(inputTextField.getText()));
         ClearBTN.setOnAction(event -> {
             if (characterAnimationTimeline != null) {
                 characterAnimationTimeline.stop();
@@ -156,20 +164,15 @@ public class NFAController {
                 if (ch == 'a') {
                     currentState = 1;
                 } else if (ch == 'b') {
-                    currentState = 2; // Transition to q2 for accepted path
+                    currentState = 0; // Stay at q0 for one path
                 }
                 break;
             case 1:
-                // q1 is a trap state for accepted path
                 if (ch == 'a' || ch == 'b') {
                     currentState = 1;
                 }
                 break;
             case 2:
-                // q2 self-loops for both inputs
-                if (ch == 'a' || ch == 'b') {
-                    currentState = 2;
-                }
                 break;
             default:
                 return false;
@@ -183,11 +186,10 @@ public class NFAController {
                 if (ch == 'a') {
                     rejectedState = 1;
                 } else if (ch == 'b') {
-                    rejectedState = 0; // Loop in q0 for rejected path with 'b'
+                    rejectedState = 0; // Stay at q0 for one path
                 }
                 break;
             case 1:
-                // q1 is a trap state for rejected path
                 if (ch == 'a' || ch == 'b') {
                     rejectedState = 1;
                 }

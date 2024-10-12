@@ -15,12 +15,12 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane fx:id="dfaPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="668.0" prefWidth="1187.0" style="-fx-background-radius: 25;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.autox.DFAController">
+<Pane fx:id="dfaPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="668.0" prefWidth="1187.0" style="-fx-background-radius: 25;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.autox.DFAController">
    <stylesheets>
       <URL value="@../StyleSheet/Styles.css" />
       <URL value="@../StyleSheet/txtSS.css" />
    </stylesheets>
-   <ImageView fitHeight="233.0" fitWidth="604.0" layoutX="142.0" layoutY="298.0">
+   <ImageView fitHeight="294.0" fitWidth="685.0" layoutX="122.0" layoutY="264.0">
       <Image url="@../Images/DFALines.png" />
    </ImageView>
    <Text fill="#464545" layoutX="127.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DFA Simulator" wrappingWidth="450.4999999999998">
@@ -69,7 +69,7 @@
    <ImageView fx:id="q1" fitHeight="56.0" fitWidth="56.0" layoutX="239.0" layoutY="301.0">
       <Image url="@../Images/q1.png" />
    </ImageView>
-   <ImageView fx:id="q2" fitHeight="56.0" fitWidth="56.0" layoutX="304.0" layoutY="385.0">
+   <ImageView fx:id="q2" fitHeight="56.0" fitWidth="56.0" layoutX="299.0" layoutY="385.0">
       <Image url="@../Images/q2.png" />
    </ImageView>
    <ImageView fx:id="q3" fitHeight="56.0" fitWidth="56.0" layoutX="371.0" layoutY="300.0">
@@ -81,7 +81,7 @@
    <ImageView id="q5" fx:id="q5" fitHeight="56.0" fitWidth="56.0" layoutX="371.0" layoutY="470.0">
       <Image url="@../Images/q5.png" />
    </ImageView>
-   <ImageView fx:id="q6" fitHeight="56.0" fitWidth="56.0" layoutX="440.0" layoutY="386.0">
+   <ImageView fx:id="q6" fitHeight="56.0" fitWidth="56.0" layoutX="436.0" layoutY="384.0">
       <Image url="@../Images/q6.png" />
    </ImageView>
    <ImageView fx:id="q7" fitHeight="56.0" fitWidth="56.0" layoutX="508.0" layoutY="299.0">
@@ -93,7 +93,7 @@
    <ImageView id="q9" fx:id="q9" fitHeight="56.0" fitWidth="56.0" layoutX="572.0" layoutY="385.0">
       <Image url="@../Images/q9.png" />
    </ImageView>
-   <ImageView fx:id="q10f" fitHeight="56.0" fitWidth="56.0" layoutX="708.0" layoutY="384.0">
+   <ImageView fx:id="q10f" fitHeight="56.0" fitWidth="56.0" layoutX="711.0" layoutY="383.0">
       <Image url="@../Images/q10f.png" />
    </ImageView>
    <Button fx:id="ClearBTN" alignment="CENTER" layoutX="665.0" layoutY="206.0" minHeight="34.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="100.0" text="Clear">
@@ -113,7 +113,8 @@
       <FlowPane fx:id="OutputTM" alignment="CENTER" prefHeight="447.0" prefWidth="318.0">
          <padding>
             <Insets left="50.0" />
-         </padding></FlowPane>
+         </padding>
+      </FlowPane>
    </ScrollPane>
    <Text fill="#464545" layoutX="804.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-twotoldok" text="State Transition:" wrappingWidth="118.0283203125">
       <font>
@@ -127,7 +128,7 @@
       </font>
    </Text>
    <Pane layoutX="291.0" layoutY="613.0" prefHeight="25.0" prefWidth="444.0" style="-fx-background-color: #EDF2F7;" styleClass="background-exp">
-      <Text layoutX="13.0" layoutY="17.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Strings STARTING with 'aba' || 'bab&quot;  and ENDING with 'aba' || 'abb'" wrappingWidth="450.4999999999998">
+      <Text layoutX="13.0" layoutY="17.0" strokeType="OUTSIDE" strokeWidth="0.0" text="(aba+bab) (a+b)* (bab) (a+b)* (a+b+ab+ba) (a+b)*" wrappingWidth="450.4999999999998">
          <font>
             <Font name="Segoe UI" size="14.0" />
          </font>
