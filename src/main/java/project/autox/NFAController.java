@@ -14,8 +14,9 @@ import javafx.util.Duration;
 
 public class NFAController {
 
-    private int currentState = 0;
-    private int rejectedState = 0;
+    private int currentState = 0; // State of the main automaton
+    private int rejectedState = 0; // State of the rejected automaton
+    private final int TRAP_STATE = 1; // Trap state
     private Timeline characterAnimationTimeline;
 
     @FXML
@@ -88,16 +89,41 @@ public class NFAController {
                 addTransitionToOutput(acceptedTransitions.toString(), AcceptedOutputTM);
                 addTransitionToOutput(rejectedTransitions.toString(), RejectedOutputTM);
 
+                // If we reach the trap state in either accepted or rejected, show the trap state message.
+                if (currentState == TRAP_STATE) {
+                    addTransitionToOutput("TRAP STATE", AcceptedOutputTM);
+                    break;
+                }
+                if (rejectedState == TRAP_STATE) {
+                    addTransitionToOutput("TRAP STATE", RejectedOutputTM);
+                    break;
+                }
+
                 acceptedTransitions.setLength(0);
                 rejectedTransitions.setLength(0);
             }
 
-            addTransitionToOutput(currentState == 2 ? "ACCEPTED" : "REJECTED", AcceptedOutputTM);
-            addTransitionToOutput(rejectedState == 2 ? "ACCEPTED" : "REJECTED", RejectedOutputTM);
+
+            if (currentState == 2) {
+                addTransitionToOutput("ACCEPTED", AcceptedOutputTM);
+            } else if (currentState == TRAP_STATE) {
+                addTransitionToOutput("TRAP STATE", AcceptedOutputTM);
+            } else {
+                addTransitionToOutput("REJECTED", AcceptedOutputTM);
+            }
+
+            if (rejectedState == 2) {
+                addTransitionToOutput("ACCEPTED", RejectedOutputTM);
+            } else if (rejectedState == TRAP_STATE) {
+                addTransitionToOutput("TRAP STATE", RejectedOutputTM);
+            } else {
+                addTransitionToOutput("REJECTED", RejectedOutputTM);
+            }
         } else {
             System.out.println("Invalid input. Only 'a' and 'b' are allowed.");
         }
     }
+
 
     private void clearFields() {
         if (characterAnimationTimeline != null) {
@@ -136,7 +162,7 @@ public class NFAController {
             // Check if the line is "ACCEPTED" or "REJECTED" and set the color accordingly
             if (line.trim().equals("ACCEPTED")) {
                 transitionLabel.setTextFill(Color.GREEN);
-            } else if (line.trim().equals("REJECTED")) {
+            } else if (line.trim().equals("REJECTED") || line.trim().equals("TRAP STATE")) {
                 transitionLabel.setTextFill(Color.RED);
             }
 
@@ -169,48 +195,44 @@ public class NFAController {
 
     private void acceptedTransition(char ch) {
         switch (currentState) {
-            case 0:
+            case 0: // Start state
                 if (ch == 'b') {
-                    currentState = 2;
+                    currentState = 2; // Move to state 2
                     animateImageView(q2f);
                 } else if (ch == 'a') {
-                    currentState = 1;
+                    currentState = 1; // Move to state 1
                     animateImageView(q1);
                 }
                 break;
-            case 1:
+            case 1: // State 1
                 if (ch == 'a') {
-                    currentState = -1;
-                    animateImageView(q1);
+                    currentState = TRAP_STATE; // Trap state
+                    animateImageView(q1); // Keep showing state 1
                 }
                 break;
-            case 2:
+            case 2: // Accepting state
                 animateImageView(q2f);
                 break;
             default:
-                currentState = -1; // Trap state for invalid input
+                currentState = TRAP_STATE; // Go to trap state for invalid input
         }
     }
 
     private void rejectedTransition(char ch) {
         switch (rejectedState) {
-            case 0:
+            case 0: // q0
                 if (ch == 'b') {
-                    rejectedState = 0;
+                    rejectedState = 0; // Remain in q0
                     animateImageView(q0reject);
                 } else if (ch == 'a') {
-                    rejectedState = 1;
+                    rejectedState = TRAP_STATE; // Transition to trap state
                     animateImageView(q1rejected);
                 }
                 break;
-            case 1:
-                if (ch == 'a') {
-                    rejectedState = -1;
-                    animateImageView(q1rejected);
-                }
-                break;
+            case TRAP_STATE: // trap state for rejected input
+                break; // No transitions possible from trap state
             default:
-                rejectedState = -1; // Trap state for invalid input
+                rejectedState = TRAP_STATE; // Handle invalid input
         }
     }
 
