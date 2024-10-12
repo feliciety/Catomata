@@ -11,29 +11,28 @@ import javafx.scene.paint.Color;
 import javafx.util.Duration;
 import javafx.scene.layout.FlowPane;
 
-public class NFAController {
+public class NFARController {
 
     private int currentState = 0; // Start at q0
     private Timeline characterAnimationTimeline;
 
     @FXML
     private TextField inputTextField;
+
     @FXML
     private Button ValidateBTN;
+
     @FXML
     private Button SimulateBTN;
+
     @FXML
     private Button ClearBTN;
 
     @FXML
-    private FlowPane OutputTM;
-    @FXML
     private FlowPane RejectedOutputTM;
 
     @FXML
-    private ImageView q0, q1, q2f;
-
-
+    private ImageView q0reject, q1rejected, q2frejected;
 
     public void initialize() {
         // Set up button animations
@@ -42,13 +41,12 @@ public class NFAController {
         setupButton(ClearBTN);
 
         // Apply shadow effect to state indicators
-        applyShadowToImageView(q0);
-        applyShadowToImageView(q1);
-        applyShadowToImageView(q2f);
-
+        applyShadowToImageView(q0reject);
+        applyShadowToImageView(q1rejected);
+        applyShadowToImageView(q2frejected);
 
         ValidateBTN.setOnAction(event -> {
-            OutputTM.getChildren().clear();
+            RejectedOutputTM.getChildren().clear(); // Clear previous output
             String input = inputTextField.getText(); // Get input from the text field
             if (isValid(input)) { // Check if the input is valid (contains only 'a' and 'b')
                 StringBuilder transitions = new StringBuilder(); // Use StringBuilder to collect transitions
@@ -88,10 +86,10 @@ public class NFAController {
             }
             inputTextField.clear(); // Clear the input text field
             currentState = 0; // Reset current state when clearing input
-            OutputTM.getChildren().clear();
             RejectedOutputTM.getChildren().clear(); // Clear rejected output
         });
     }
+
 
     private void setupButton(Button button) {
         button.setOnMouseEntered(event -> {
@@ -113,7 +111,7 @@ public class NFAController {
         Label transitionLabel = new Label(transition);
         transitionLabel.setTextFill(Color.BLACK);
         transitionLabel.setStyle("-fx-font-size: 16px; -fx-font-weight: normal");
-        OutputTM.getChildren().add(transitionLabel);
+        RejectedOutputTM.getChildren().add(transitionLabel);
         FlowPane.setMargin(transitionLabel, new javafx.geometry.Insets(10.0, 10.0, 10.0, 10.0)); // Set margin for each label
     }
 
@@ -135,8 +133,10 @@ public class NFAController {
                 boolean transitionSuccess = transition(ch);
                 if (transitionSuccess) {
                     animateImageView(getCurrentStateImageView());
+                    moveStateImage(getCurrentStateImageView()); // Move the state image
                 } else {
-                    animateImageView(q2f); // If transition fails, animate the trap state
+                    animateImageView(q2frejected); // If transition fails, animate the trap state
+                    moveStateImage(q2frejected); // Move to the trap state
                 }
             });
             timeline.getKeyFrames().add(keyFrame);
@@ -146,11 +146,20 @@ public class NFAController {
         timeline.play();
     }
 
+    private void moveStateImage(ImageView imageView) {
+        TranslateTransition translateTransition = new TranslateTransition(Duration.seconds(0.5), imageView);
+        translateTransition.setFromX(imageView.getLayoutX());
+        translateTransition.setToX(imageView.getLayoutX() + 50); // Move 50 pixels to the right
+        translateTransition.setFromY(imageView.getLayoutY());
+        translateTransition.setToY(imageView.getLayoutY()); // Keep Y position constant
+        translateTransition.play();
+    }
+
     private ImageView getCurrentStateImageView() {
         switch (currentState) {
-            case 0: return q0;
-            case 1: return q1;
-            case 2: return q2f; // Trap state
+            case 0: return q0reject; // State q0
+            case 1: return q1rejected; // State q1
+            case 2: return q2frejected; // State q2
             default: return null;
         }
     }
@@ -159,22 +168,22 @@ public class NFAController {
         switch (currentState) {
             case 0: // q0
                 if (ch == 'b') {
-                    currentState = 0; // Transition to q1
-                    animateSequentially(q0, q2f); // Animate q0 first, then q1
+                    currentState = 0; // Stay in q0
+                    animateImageView(q0reject); // Animate q0
                 } else if (ch == 'a') {
                     currentState = 2; // Transition to trap state
-                    animateImageView(q2f);
+                    animateImageView(q2frejected);
                 }
                 break;
             case 1:
                 if (ch == 'a') {
                     currentState = 2; // Transition to trap state
-                    animateImageView(q2f);
+                    animateImageView(q2frejected);
                 }
                 break;
             case 2: // Trap state
                 // Stay in trap state for any input
-                animateImageView(q2f);
+                animateImageView(q2frejected);
                 break;
             default:
                 return false; // Transition was unsuccessful
@@ -188,16 +197,6 @@ public class NFAController {
         return true; // Transition was successful
     }
 
-    private void animateSequentially(ImageView first, ImageView second) {
-        // Animate the first state (e.g., q0)
-        animateImageView(first);
-
-        // Create a sequential transition to animate the second state after the first
-        PauseTransition pause = new PauseTransition(Duration.seconds(1.0)); // Add delay between animations
-        pause.setOnFinished(event -> animateImageView(second)); // Animate the second state after the first
-        pause.play();
-    }
-
     private void animateImageView(ImageView imageView) {
         ScaleTransition scaleTransition = new ScaleTransition(Duration.seconds(0.5), imageView);
         scaleTransition.setFromX(1.0);
@@ -208,4 +207,4 @@ public class NFAController {
         scaleTransition.setAutoReverse(true);
         scaleTransition.play();
     }
-    }
+}
