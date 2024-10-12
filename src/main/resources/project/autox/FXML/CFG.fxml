@@ -6,6 +6,8 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Line?>
@@ -17,28 +19,28 @@
       <URL value="@../StyleSheet/Styles.css" />
       <URL value="@../StyleSheet/txtSS.css" />
    </stylesheets>
-   <Text fill="#464545" layoutX="257.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Context Free Grammar" wrappingWidth="630.333">
+   <Text fill="#464545" layoutX="186.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Context Free Grammar" wrappingWidth="630.333">
       <styleClass>
          <String fx:value="display-flex" />
          <String fx:value="text-title" />
       </styleClass>
    </Text>
-   <Text fill="#464545" layoutX="260.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-twotoldok" text="Input String:" wrappingWidth="118.028">
+   <Text fill="#464545" layoutX="191.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-twotoldok" text="Input String:" wrappingWidth="118.028">
       <font>
          <Font name="System Bold" size="12.0" />
       </font>
    </Text>
-   <TextField fx:id="InputCFG" layoutX="260.0" layoutY="127.0" styleClass="text-field" />
-   <Line endX="559.067" layoutX="335.0" layoutY="89.0" startX="-70.267" stroke="#e1e1e1" style="-fx-opacity: 10;" styleClass="line-divider" />
-   <Line endX="559.067" layoutX="333.0" layoutY="226.0" startX="-70.267" stroke="#e1e1e1" style="-fx-opacity: 10;" styleClass="line-divider" />
-   <Line endX="559.067" layoutX="328.0" layoutY="570.0" startX="-70.267" stroke="#e1e1e1" style="-fx-opacity: 10;" styleClass="line-divider" />
-   <Text fill="#464545" layoutX="731.0" layoutY="261.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-twotoldok" text="Production Rule:" wrappingWidth="133.1042763671875">
+   <TextField fx:id="InputCFG" layoutX="191.0" layoutY="138.0" styleClass="text-field" />
+   <Line endX="559.067" layoutX="261.0" layoutY="89.0" startX="-70.267" stroke="#e1e1e1" style="-fx-opacity: 10;" styleClass="line-divider" />
+   <Line endX="559.067" layoutX="266.0" layoutY="267.0" startX="-70.267" stroke="#e1e1e1" style="-fx-opacity: 10;" styleClass="line-divider" />
+   <Line endX="559.067" layoutX="261.0" layoutY="618.0" startX="-70.267" stroke="#e1e1e1" style="-fx-opacity: 10;" styleClass="line-divider" />
+   <Text fill="#464545" layoutX="672.0" layoutY="302.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-twotoldok" text="Production Rule:" wrappingWidth="133.1042763671875">
       <font>
          <Font name="Segoe Script" size="12.0" />
       </font>
    </Text>
-   <Pane layoutX="713.0" layoutY="270.0" prefHeight="27.0" prefWidth="168.0" style="-fx-background-color: #EDF2F7;" styleClass="background-exp" />
-   <HBox alignment="CENTER" layoutX="259.0" layoutY="174.0" prefHeight="46.0" prefWidth="216.0">
+   <Pane layoutX="654.0" layoutY="311.0" prefHeight="27.0" prefWidth="168.0" style="-fx-background-color: #EDF2F7;" styleClass="background-exp" />
+   <HBox alignment="CENTER" layoutX="192.0" layoutY="198.0" prefHeight="46.0" prefWidth="216.0">
       <children>
          <Button fx:id="ValidateCFG" alignment="CENTER" minHeight="34.0" mnemonicParsing="false" onAction="#handleValidateCFG" prefHeight="34.0" prefWidth="101.0" styleClass="continue-button" stylesheets="@../StyleSheet/Styles.css" text="Validate">
             <font>
@@ -55,28 +57,33 @@
          </Button>
       </children>
    </HBox>
-   <TextArea fx:id="OutputCFG" layoutX="264.0" layoutY="244.0" prefHeight="310.0" prefWidth="425.0" style="-fx-background-color: white;">
+   <TextArea fx:id="OutputCFG" layoutX="197.0" layoutY="285.0" prefHeight="310.0" prefWidth="425.0" style="-fx-background-color: white;">
       <font>
          <Font size="18.0" />
       </font>
       <padding>
          <Insets left="30.0" right="30.0" top="30.0" />
       </padding></TextArea>
-   <Text layoutX="771.0" layoutY="289.0" strokeType="OUTSIDE" strokeWidth="0.0" text="S → aSa" wrappingWidth="52.503662597656245">
+   <Text layoutX="712.0" layoutY="330.0" strokeType="OUTSIDE" strokeWidth="0.0" text="S → aSa" wrappingWidth="52.503662597656245">
       <font>
          <Font name="Segoe UI" size="14.0" />
       </font>
    </Text>
-   <Pane layoutX="713.0" layoutY="303.0" prefHeight="27.0" prefWidth="168.0" style="-fx-background-color: #EDF2F7;" styleClass="background-exp" />
-   <Text layoutX="771.0" layoutY="322.0" strokeType="OUTSIDE" strokeWidth="0.0" text="S → bSb" wrappingWidth="52.503662597656245">
+   <Pane layoutX="654.0" layoutY="344.0" prefHeight="27.0" prefWidth="168.0" style="-fx-background-color: #EDF2F7;" styleClass="background-exp" />
+   <Text layoutX="712.0" layoutY="363.0" strokeType="OUTSIDE" strokeWidth="0.0" text="S → bSb" wrappingWidth="52.503662597656245">
       <font>
          <Font name="Segoe UI" size="14.0" />
       </font>
    </Text>
-   <Pane layoutX="713.0" layoutY="336.0" prefHeight="27.0" prefWidth="168.0" style="-fx-background-color: #EDF2F7;" styleClass="background-exp" />
-   <Text layoutX="771.0" layoutY="355.0" strokeType="OUTSIDE" strokeWidth="0.0" text="S → C" wrappingWidth="52.503662597656245">
+   <Pane layoutX="654.0" layoutY="377.0" prefHeight="27.0" prefWidth="168.0" style="-fx-background-color: #EDF2F7;" styleClass="background-exp" />
+   <Text layoutX="712.0" layoutY="396.0" strokeType="OUTSIDE" strokeWidth="0.0" text="S → C" wrappingWidth="52.503662597656245">
       <font>
          <Font name="Segoe UI" size="14.0" />
       </font>
    </Text>
+   <ImageView fitHeight="527.0" fitWidth="154.0" layoutX="864.0" layoutY="84.0">
+      <image>
+         <Image url="@../Images/CFGproof.png" />
+      </image>
+   </ImageView>
 </Pane>
