@@ -71,6 +71,3 @@ This project is licensed under the MIT License.
 
 **Let CatoMata guide you through the intricate world of automata theory—one paw-step at a time!** 🐾  
 
----  
-
-Does this capture your vision? Let me know if you'd like to tweak or add anything! 😊
