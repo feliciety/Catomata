@@ -60,7 +60,7 @@ CatoMata is designed to make automata theory approachable and fun for students, 
 ## 📷 Preview  
 
 ![CatoMata Context Free Grammar Simulator](https://github.com/feliciety/Catomata/assets/CFG.png)  
-<img src="/assets/dfa.png" alt="CatoMata Deterministic Finite Automata Simulator">
+<img src="/assets/DFA.png" alt="CatoMata Deterministic Finite Automata Simulator">
 
 
 ![CatoMata Deterministic Finite Automata Simulator](https://github.com/feliciety/Catomata/assets/DFA.png)  
