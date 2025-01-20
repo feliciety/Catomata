@@ -59,17 +59,17 @@ CatoMata is designed to make automata theory approachable and fun for students, 
 
 ## 📷 Preview  
 
-![CatoMata Context Free Grammar Simulator](https://github.com/feliciety/catomata/assets/CFG.png)  
+![CatoMata Context Free Grammar Simulator](https://github.com/feliciety/Catomata/assets/CFG.png)  
 
-![CatoMata Deterministic Finite Automata Simulator](https://github.com/feliciety/catomata/assets/DFA.png)  
+![CatoMata Deterministic Finite Automata Simulator](https://github.com/feliciety/Catomata/assets/DFA.png)  
 
-![CatoMata Non-deterministic Finite Automata Simulator](https://github.com/feliciety/catomata/assets/NFA.png)  
+![CatoMata Non-deterministic Finite Automata Simulator](https://github.com/feliciety/Catomata/assets/NFA.png)  
 
-![CatoMata Push Down Automata Simulator](https://github.com/feliciety/catomata/assets/PDA.png)  
+![CatoMata Push Down Automata Simulator](https://github.com/feliciety/Catomata/assets/PDA.png)  
 
-![CatoMata Turing Machine Simulator](https://github.com/feliciety/catomata/assets/TMS.png)  
+![CatoMata Turing Machine Simulator](https://github.com/feliciety/Catomata/assets/TMS.png)  
 
-![CatoMata Tower of Hanoi Simulator](https://github.com/feliciety/catomata/assets/THS.png)  
+![CatoMata Tower of Hanoi Simulator](https://github.com/feliciety/Catomata/assets/THS.png)  
 
 
 ---
