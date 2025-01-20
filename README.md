@@ -1,6 +1,3 @@
-Here's a creative README file draft for your GitHub repository:
-
----
 
 # CatoMata 🐾  
 
@@ -12,73 +9,67 @@ Here's a creative README file draft for your GitHub repository:
 
 Explore the fascinating world of automata theory with these modules, each equipped with engaging animations:  
 
-1. **Deterministic Finite Automata (DFA)**  
-   Visualize state transitions in a deterministic system where every input leads to a unique state.  
+### 1. Deterministic Finite Automata (DFA)  
+Visualize state transitions in a deterministic system where every input leads to a unique state.  
 
-2. **Nondeterministic Finite Automata (NFA)**  
-   Witness how multiple paths can coexist for a single input, demonstrating nondeterministic behavior.  
+<img src="/assets/DFA.png" alt="CatoMata Deterministic Finite Automata Simulator" width="1000">  
 
-3. **Context-Free Grammar (CFG)**  
-   Learn the foundation of programming languages by watching grammar rules transform into parse trees.  
+### 2. Nondeterministic Finite Automata (NFA)  
+Witness how multiple paths can coexist for a single input, demonstrating nondeterministic behavior.  
 
-4. **Push Down Automata (PDA)**  
-   Understand how a stack enhances the capabilities of finite automata through real-time simulations.  
+<img src="/assets/NFA.png" alt="CatoMata Non-deterministic Finite Automata Simulator" width="1000">  
 
-5. **Turing Machine**  
-   Experience the power of computation with an interactive animation that shows how Turing Machines process data.  
+### 3. Context-Free Grammar (CFG)  
+Learn the foundation of programming languages by watching grammar rules transform into parse trees.  
 
-6. **Tower of Hanoi**  
-   Take a break from theory and solve this classic puzzle using recursive logic!  
+<img src="/assets/CFG.png" alt="CatoMata Context Free Grammar Simulator" width="1000">  
+
+### 4. Push Down Automata (PDA)  
+Understand how a stack enhances the capabilities of finite automata through real-time simulations.  
+
+<img src="/assets/PDA.png" alt="CatoMata Push Down Automata Simulator" width="1000">  
+
+### 5. Turing Machine Simulator  
+Experience the power of computation with an interactive animation that shows how Turing Machines process data.  
+
+<img src="/assets/TMS.png" alt="CatoMata Turing Machine Simulator" width="1000">  
+
+### 6. Tower of Hanoi Simulator  
+Take a break from theory and solve this classic puzzle using recursive logic!  
+
+<img src="/assets/THS.png" alt="CatoMata Tower of Hanoi Simulator" width="1000">  
 
 ---
 
 ## 🚀 Getting Started  
 
-1. Clone this repository:  
+Follow these steps to set up and run the project:  
+
+1. **Clone this repository**:  
    ```bash  
-   git clone https://github.com/your-username/catomata.git  
+   git clone https://github.com/feliciety/catomata.git  
    ```  
-2. Open the project in your browser or editor.  
-3. Explore the tabs and watch the animations in action!  
 
----
+2. **Open the project in your browser or editor**:  
+   Navigate to the project directory and open the `index.html` file in a browser to explore the features.  
 
-## 🛠️ Built With  
-
-- **HTML5, CSS3, JavaScript**: For a clean, responsive, and dynamic interface.  
-- **Canvas and SVG**: For rendering visually appealing animations.  
-- **Open-Source Libraries**: Powering the animations and interactivity.  
+3. **Explore the tabs**:  
+   Click on the tabs to see the animations and understand the theoretical concepts.  
 
 ---
 
 ## 🎯 Goals  
 
-CatoMata is designed to make automata theory approachable and fun for students, educators, and anyone curious about the foundation of computation.  
-
----
-
-## 📷 Preview  
-
-![CatoMata Context Free Grammar Simulator](https://github.com/feliciety/Catomata/assets/CFG.png)  
-<img src="/assets/DFA.png" alt="CatoMata Deterministic Finite Automata Simulator">
-
-
-![CatoMata Deterministic Finite Automata Simulator](https://github.com/feliciety/Catomata/assets/DFA.png)  
-
-![CatoMata Non-deterministic Finite Automata Simulator](https://github.com/feliciety/Catomata/assets/NFA.png)  
-
-![CatoMata Push Down Automata Simulator](https://github.com/feliciety/Catomata/assets/PDA.png)  
-
-![CatoMata Turing Machine Simulator](https://github.com/feliciety/Catomata/assets/TMS.png)  
-
-![CatoMata Tower of Hanoi Simulator](https://github.com/feliciety/Catomata/assets/THS.png)  
-
+CatoMata is designed to:  
+- Make automata theory approachable and fun for students and educators.  
+- Provide a visual and interactive way to grasp complex computational concepts.  
+- Promote curiosity in theoretical computer science.  
 
 ---
 
 ## 📜 License  
 
-This project is licensed under the MIT License.  
+This project is licensed under the MIT License. See the `LICENSE` file for details.  
 
 ---
 
